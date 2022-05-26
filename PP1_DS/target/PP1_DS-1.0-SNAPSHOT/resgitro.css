@@ -1,0 +1,23 @@
+body{
+    width: 900PX;
+    margin: auto;
+
+
+}
+h1{ 
+    color: #0066ff;
+    text-align:  center;
+}
+h2{ 
+    text-align:  center;
+}
+
+nav li{
+    display:contents;
+    padding: 5px;
+    
+}
+
+.menusuperior{
+    text-align:  center;
+}

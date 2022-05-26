@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
+-->
+<html>
+    <head>
+        <title>Tranferir dinero a cuenta</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="../../Inicio.css" rel="stylesheet" type="text/css"/>
+            <script type="text/javascript">
+        function obetnerdatos(){
+            var numero=document.getElementById('NUMEROCUENTA').value
+            var pin=document.getElementById('NUMEROCUENTA').value
+            
+            document.trans.NUMEROCUENTA.value = numero;
+            document.trans.PIN.value = pin;
+        }
+    </script>
+    </head>
+    <body>
+        <h1>Tranferir dinero a cuenta</h1>
+        <nav>
+            <form method="get" action="../../PalabraEnviadaWeb">
+                <hr>
+                <h2> Ingrese los datos para enviar palabra de seguridad</h2>
+                <label>Numero de cuenta origen:</label>
+                <input type="Number"  name="NUMEROCUENTA" id="NUMEROCUENTA" required>
+                <br><br>
+                <label>PIN:</label>
+                <input type="password" name="PIN" ID="PIN" required>
+                <button type="submit" onclick="obetnerdatos()" >Enviar Palabra </button>
+            </form>
+            <form name="trans" method="GET" action="../../TransferirWeb">
+                <hr>
+                 <h2> Ingrese los datos para hacer el retiro</h2>
+                <label>Numero de cuenta origen:</label>
+                <input type="Number" name="NUMEROCUENTA" required>
+                <br><br>
+                
+                <label>Numero de cuenta destino:</label>
+                <input type="Number" name="NUMEROCUENTADES" required>
+                <br><br>
+                
+                <label>PIN:</label>
+                <input type="password" name="PIN" required>
+                <br><br>
+                
+                <label>Palabra:</label>
+                <input type="Text" name="PALABRA" required>
+                <br><br>
+
+                <label>Monto: </label>
+                <input type="number" name="MONTO"  required>
+                <br><br>
+                <button>Transferir</button>
+            </form>
+
+            
+        </nav>
+        <hr>
+        <a href="../operaciones.html">Volver</a>
+    </body>
+</html>

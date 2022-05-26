@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Context path="/PP1_DS">
+
+<Resource name="jdbc/BDBanco" auth="Container" type="javax.sql.DataSource"
+    username="administrador"
+    password="diseno2022!"
+    driverClassName="com.microsoft.sqlserver.jdbc.SQLServerDriver"
+    url="jdbc:jtds:sqlserver://localhost:1433/database=BDBanco"
+    maxTotal="25"
+    maxIdle="10"
+    validationQuery="select 1" />
+
+              
+</Context>

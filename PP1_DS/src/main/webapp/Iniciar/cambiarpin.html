@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
+-->
+<html>
+    <head>
+        <title>Cambiar PIN</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="../Inicio.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        <h1>Cambiar PIN</h1>
+        <nav>
+            <form method="GET" action="../CambiarPinWeb">
+                <hr>
+                <label>Numero de cuenta a cambiar el PIN:</label>
+                <input type="Number" name="NUMEROCUENTA" required>
+                <br><br>
+                <label>PIN actual:</label>
+                <input type="password" name="PINACTUAL" required>
+                <br><br>
+                <label>PIN nuevo: </label>
+                <input type="password" name="PINNUEVO" required>
+                <br><br>
+                <button>Cambiar</button>
+            </form>
+        </nav>
+        <hr>
+        <a href="../iniciar.html">Volver</a>
+    </body>
+</html>

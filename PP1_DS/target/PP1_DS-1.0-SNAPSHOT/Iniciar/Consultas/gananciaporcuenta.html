@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
+-->
+<html>
+    <head>
+        <title>Consultar ganancias por cuenta</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1>Consultar ganancias por cuenta</h1>
+        <nav>
+            <form method="GET" action="../../ConsultarGananciaPorCuentaWeb">
+                <hr>
+                <label>Seleccione el tipo de cuenta:</label>
+
+                <br><br><select name="CUENTA">
+                    <optgroup label="Tipos">
+                        <option value="1">Deposito </option>
+                        <option value="2">Retiro</option>
+                        <option value="3">Deposito y Retiro </option>
+                    </optgroup>
+                </select>
+                <br><br>
+                <label>Numero de cuenta :</label>
+                <input type="Number" name="NUMEROCUENTA" required>
+
+                <br><br>
+                <button>Consultar</button>
+            </form>
+        </nav>
+        <hr>
+        <a href="../consultas.html">Volver</a>
+    </body>
+</html>

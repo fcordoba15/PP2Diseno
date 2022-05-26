@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
+-->
+<html>
+    <head>
+        <title>Depositar dinero a cuenta</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="../../Inicio.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        <h1>Depositar dinero a cuenta</h1>
+        <nav>
+            <form method="GET" action="../../DepositarWeb">
+                <hr>
+                <label>Numero de cuenta a depositar:</label>
+                <input type="Number" NAME="NUMEROCUENTA" required>
+                <br><br>
+                <label>Divisas:</label>
+                <select name="DIVISAS">
+                    <optgroup label="Divisas">
+                        <option value="1">Dolares</option>
+                        <option value="2">Colones</option>
+                    </optgroup>
+                </select>
+                <br><br>
+                <label>Monto: </label>
+                <input type="number" NAME="MONTO" required>
+                <br><br>
+                <button>Depositar</button>
+                
+            </form>
+        </nav>
+        <hr>
+        <a href="../operaciones.html">Volver</a>
+    </body>
+</html>

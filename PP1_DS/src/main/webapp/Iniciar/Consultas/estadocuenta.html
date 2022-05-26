@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
+-->
+<html>
+    <head>
+        <title>Consultar estado de cuenta</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="../../Inicio.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        <h1>Consultar estado de cuenta</h1>
+        <nav>
+            <form METHOD="GET" action="../../ConsultarEstadoCuentaWeb">
+                <hr>
+                <label>Numero de cuenta :</label>
+                <input type="Number" name="NUMEROCUENTA" required>
+                <br><br>
+                 <label>PIN:</label>
+                <input type="password"  name="PIN" required>
+                <br><br>
+                <label>Divisas:</label>
+                <select name="DIVISAS">
+                    <optgroup label="Divisas">
+                        <option value="1">Dolares</option>
+                        <option value="2">Colones</option>
+                    </optgroup>
+                </select>
+                <br><br>
+                <button>Consultar</button>
+                <br><br>
+                
+            </form>
+        </nav>
+        <hr>
+        <a href="../consultas.html">Volver</a>
+    </body>
+</html>

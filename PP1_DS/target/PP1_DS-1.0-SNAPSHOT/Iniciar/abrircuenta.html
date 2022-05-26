@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
+-->
+<html>
+    <head>
+        <title>Abrir una cuenta bancaria</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="../Inicio.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        <h1>Abrir una cuenta bancaria</h1>
+        <nav>
+            <form method="GET" action="../AbrirCuentaBancariaWeb">
+                <hr>
+                <label>Cédula del dueño de la cuenta:</label>
+                <input type="Number" placeholder="Cédula" name="NUMEROCUENTA" required>
+                <br><br>
+                <label>Digite el PIN:</label>
+                <input type="password" placeholder="PIN" name="PIN" required>
+                <br><br>
+                <label>Monto a depositar en ₡: </label>
+                <input type="text" placeholder="₡" NAME="MONTO" required>
+                <br><br>
+                <button>Abrir</button>
+            </form>
+        </nav>
+        <hr>
+        <a href="../iniciar.html">Volver</a>
+    </body>
+</html>

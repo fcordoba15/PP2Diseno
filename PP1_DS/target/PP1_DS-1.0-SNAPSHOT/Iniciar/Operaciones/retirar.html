@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="../../Inicio.css" rel="stylesheet" type="text/css"/>
+        
+    <script type="text/javascript">
+        function obetnerdatos(){
+            var numero=document.getElementById('NUMEROCUENTA').value
+            var pin=document.getElementById('NUMEROCUENTA').value
+            
+            document.retiro.NUMEROCUENTA.value = numero;
+            document.retiro.PIN.value = pin;
+        }
+    </script>
+    </head>
+    
+
+    <body>
+        <h1>Retirar dinero de cuenta</h1>
+        <nav>
+            <form name="palabra" method="get" action="../../PalabraEnviadaWeb" oninput="resultado" >
+                <hr>
+                <h2> Ingrese los datos para enviar palabra de seguridad</h2>
+                <label>Numero de cuenta del retiro:</label>
+                <input type="Number"  name="NUMEROCUENTA" id="NUMEROCUENTA" required>
+                <br><br>
+                <label>PIN:</label>
+                <input type="password" name="PIN" ID="PIN" required>
+                <button type="submit" onclick="obetnerdatos()" >Enviar Palabra </button>
+            </form>
+            <form name="retiro" method="GET" action="../../RetirarWeb">
+                <hr>
+                <h2> Ingrese los datos para hacer el retiro</h2>
+                <br>
+                <label>Numero de cuenta del retiro:</label>
+
+                <input type="TEXT" name="NUMEROCUENTA" id="NUMEROCUENTA" required>
+                <br><br>
+                 <label>PIN:</label>
+                <input type="password" name="PIN" id="PIN" required>
+                <br><br>
+                <label>Divisas:</label>
+                <select name="DIVISAS">
+                    <optgroup label="Divisas">
+                        <option value="1">Dolares</option>
+                        <option value="2">Colones</option>
+                    </optgroup>
+                </select>
+                <br><br>
+                <label>Palabra:</label>
+                <input type="Text" name="PALABRA" required>
+                <br><br>
+                <label>Monto: </label>
+                <input type="number" NAME="MONTO" required>
+                <br><br>
+                <button>Retirar</button>
+            </form>
+                        
+
+        </nav>
+        <hr>
+        <a href="../operaciones.html">Volver</a>
+    </body>
+</html>
