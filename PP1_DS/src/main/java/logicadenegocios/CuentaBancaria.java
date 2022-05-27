@@ -21,7 +21,8 @@ public class CuentaBancaria implements Comparable{
     protected Cliente duenio;
     protected ArrayList<Operacion> operaciones;
     protected int cantidadOperacionesRetirosDepositos;  
-    
+    private  ArrayList<BitacoraNotificationObserver> observers;
+    private  Operacion exchangeRate;
 
     public CuentaBancaria(double pSaldo, String pPin, Cliente pDuenio) {
         setFechaCreacion();
@@ -32,15 +33,24 @@ public class CuentaBancaria implements Comparable{
         setNumeroCuenta();
         setCantidadOperacionesRetirosDepositos(0);
         operaciones = new ArrayList <Operacion>();
+        observers= new ArrayList<BitacoraNotificationObserver>();
     }  
     
     public CuentaBancaria() {
 
     }
     
+    public Operacion getExhangeRate() {
+        return exchangeRate;
+    }
+    public void setExchangeRate(Operacion pExchageRate) {
+        exchangeRate= pExchageRate;
+        notificarTodosObservadores();
+    }
+   
     public void cambiarPin(String pPin){
         setPin(pPin);
-        agregarOperacion("Cambio de pin",0,0);
+        CuentaBancaria.this.agregarOperacion("Cambio de pin",0,0);
     }
     
     public String depositarColones(double pMontoDeposito){
@@ -52,7 +62,7 @@ public class CuentaBancaria implements Comparable{
         }
         setSaldo(getSaldo() + (pMontoDeposito - montoComision));
         setCantidadOperacionesRetirosDepositos(getCantidadOperacionesRetirosDepositos() + 1);
-        agregarOperacion("Deposito",pMontoDeposito,montoComision);
+        CuentaBancaria.this.agregarOperacion("Deposito",pMontoDeposito,montoComision);
         return "Estimado usuario, se han depositado correctamente " + pMontoDeposito +" colones" + "\n[El monto real depositado a su cuenta " + getNumeroCuenta() + " es de " + pMontoDeposito + " colones]" + "\n[El monto cobrado por concepto de comisión fue de " + df.format(montoComision) + " colones, que  fueron rebajados automáticamente de su saldo actual]";
     }
     
@@ -66,7 +76,7 @@ public class CuentaBancaria implements Comparable{
         }
         setSaldo(getSaldo() + (montoDepositoColones - montoComision));
         setCantidadOperacionesRetirosDepositos(getCantidadOperacionesRetirosDepositos() + 1);
-        agregarOperacion("Deposito",montoDepositoColones,montoComision);
+        CuentaBancaria.this.agregarOperacion("Deposito",montoDepositoColones,montoComision);
         return "Estimado usuario, se han recibido correctamente " + pMontoDeposito + " dolares" + "\n[Según el BCCR, el tipo de cambio de compra del dólar del " + obtenerFechaActual() + " es: " + calcularTipoCambioCompra(1) + "\n[El monto equivalente en colones es " + df.format(montoDepositoColones) + "]\n[El monto real depositado a su numero de cuenta " + getNumeroCuenta() + " es de " + pMontoDeposito + " dolares]" + "\n[El monto cobrado por concepto de comisión fue de " + df.format(montoComision) + " colones, que  fueron rebajados automáticamente de su saldo actual]";
     }
     
@@ -79,7 +89,7 @@ public class CuentaBancaria implements Comparable{
         }
         setSaldo(getSaldo() - (pMontoRetiro + montoComision));
         setCantidadOperacionesRetirosDepositos(getCantidadOperacionesRetirosDepositos() + 1);
-        agregarOperacion("Retiro",pMontoRetiro,montoComision);
+        CuentaBancaria.this.agregarOperacion("Retiro",pMontoRetiro,montoComision);
         return "Estimado usuario, el monto de este retiro es " + pMontoRetiro + " colones." + "\n[El monto cobrado por concepto de comisión fue de " + df.format(montoComision) + " colones, que  fueron rebajados automáticamente de su saldo actual]";
     }
     
@@ -94,7 +104,7 @@ public class CuentaBancaria implements Comparable{
         }
         setSaldo(getSaldo() - (montoRetiroColones + montoComision));
         setCantidadOperacionesRetirosDepositos(getCantidadOperacionesRetirosDepositos() + 1);
-        agregarOperacion("Retiro",montoRetiroColones,montoComision);
+        CuentaBancaria.this.agregarOperacion("Retiro",montoRetiroColones,montoComision);
         return "Estimado usuario, el monto de este retiro es " + pMontoRetiro + " dólares." + "\n[Según el BCCR, el tipo de cambio de venta del dólar de hoy es: " + calcularTipoCambioVenta(1) + "]\n[El monto equivalente de su retiro es " + df.format(montoRetiroColones) + " colones] \n[El monto cobrado por concepto de comisión fue de " + df.format(montoComision) + " colones, que fueron rebajados automáticamente de su saldo actual]";
     }
     
@@ -106,36 +116,36 @@ public class CuentaBancaria implements Comparable{
             montoComision = calcularComision(pMonto);
         }
         setSaldo(getSaldo() - (pMonto + montoComision));
-        agregarOperacion("Transferencia",pMonto,montoComision);
+        CuentaBancaria.this.agregarOperacion("Transferencia",pMonto,montoComision);
         return "Estimado usuario, la transferencia de fondos se ejecutó satisfactoriamente. El monto retirado de la cuenta origen y depositado en la cuenta destino es " + pMonto + "colones. \n" + "[El monto cobrado por concepto de comisión a la cuenta origen fue de " + df.format(montoComision) + " colones, que fueron rebajados automáticamente de su saldo actual]";
     }
     
     public String consultarSaldoCuentaColones(){
         DecimalFormat df = new DecimalFormat("#.00");
-        agregarOperacion("Consulta",0,0);
+        CuentaBancaria.this.agregarOperacion("Consulta",0,0);
         return "Estimado usuario el saldo actual de su cuenta es " + df.format(getSaldo()) + " colones. ";
     }
     
     public String consultarSaldoCuentaDolares(){
         DecimalFormat df = new DecimalFormat("#.00");
-        agregarOperacion("Consulta",0,0);
+        CuentaBancaria.this.agregarOperacion("Consulta",0,0);
         return "Estimado usuario el saldo actual de su cuenta es " + df.format(getSaldo()/calcularTipoCambioCompra(1)) + " dólares.\nPara esta conversión se utilizó el tipo de cambio del dólar, precio de compra.\n[Según el BCCR, el tipo de cambio de compra del dólar de hoy es:" + calcularTipoCambioCompra(1) + "]"; 
     }
     
     public String consultarEstadoCuentaColones (){
         DecimalFormat df = new DecimalFormat("#.00");
-        agregarOperacion("Consulta",0,0);
+        CuentaBancaria.this.agregarOperacion("Consulta",0,0);
         return "Propietario: " + duenio.getNombre() + duenio.getPrimerApellido() + "\nFecha creacion: " + getFechaCreacion() + "\nNumero de Cuenta: " + getNumeroCuenta() + "\nSaldo en colones: " + df.format(getSaldo());
     }
     
     public String consultarEstadoCuentaDolares(){
         DecimalFormat df = new DecimalFormat("#.00");
-        agregarOperacion("Consulta",0,0);
+        CuentaBancaria.this.agregarOperacion("Consulta",0,0);
         return "Duenio: " + duenio.getNombre() + duenio.getPrimerApellido() + "\nFecha creacion: " + getFechaCreacion() + "\nNumero de Cuenta: " + getNumeroCuenta() + "\nSaldo en dolares: " + df.format(getSaldo()/calcularTipoCambioVenta(1));
     }
     
     public String consultarStatusCuenta(){
-        agregarOperacion("Consulta",0,0);
+        CuentaBancaria.this.agregarOperacion("Consulta",0,0);
         return "“La cuenta número " + getNumeroCuenta() + " se encuentra: " + isActiva();
     }
     
@@ -153,15 +163,18 @@ public class CuentaBancaria implements Comparable{
     public void agregarOperacion (String pTipoOperacion, double pMonto,double pMontoComision){
         Operacion nuevaOperacion = new Operacion (pTipoOperacion, pMonto, pMontoComision);
         operaciones.add(nuevaOperacion);
+        setExchangeRate(nuevaOperacion);
+       
     }
     
     public void agregarOperacion(String pTipoOperacion, double pMonto, double pMontoComision, 
-            LocalDate pFechaCreacion, boolean pIsComision) {
+         LocalDate pFechaCreacion, boolean pIsComision) {
          Operacion operacion = new Operacion (pTipoOperacion, pMonto, pMontoComision);
          operacion.setComision(pIsComision);
          operacion.setFechaOperacion(pFechaCreacion);
-
          operaciones.add(operacion);
+         setExchangeRate(operacion);
+         
     }
     
     
@@ -189,6 +202,15 @@ public class CuentaBancaria implements Comparable{
           numeroCuenta =  list.get(i);
         }
     }
+    public void attach(BitacoraNotificationObserver pObserver) {
+        observers.add(pObserver);
+       }
+    
+    public void notificarTodosObservadores() {
+        for (int i = 0; i < observers.size(); i++) {
+        observers.get(i).update();
+        }
+    }
 
     public void setDuenio (Cliente pDuenio){
         duenio = pDuenio;
@@ -212,12 +234,18 @@ public class CuentaBancaria implements Comparable{
     public void setNumCuenta(int pNumeroCuenta) {
        numeroCuenta=  pNumeroCuenta;
     }
+    
+    
      public void setFechaCreacion(LocalDate pFecha){
         fechaCreacion = pFecha;
     }
 
     public void setOperaciones(ArrayList<Operacion> pOperaciones) {
         this.operaciones = pOperaciones;
+    }
+    
+     public void setObservers(ArrayList<BitacoraNotificationObserver>pObservers) {
+        this.observers = pObservers;
     }
   
     public void setCantidadOperacionesRetirosDepositos(int pCantidadOperacionesRetirosDepositos){

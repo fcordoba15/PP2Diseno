@@ -45,6 +45,13 @@ public class AbrirCuentaBancariaWeb extends HttpServlet {
     out.println(CuentaBancariaCt.resgistrarCuentaBancaria(monto, pin, identificacion) );
     out.println("<hr><a href=\"iniciar.html\">Volver</a>");
     out.println("</body></html>");
+    
+    
   }
+    
+    public void doPost(HttpServletRequest request, HttpServletResponse response)
+                                   throws ServletException, IOException {
+       response.sendRedirect("C:\\Users\\Fiorella Mora\\Documents\\SimpleFactory\\nbproject\\project.xml");
+   }
 
 }

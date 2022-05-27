@@ -6,6 +6,10 @@ import static controlador.ClienteCt.clientes;
 import java.text.DecimalFormat;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import logicadenegocios.BitacoraCSV;
+import logicadenegocios.BitacoraNotificationObserver;
+import logicadenegocios.BitacoraTramaPlana;
+import logicadenegocios.BitacoraXML;
 import logicadenegocios.Cliente;
 import logicadenegocios.CuentaBancaria;
 import logicadenegocios.Operacion;
@@ -36,6 +40,11 @@ public class CuentaBancariaCt {
                 cuentaBancariaAux = new CuentaBancaria(Integer.parseInt(pSaldo),pPin,clienteCt.clientes.get(i));
                 clienteCt.clientes.get(i).agregarCuentaBancaria(cuentaBancariaAux);
                 cuentaDAO.registrarCuentaDAO(cuentaBancariaAux.getNumeroCuenta(),cuentaBancariaAux.getFechaCreacion(),cuentaBancariaAux.getSaldo(),cuentaBancariaAux.getactiva(),cuentaBancariaAux.getPin(),Integer.parseInt(pIdentificacion),cuentaBancariaAux.getCantidadOperacionesRetirosDepositos());
+                
+                //SUBSCRIPCION BITÁCORAS
+                BitacoraXML notificationObserver1 = new BitacoraXML(cuentaBancariaAux);
+                BitacoraCSV notificationObserver2 = new BitacoraCSV (cuentaBancariaAux);
+                BitacoraTramaPlana notificationObserver3 = new BitacoraTramaPlana(cuentaBancariaAux);
             }
         }
     
@@ -217,6 +226,7 @@ public class CuentaBancariaCt {
     
     //-------------------CONTROLADOR - DAO----------------//
     public static void cargarCuentasCt(int pNumCuenta,LocalDate pFechaCreacion,double pSaldo, boolean pIsActiva,int pDuenio,int pCantOperaciones, String pPin){
+        ArrayList<BitacoraNotificationObserver> observers = new ArrayList<>();
         ArrayList<Operacion> operaciones = new ArrayList<>();
         for (int i = 0; i < clienteCt.clientes.size(); i++){
              if(pDuenio ==  clienteCt.clientes.get(i).getIdentificacion()){
@@ -229,7 +239,14 @@ public class CuentaBancariaCt {
                  cuenta.setPin(pPin);
                  cuenta.setCantidadOperacionesRetirosDepositos(pCantOperaciones);
                  cuenta.setOperaciones(operaciones);
+                 cuenta.setObservers(observers);
                  clienteCt.clientes.get(i).agregarCuentaBancaria(cuenta); 
+                 
+                 //SUBCRIPCION BITACOTAS
+                 BitacoraXML notificationObserver1 = new BitacoraXML(cuenta);
+                 BitacoraCSV notificationObserver2 = new BitacoraCSV (cuenta);
+                 BitacoraTramaPlana notificationObserver3 = new BitacoraTramaPlana(cuenta);
+                 
              }
          }    
     }

@@ -2,11 +2,8 @@
 package logicadenegocios;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 
-/**
- *
- * @author fabih
- */
 
 public class Operacion {
     private LocalDate fechaOperacion;
@@ -20,7 +17,7 @@ public class Operacion {
         setMonto(pMonto);
         obtenerFechaActual();
         setMontoComision(pMontoComision);
-        //Faltan los otros dos atributos
+        
     }
 
     Operacion() {
@@ -47,6 +44,8 @@ public class Operacion {
     public void setComision(boolean pComision) {
         comision = pComision;
     }
+   
+    
 
     public void setMontoComision(double montoComision) {
         this.montoComision = montoComision;
