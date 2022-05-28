@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><bitacora>
+    <vistaCLI>
+    <operacion><numeroCuenta>798</numeroCuenta><tipoOperacion>Deposito</tipoOperacion><fechaOperacion>2022-05-27</fechaOperacion><monto>8423094.72</monto><montoComision>0.0</montoComision></operacion><operacion><numeroCuenta>798</numeroCuenta><tipoOperacion>Deposito</tipoOperacion><fechaOperacion>2022-05-27</fechaOperacion><monto>67688.0</monto><montoComision>0.0</montoComision></operacion><operacion><numeroCuenta>798</numeroCuenta><tipoOperacion>Deposito</tipoOperacion><fechaOperacion>2022-05-27</fechaOperacion><monto>67688.0</monto><montoComision>1353.76</montoComision></operacion><operacion><numeroCuenta>798</numeroCuenta><tipoOperacion>Deposito</tipoOperacion><fechaOperacion>2022-05-27</fechaOperacion><monto>1222.0</monto><montoComision>0.0</montoComision></operacion><operacion><numeroCuenta>798</numeroCuenta><tipoOperacion>Deposito</tipoOperacion><fechaOperacion>2022-05-27</fechaOperacion><monto>1000.0</monto><montoComision>20.0</montoComision></operacion><operacion><numeroCuenta>798</numeroCuenta><tipoOperacion>Deposito</tipoOperacion><fechaOperacion>2022-05-27</fechaOperacion><monto>67688.0</monto><montoComision>1353.76</montoComision></operacion><operacion><numeroCuenta>798</numeroCuenta><tipoOperacion>Deposito</tipoOperacion><fechaOperacion>2022-05-27</fechaOperacion><monto>100.0</monto><montoComision>2.0</montoComision></operacion></vistaCLI>
+    <vistaGUI>
+    </vistaGUI>
+    <vistaWEB>
+    </vistaWEB>
+</bitacora>

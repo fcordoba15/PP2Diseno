@@ -19,7 +19,7 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
 public class BitacoraXML extends BitacoraNotificationObserver{
-    static File file = new File("C:\\Users\\Fiorella Mora\\Documents\\GitHub\\PP1Diseno\\PP1_DS\\bitacoras\\XML.xml"); 
+    static File file = new File("C:\\Users\\Fiorella Mora\\Documents\\GitHub\\PP2Diseno\\PP1_DS\\bitacoras\\XML.xml"); 
 
      public BitacoraXML(CuentaBancaria pSubject) {
         subject= pSubject;
