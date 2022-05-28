@@ -210,6 +210,7 @@ public class CuentaBancaria implements Comparable{
         for (int i = 0; i < observers.size(); i++) {
         observers.get(i).update();
         }
+        System.out.println(observers.size());
     }
 
     public void setDuenio (Cliente pDuenio){

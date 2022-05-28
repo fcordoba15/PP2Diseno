@@ -23,7 +23,7 @@ import static seguridad.CuentaBancariaSc.*;
 
 public class ClienteCt {
     
-    
+    private static int vista = 0; //0 cli - 1 Gui - 2 Web
     static int numCliente = 0;
     static ArrayList<Cliente> clientes = new ArrayList<>();
     private static ClienteDAO clienteDAO = new ClienteDAO();
@@ -524,5 +524,12 @@ public class ClienteCt {
         Cliente clienteAux = new Cliente(pPrimerApellido,pSegundoApellido,pNombre,pIdentificacion,pFechaNacimiento,pNumeroTelefonico,pCorreoElectronico);
         clienteAux.setCodigoCliente(pCodigo);
         clientes.add(clienteAux);   
+    }
+    
+    public static int getVista(){
+        return vista;
+    }
+    public void setVista(int pVista){
+        vista = pVista;
     }
 }
