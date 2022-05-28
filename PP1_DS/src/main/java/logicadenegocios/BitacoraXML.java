@@ -24,7 +24,6 @@ public class BitacoraXML extends BitacoraNotificationObserver{
      public BitacoraXML(CuentaBancaria pSubject) {
         subject= pSubject;
         subject.attach(this);
-        System.out.println("ee");
     }
     public void update() {
         try {
