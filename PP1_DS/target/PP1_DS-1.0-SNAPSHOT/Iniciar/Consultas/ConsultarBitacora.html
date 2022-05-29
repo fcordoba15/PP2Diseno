@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="../../Inicio.css" rel="stylesheet" type="text/css"/>
+    </head>
+    
+
+    <body>
+        <h1>Ha iniciado sesion!</h1>
+        <nav>
+            <form name="registrosDiarios" method="GET" action="../../RegistrosDiariosWeb" >
+                <hr>
+                <h2> Seleccione la consulta que desea</h2>
+                <button  >Consultar registros diarios por: </button>
+                <select name="TIPOS">
+                    <optgroup label="Tipos">
+                        <option value="1">XML</option>
+                        <option value="2">CSV</option>
+                        <option value="3">Trama Plana</option>
+                    </optgroup>
+                </select>
+                
+                <BR>
+            </form>
+             <br>
+        <br>
+                        <form name="registrosDiarios" method="GET" action="../../RegistrosCLIWeb" >
+
+                <button  >Consultar registros CLI por: </button>
+                <select name="TIPOS">
+                    <optgroup label="Tipos">
+                        <option value="1">XML</option>
+                        <option value="2">CSV</option>
+                        <option value="3">Trama Plana</option>
+                    </optgroup>
+                </select>
+                <BR>
+            </form>
+         <br>
+        <br>
+                        <form name="registrosDiarios" method="GET" action="../../RegistrosGUIWeb" >
+
+                <button  >Consultar registros GUI por: </button>
+                <select name="TIPOS">
+                    <optgroup label="Tipos">
+                        <option value="1">XML</option>
+                        <option value="2">CSV</option>
+                        <option value="3">Trama Plana</option>
+                    </optgroup>
+                </select>
+                <BR>
+            </form>
+         <br>
+        <br>
+                        <form name="registrosDiarios" method="GET" action="../../RegistrosWebWeb" >
+
+                <button  >Consultar registros WEB por: </button>
+                <select name="TIPOS">
+                    <optgroup label="Tipos">
+                        <option value="1">XML</option>
+                        <option value="2">CSV</option>
+                        <option value="3">Trama Plana</option>
+                    </optgroup>
+                </select>
+                <BR>
+            </form>
+         <br>
+        <br>
+                        <form name="registrosDiarios" method="GET" action="../../RegistrosTotalesWeb" >
+
+                <button  >Consultar registros totales por: </button>
+                <select name="TIPOS">
+                    <optgroup label="Tipos">
+                        <option value="1">XML</option>
+                        <option value="2">CSV</option>
+                        <option value="3">Trama Plana</option>
+                    </optgroup>
+                </select>
+                <BR>
+            </form>
+         <br>
+        <br>
+            
+            
+
+
+        </nav>
+        <hr>
+        <a href="InicioSesionBitacora.html">Volver</a>
+    </body>
+</html>

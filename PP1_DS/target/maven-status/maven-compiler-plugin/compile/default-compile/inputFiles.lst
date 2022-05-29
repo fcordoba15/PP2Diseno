@@ -1,59 +1,72 @@
-C:\Users\Fiorella Mora\Documents\GitHub\PP1Diseno\PP1_DS\src\main\java\logicadenegocios\Cliente.java
-C:\Users\Fiorella Mora\Documents\GitHub\PP1Diseno\PP1_DS\src\main\java\DAO\ConexionDAO.java
-C:\Users\Fiorella Mora\Documents\GitHub\PP1Diseno\PP1_DS\src\main\java\vistaGUI\AbrirCuentaBancaria.java
-C:\Users\Fiorella Mora\Documents\GitHub\PP1Diseno\PP1_DS\src\main\java\vistaGUI\RegistrarCliente.java
-C:\Users\Fiorella Mora\Documents\GitHub\PP1Diseno\PP1_DS\src\main\java\vistaGUI\ConsultarSaldo.java
-C:\Users\Fiorella Mora\Documents\GitHub\PP1Diseno\PP1_DS\src\main\java\comunicacionExterna\CambioMoneda.java
-C:\Users\Fiorella Mora\Documents\GitHub\PP1Diseno\PP1_DS\src\main\java\validaciones\ValidacionCliente.java
-C:\Users\Fiorella Mora\Documents\GitHub\PP1Diseno\PP1_DS\src\main\java\conexionWeb\ConsultarTipoCambioWeb.java
-C:\Users\Fiorella Mora\Documents\GitHub\PP1Diseno\PP1_DS\src\main\java\vistaGUI\MenuOperaciones.java
-C:\Users\Fiorella Mora\Documents\GitHub\PP1Diseno\PP1_DS\src\main\java\logicadenegocios\Operacion.java
-C:\Users\Fiorella Mora\Documents\GitHub\PP1Diseno\PP1_DS\src\main\java\vistaGUI\ConsultarGananciasPorCuenta.java
-C:\Users\Fiorella Mora\Documents\GitHub\PP1Diseno\PP1_DS\src\main\java\util\Ordenacion.java
-C:\Users\Fiorella Mora\Documents\GitHub\PP1Diseno\PP1_DS\src\main\java\vistaGUI\CambiarPin.java
-C:\Users\Fiorella Mora\Documents\GitHub\PP1Diseno\PP1_DS\src\main\java\vistaGUI\Transferir.java
-C:\Users\Fiorella Mora\Documents\GitHub\PP1Diseno\PP1_DS\src\main\java\vistaGUI\ListarCuentasOrdenadas.java
-C:\Users\Fiorella Mora\Documents\GitHub\PP1Diseno\PP1_DS\src\main\java\conexionWeb\ConsultarClienteWeb.java
-C:\Users\Fiorella Mora\Documents\GitHub\PP1Diseno\PP1_DS\src\main\java\vistaGUI\Depositar.java
-C:\Users\Fiorella Mora\Documents\GitHub\PP1Diseno\PP1_DS\src\main\java\conexionWeb\TransferirWeb.java
-C:\Users\Fiorella Mora\Documents\GitHub\PP1Diseno\PP1_DS\src\main\java\vistaGUI\Retirar.java
-C:\Users\Fiorella Mora\Documents\GitHub\PP1Diseno\PP1_DS\src\main\java\conexionWeb\CuentaConsultadaWeb.java
-C:\Users\Fiorella Mora\Documents\GitHub\PP1Diseno\PP1_DS\src\main\java\conexionWeb\CambiarPinWeb.java
-C:\Users\Fiorella Mora\Documents\GitHub\PP1Diseno\PP1_DS\src\main\java\comunicacionExterna\ObtencionXML.java
-C:\Users\Fiorella Mora\Documents\GitHub\PP1Diseno\PP1_DS\src\main\java\conexionWeb\ConsultarStatusWeb.java
-C:\Users\Fiorella Mora\Documents\GitHub\PP1Diseno\PP1_DS\src\main\java\seguridad\CuentaBancariaSc.java
-C:\Users\Fiorella Mora\Documents\GitHub\PP1Diseno\PP1_DS\src\main\java\comunicacionExterna\ConexionWebService.java
-C:\Users\Fiorella Mora\Documents\GitHub\PP1Diseno\PP1_DS\src\main\java\conexionWeb\PalabraEnviadaWeb.java
-C:\Users\Fiorella Mora\Documents\GitHub\PP1Diseno\PP1_DS\src\main\java\vistaGUI\ConsultarGananciasTotales.java
-C:\Users\Fiorella Mora\Documents\GitHub\PP1Diseno\PP1_DS\src\main\java\conexionWeb\ConsultarEstadoCuentaWeb.java
-C:\Users\Fiorella Mora\Documents\GitHub\PP1Diseno\PP1_DS\src\main\java\vistaGUI\MenuConsultas.java
-C:\Users\Fiorella Mora\Documents\GitHub\PP1Diseno\PP1_DS\src\main\java\DAO\ClienteDAO.java
-C:\Users\Fiorella Mora\Documents\GitHub\PP1Diseno\PP1_DS\src\main\java\conexionWeb\ConsultarSaldoWeb.java
-C:\Users\Fiorella Mora\Documents\GitHub\PP1Diseno\PP1_DS\src\main\java\comunicacionExterna\CorreoElectronico.java
-C:\Users\Fiorella Mora\Documents\GitHub\PP1Diseno\PP1_DS\src\main\java\vistaGUI\ConsultarStatus.java
-C:\Users\Fiorella Mora\Documents\GitHub\PP1Diseno\PP1_DS\src\main\java\controlador\ActualizacionDatos.java
-C:\Users\Fiorella Mora\Documents\GitHub\PP1Diseno\PP1_DS\src\main\java\util\PalabraAleatoria.java
-C:\Users\Fiorella Mora\Documents\GitHub\PP1Diseno\PP1_DS\src\main\java\seguridad\ClienteSc.java
-C:\Users\Fiorella Mora\Documents\GitHub\PP1Diseno\PP1_DS\src\main\java\validaciones\ValidacionFormato.java
-C:\Users\Fiorella Mora\Documents\GitHub\PP1Diseno\PP1_DS\src\main\java\controlador\ClienteCt.java
-C:\Users\Fiorella Mora\Documents\GitHub\PP1Diseno\PP1_DS\src\main\java\conexionWeb\AbrirCuentaBancariaWeb.java
-C:\Users\Fiorella Mora\Documents\GitHub\PP1Diseno\PP1_DS\src\main\java\conexionWeb\ConsultarGananciaPorCuentaWeb.java
-C:\Users\Fiorella Mora\Documents\GitHub\PP1Diseno\PP1_DS\src\main\java\vistaGUI\MenuPrincipal.java
-C:\Users\Fiorella Mora\Documents\GitHub\PP1Diseno\PP1_DS\src\main\java\vistaGUI\ConsultarEstadoCuenta.java
-C:\Users\Fiorella Mora\Documents\GitHub\PP1Diseno\PP1_DS\src\main\java\controlador\CuentaBancariaCt.java
-C:\Users\Fiorella Mora\Documents\GitHub\PP1Diseno\PP1_DS\src\main\java\logicadenegocios\CuentaBancaria.java
-C:\Users\Fiorella Mora\Documents\GitHub\PP1Diseno\PP1_DS\src\main\java\conexionWeb\DepositarWeb.java
-C:\Users\Fiorella Mora\Documents\GitHub\PP1Diseno\PP1_DS\src\main\java\validaciones\ValidacionCuenta.java
-C:\Users\Fiorella Mora\Documents\GitHub\PP1Diseno\PP1_DS\src\main\java\util\Comparable.java
-C:\Users\Fiorella Mora\Documents\GitHub\PP1Diseno\PP1_DS\src\main\java\vistaGUI\PaginaPrincipal.java
-C:\Users\Fiorella Mora\Documents\GitHub\PP1Diseno\PP1_DS\src\main\java\comunicacionExterna\MensajeSMS.java
-C:\Users\Fiorella Mora\Documents\GitHub\PP1Diseno\PP1_DS\src\main\java\DAO\CuentaBancariaDAO.java
-C:\Users\Fiorella Mora\Documents\GitHub\PP1Diseno\PP1_DS\src\main\java\conexionWeb\RetirarWeb.java
-C:\Users\Fiorella Mora\Documents\GitHub\PP1Diseno\PP1_DS\src\main\java\vistaGUI\ConsultarTipoCambio.java
-C:\Users\Fiorella Mora\Documents\GitHub\PP1Diseno\PP1_DS\src\main\java\conexionWeb\ClienteConsultadoWeb.java
-C:\Users\Fiorella Mora\Documents\GitHub\PP1Diseno\PP1_DS\src\main\java\DAO\OperacionDAO.java
-C:\Users\Fiorella Mora\Documents\GitHub\PP1Diseno\PP1_DS\src\main\java\conexionWeb\ConsultarGananciasTotalesWeb.java
-C:\Users\Fiorella Mora\Documents\GitHub\PP1Diseno\PP1_DS\src\main\java\vistaCLI\Consola.java
-C:\Users\Fiorella Mora\Documents\GitHub\PP1Diseno\PP1_DS\src\main\java\vistaGUI\ListarClientesOrdenados.java
-C:\Users\Fiorella Mora\Documents\GitHub\PP1Diseno\PP1_DS\src\main\java\conexionWeb\ConsultarCuentaWeb.java
-C:\Users\Fiorella Mora\Documents\GitHub\PP1Diseno\PP1_DS\src\main\java\conexionWeb\RegistrarClienteWeb.java
+C:\Users\fabih\OneDrive\Documentos\GitHub\PP2Diseno\PP1_DS\src\main\java\vistaGUI\ListarCuentasOrdenadas.java
+C:\Users\fabih\OneDrive\Documentos\GitHub\PP2Diseno\PP1_DS\src\main\java\vistaGUI\RegistrarCliente.java
+C:\Users\fabih\OneDrive\Documentos\GitHub\PP2Diseno\PP1_DS\src\main\java\conexionWeb\ConsultarSaldoWeb.java
+C:\Users\fabih\OneDrive\Documentos\GitHub\PP2Diseno\PP1_DS\src\main\java\comunicacionExterna\ObtencionXML.java
+C:\Users\fabih\OneDrive\Documentos\GitHub\PP2Diseno\PP1_DS\src\main\java\conexionWeb\ConsultarGananciasTotalesWeb.java
+C:\Users\fabih\OneDrive\Documentos\GitHub\PP2Diseno\PP1_DS\src\main\java\controlador\ActualizacionDatos.java
+C:\Users\fabih\OneDrive\Documentos\GitHub\PP2Diseno\PP1_DS\src\main\java\validaciones\ValidacionFormato.java
+C:\Users\fabih\OneDrive\Documentos\GitHub\PP2Diseno\PP1_DS\src\main\java\comunicacionExterna\CorreoElectronico.java
+C:\Users\fabih\OneDrive\Documentos\GitHub\PP2Diseno\PP1_DS\src\main\java\logicadenegocios\BitacoraTramaPlana.java
+C:\Users\fabih\OneDrive\Documentos\GitHub\PP2Diseno\PP1_DS\src\main\java\controlador\CuentaBancariaCt.java
+C:\Users\fabih\OneDrive\Documentos\GitHub\PP2Diseno\PP1_DS\src\main\java\vistaGUI\ConsultarGananciasPorCuenta.java
+C:\Users\fabih\OneDrive\Documentos\GitHub\PP2Diseno\PP1_DS\src\main\java\conexionWeb\ConsultarCuentaWeb.java
+C:\Users\fabih\OneDrive\Documentos\GitHub\PP2Diseno\PP1_DS\src\main\java\vistaGUI\Retirar.java
+C:\Users\fabih\OneDrive\Documentos\GitHub\PP2Diseno\PP1_DS\src\main\java\conexionWeb\ConsultarClienteWeb.java
+C:\Users\fabih\OneDrive\Documentos\GitHub\PP2Diseno\PP1_DS\src\main\java\conexionWeb\ConsultarStatusWeb.java
+C:\Users\fabih\OneDrive\Documentos\GitHub\PP2Diseno\PP1_DS\src\main\java\comunicacionExterna\CambioMoneda.java
+C:\Users\fabih\OneDrive\Documentos\GitHub\PP2Diseno\PP1_DS\src\main\java\DAO\CuentaBancariaDAO.java
+C:\Users\fabih\OneDrive\Documentos\GitHub\PP2Diseno\PP1_DS\src\main\java\conexionWeb\ClienteConsultadoWeb.java
+C:\Users\fabih\OneDrive\Documentos\GitHub\PP2Diseno\PP1_DS\src\main\java\vistaGUI\MenuOperaciones.java
+C:\Users\fabih\OneDrive\Documentos\GitHub\PP2Diseno\PP1_DS\src\main\java\logicadenegocios\BitacoraXML.java
+C:\Users\fabih\OneDrive\Documentos\GitHub\PP2Diseno\PP1_DS\src\main\java\vistaGUI\ConsultarStatus.java
+C:\Users\fabih\OneDrive\Documentos\GitHub\PP2Diseno\PP1_DS\src\main\java\conexionWeb\RegistrosDiariosWeb.java
+C:\Users\fabih\OneDrive\Documentos\GitHub\PP2Diseno\PP1_DS\src\main\java\conexionWeb\RegistrosGUIWeb.java
+C:\Users\fabih\OneDrive\Documentos\GitHub\PP2Diseno\PP1_DS\src\main\java\vistaGUI\MenuPrincipal.java
+C:\Users\fabih\OneDrive\Documentos\GitHub\PP2Diseno\PP1_DS\src\main\java\conexionWeb\AbrirCuentaBancariaWeb.java
+C:\Users\fabih\OneDrive\Documentos\GitHub\PP2Diseno\PP1_DS\src\main\java\conexionWeb\CambiarPinWeb.java
+C:\Users\fabih\OneDrive\Documentos\GitHub\PP2Diseno\PP1_DS\src\main\java\conexionWeb\RetirarWeb.java
+C:\Users\fabih\OneDrive\Documentos\GitHub\PP2Diseno\PP1_DS\src\main\java\controlador\AdministradorCt.java
+C:\Users\fabih\OneDrive\Documentos\GitHub\PP2Diseno\PP1_DS\src\main\java\vistaGUI\ConsultarSaldo.java
+C:\Users\fabih\OneDrive\Documentos\GitHub\PP2Diseno\PP1_DS\src\main\java\DAO\OperacionDAO.java
+C:\Users\fabih\OneDrive\Documentos\GitHub\PP2Diseno\PP1_DS\src\main\java\seguridad\ClienteSc.java
+C:\Users\fabih\OneDrive\Documentos\GitHub\PP2Diseno\PP1_DS\src\main\java\DAO\ConexionDAO.java
+C:\Users\fabih\OneDrive\Documentos\GitHub\PP2Diseno\PP1_DS\src\main\java\vistaGUI\ConsultarEstadoCuenta.java
+C:\Users\fabih\OneDrive\Documentos\GitHub\PP2Diseno\PP1_DS\src\main\java\DAO\ClienteDAO.java
+C:\Users\fabih\OneDrive\Documentos\GitHub\PP2Diseno\PP1_DS\src\main\java\logicadenegocios\BitacoraNotificationObserver.java
+C:\Users\fabih\OneDrive\Documentos\GitHub\PP2Diseno\PP1_DS\src\main\java\conexionWeb\PalabraEnviadaWeb.java
+C:\Users\fabih\OneDrive\Documentos\GitHub\PP2Diseno\PP1_DS\src\main\java\comunicacionExterna\ConexionWebService.java
+C:\Users\fabih\OneDrive\Documentos\GitHub\PP2Diseno\PP1_DS\src\main\java\vistaCLI\Consola.java
+C:\Users\fabih\OneDrive\Documentos\GitHub\PP2Diseno\PP1_DS\src\main\java\util\Comparable.java
+C:\Users\fabih\OneDrive\Documentos\GitHub\PP2Diseno\PP1_DS\src\main\java\validaciones\ValidacionCliente.java
+C:\Users\fabih\OneDrive\Documentos\GitHub\PP2Diseno\PP1_DS\src\main\java\conexionWeb\ConsultarEstadoCuentaWeb.java
+C:\Users\fabih\OneDrive\Documentos\GitHub\PP2Diseno\PP1_DS\src\main\java\logicadenegocios\Administrador.java
+C:\Users\fabih\OneDrive\Documentos\GitHub\PP2Diseno\PP1_DS\src\main\java\util\PalabraAleatoria.java
+C:\Users\fabih\OneDrive\Documentos\GitHub\PP2Diseno\PP1_DS\src\main\java\vistaGUI\ConsultarGananciasTotales.java
+C:\Users\fabih\OneDrive\Documentos\GitHub\PP2Diseno\PP1_DS\src\main\java\conexionWeb\InicioSesionWeb.java
+C:\Users\fabih\OneDrive\Documentos\GitHub\PP2Diseno\PP1_DS\src\main\java\vistaGUI\AbrirCuentaBancaria.java
+C:\Users\fabih\OneDrive\Documentos\GitHub\PP2Diseno\PP1_DS\src\main\java\vistaGUI\Depositar.java
+C:\Users\fabih\OneDrive\Documentos\GitHub\PP2Diseno\PP1_DS\src\main\java\vistaGUI\CambiarPin.java
+C:\Users\fabih\OneDrive\Documentos\GitHub\PP2Diseno\PP1_DS\src\main\java\controlador\ClienteCt.java
+C:\Users\fabih\OneDrive\Documentos\GitHub\PP2Diseno\PP1_DS\src\main\java\validaciones\ValidacionCuenta.java
+C:\Users\fabih\OneDrive\Documentos\GitHub\PP2Diseno\PP1_DS\src\main\java\conexionWeb\RegistrosWebWeb.java
+C:\Users\fabih\OneDrive\Documentos\GitHub\PP2Diseno\PP1_DS\src\main\java\logicadenegocios\CuentaBancaria.java
+C:\Users\fabih\OneDrive\Documentos\GitHub\PP2Diseno\PP1_DS\src\main\java\conexionWeb\CuentaConsultadaWeb.java
+C:\Users\fabih\OneDrive\Documentos\GitHub\PP2Diseno\PP1_DS\src\main\java\util\Ordenacion.java
+C:\Users\fabih\OneDrive\Documentos\GitHub\PP2Diseno\PP1_DS\src\main\java\comunicacionExterna\MensajeSMS.java
+C:\Users\fabih\OneDrive\Documentos\GitHub\PP2Diseno\PP1_DS\src\main\java\vistaGUI\MenuConsultas.java
+C:\Users\fabih\OneDrive\Documentos\GitHub\PP2Diseno\PP1_DS\src\main\java\conexionWeb\RegistrosTotalesWeb.java
+C:\Users\fabih\OneDrive\Documentos\GitHub\PP2Diseno\PP1_DS\src\main\java\conexionWeb\RegistrosCLIWeb.java
+C:\Users\fabih\OneDrive\Documentos\GitHub\PP2Diseno\PP1_DS\src\main\java\conexionWeb\ConsultarTipoCambioWeb.java
+C:\Users\fabih\OneDrive\Documentos\GitHub\PP2Diseno\PP1_DS\src\main\java\logicadenegocios\BitacoraCSV.java
+C:\Users\fabih\OneDrive\Documentos\GitHub\PP2Diseno\PP1_DS\src\main\java\conexionWeb\TransferirWeb.java
+C:\Users\fabih\OneDrive\Documentos\GitHub\PP2Diseno\PP1_DS\src\main\java\seguridad\CuentaBancariaSc.java
+C:\Users\fabih\OneDrive\Documentos\GitHub\PP2Diseno\PP1_DS\src\main\java\vistaGUI\Transferir.java
+C:\Users\fabih\OneDrive\Documentos\GitHub\PP2Diseno\PP1_DS\src\main\java\vistaGUI\ListarClientesOrdenados.java
+C:\Users\fabih\OneDrive\Documentos\GitHub\PP2Diseno\PP1_DS\src\main\java\vistaGUI\PaginaPrincipal.java
+C:\Users\fabih\OneDrive\Documentos\GitHub\PP2Diseno\PP1_DS\src\main\java\logicadenegocios\Operacion.java
+C:\Users\fabih\OneDrive\Documentos\GitHub\PP2Diseno\PP1_DS\src\main\java\conexionWeb\DepositarWeb.java
+C:\Users\fabih\OneDrive\Documentos\GitHub\PP2Diseno\PP1_DS\src\main\java\conexionWeb\RegistrarClienteWeb.java
+C:\Users\fabih\OneDrive\Documentos\GitHub\PP2Diseno\PP1_DS\src\main\java\logicadenegocios\Cliente.java
+C:\Users\fabih\OneDrive\Documentos\GitHub\PP2Diseno\PP1_DS\src\main\java\seguridad\AdministradorSc.java
+C:\Users\fabih\OneDrive\Documentos\GitHub\PP2Diseno\PP1_DS\src\main\java\vistaGUI\ConsultarTipoCambio.java
+C:\Users\fabih\OneDrive\Documentos\GitHub\PP2Diseno\PP1_DS\src\main\java\conexionWeb\ConsultarGananciaPorCuentaWeb.java

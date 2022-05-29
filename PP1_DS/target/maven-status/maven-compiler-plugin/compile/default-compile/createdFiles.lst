@@ -15,8 +15,10 @@ vistaGUI\ConsultarGananciasPorCuenta$5.class
 vistaGUI\ConsultarSaldo$2.class
 vistaGUI\Depositar$2.class
 vistaGUI\RegistrarCliente.class
+conexionWeb\RegistrosCLIWeb.class
 vistaGUI\ConsultarEstadoCuenta$1.class
 vistaGUI\Retirar$3.class
+seguridad\AdministradorSc.class
 vistaGUI\ListarClientesOrdenados$2.class
 vistaGUI\RegistrarCliente$6.class
 vistaGUI\ConsultarTipoCambio$2.class
@@ -24,6 +26,7 @@ validaciones\ValidacionCuenta.class
 vistaGUI\RegistrarCliente$3.class
 vistaGUI\PaginaPrincipal$1.class
 vistaGUI\ConsultarEstadoCuenta$4.class
+conexionWeb\RegistrosWebWeb.class
 vistaGUI\ConsultarTipoCambio$5.class
 vistaGUI\MenuOperaciones.class
 vistaGUI\Transferir$1.class
@@ -34,8 +37,11 @@ vistaGUI\ConsultarSaldo$4.class
 vistaGUI\Depositar$1.class
 conexionWeb\TransferirWeb.class
 vistaGUI\AbrirCuentaBancaria$3.class
+conexionWeb\RegistrosDiariosWeb.class
 logicadenegocios\Cliente.class
+logicadenegocios\Administrador.class
 vistaGUI\MenuConsultas$3.class
+conexionWeb\InicioSesionWeb.class
 vistaGUI\ConsultarGananciasTotales$2.class
 vistaGUI\Retirar$4.class
 vistaGUI\CambiarPin$3.class
@@ -54,6 +60,7 @@ vistaGUI\MenuConsultas$10.class
 DAO\OperacionDAO.class
 vistaGUI\ConsultarGananciasTotales$1.class
 vistaGUI\ListarCuentasOrdenadas$1.class
+logicadenegocios\BitacoraXML.class
 vistaGUI\RegistrarCliente$1.class
 vistaGUI\AbrirCuentaBancaria$2.class
 vistaGUI\ConsultarSaldo$3.class
@@ -61,6 +68,7 @@ vistaGUI\MenuConsultas$4.class
 vistaGUI\RegistrarCliente$8.class
 controlador\ClienteCt.class
 comunicacionExterna\CambioMoneda.class
+controlador\AdministradorCt.class
 vistaGUI\ConsultarStatus$1.class
 vistaGUI\ConsultarTipoCambio$4.class
 vistaGUI\CambiarPin$2.class
@@ -90,6 +98,7 @@ vistaGUI\PaginaPrincipal$3.class
 vistaGUI\Transferir$2.class
 seguridad\ClienteSc.class
 vistaGUI\CambiarPin.class
+conexionWeb\RegistrosGUIWeb.class
 conexionWeb\DepositarWeb.class
 vistaGUI\ConsultarGananciasPorCuenta$4.class
 conexionWeb\ConsultarGananciaPorCuentaWeb.class
@@ -103,12 +112,14 @@ vistaGUI\ListarCuentasOrdenadas.class
 vistaGUI\ConsultarGananciasTotales$3.class
 vistaGUI\MenuPrincipal$6.class
 vistaGUI\ConsultarGananciasPorCuenta$1.class
+logicadenegocios\BitacoraCSV.class
 vistaGUI\ConsultarSaldo$1.class
 vistaGUI\MenuConsultas$9.class
 vistaGUI\MenuConsultas$6.class
 conexionWeb\ConsultarEstadoCuentaWeb.class
 DAO\ClienteDAO.class
 vistaGUI\Depositar$3.class
+logicadenegocios\BitacoraTramaPlana.class
 util\PalabraAleatoria.class
 vistaGUI\AbrirCuentaBancaria$4.class
 vistaGUI\MenuOperaciones$5.class
@@ -134,8 +145,10 @@ DAO\ConexionDAO.class
 vistaGUI\ConsultarTipoCambio$1.class
 vistaGUI\Retirar$1.class
 conexionWeb\PalabraEnviadaWeb.class
+conexionWeb\RegistrosTotalesWeb.class
 vistaGUI\MenuPrincipal$1.class
 controlador\CuentaBancariaCt.class
+logicadenegocios\BitacoraNotificationObserver.class
 logicadenegocios\Operacion.class
 vistaGUI\ConsultarGananciasPorCuenta$2.class
 util\Comparable.class
