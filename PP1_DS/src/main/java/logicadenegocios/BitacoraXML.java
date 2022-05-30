@@ -59,6 +59,7 @@ public class BitacoraXML extends BitacoraNotificationObserver{
 		monto.setTextContent (String.valueOf(pCambio.getMonto()));
                 montoComision.setTextContent (String.valueOf(pCambio.getMontoComision()));
                 numeroCuenta.setTextContent(String.valueOf(numCuenta));
+                System.out.println(numCuenta);
 		 
                 // Añadir nodo hijo a persona
                 operacion.appendChild(numeroCuenta);
@@ -92,6 +93,7 @@ public class BitacoraXML extends BitacoraNotificationObserver{
              case 0:
                  return "vistaCLI";
              case 1:
+                 System.out.println("vistaGUI");
                  return "vistaGUI";
              default:
                  return "vistaWEB";

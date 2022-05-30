@@ -24,7 +24,7 @@ public class ConexionDAO {
   public void abrirConexioDAO() {
       try {
       Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver"); 
-      String url = "jdbc:sqlserver://;databaseName=BDBanco;user=administrador;password=diseno2022!;encrypt=true;trustServerCertificate=true;loginTimeout=30;";
+      String url = "jdbc:sqlserver://;databaseName=BDBanco;user=administrador;password=diseno2022!;encrypt=true;trustServerCertificate=true;";
      
       connect = DriverManager.getConnection(url);
     } catch (SQLException ex) {
