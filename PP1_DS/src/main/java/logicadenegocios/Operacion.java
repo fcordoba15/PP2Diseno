@@ -11,13 +11,14 @@ public class Operacion {
     private double monto;
     private boolean comision;
     private double montoComision;
+    private int vista;
 
-    public Operacion(String pTipoOperacion, double pMonto,double pMontoComision) {
+    public Operacion(String pTipoOperacion, double pMonto,double pMontoComision, int pVista) {
         setTipoOperacion(pTipoOperacion);
         setMonto(pMonto);
         obtenerFechaActual();
         setMontoComision(pMontoComision);
-        
+        setVista(pVista);
     }
 
     Operacion() {
@@ -69,5 +70,13 @@ public class Operacion {
 
     public double getMontoComision() {
         return montoComision;
+    }
+    
+      public int getVista() {
+        return vista;
+    }
+
+    private void setVista(int pVista) {
+       vista = pVista;
     }
 }

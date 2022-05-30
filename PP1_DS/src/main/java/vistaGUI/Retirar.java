@@ -135,10 +135,10 @@ public class Retirar extends javax.swing.JFrame {
     private void btRetirarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btRetirarActionPerformed
        ClienteCt cliente = new ClienteCt();
        if(cbDivisa.getSelectedItem().toString().equals("Colones")){
-            JOptionPane.showMessageDialog(null,cliente.realizarRetiroColones(cbNumeroCuenta.getSelectedItem().toString(), txtMonto.getText(), txtPalabra.getText(), pPalabra));
+            JOptionPane.showMessageDialog(null,cliente.realizarRetiroColones(cbNumeroCuenta.getSelectedItem().toString(), txtMonto.getText(), txtPalabra.getText(), pPalabra,1));
        }
        if(cbDivisa.getSelectedItem().toString().equals("Dolares")){
-            JOptionPane.showMessageDialog(null,cliente.realizarRetiroDolares(cbNumeroCuenta.getSelectedItem().toString(), txtMonto.getText(), txtPalabra.getText(), pPalabra));
+            JOptionPane.showMessageDialog(null,cliente.realizarRetiroDolares(cbNumeroCuenta.getSelectedItem().toString(), txtMonto.getText(), txtPalabra.getText(), pPalabra,1));
        }
     }//GEN-LAST:event_btRetirarActionPerformed
 

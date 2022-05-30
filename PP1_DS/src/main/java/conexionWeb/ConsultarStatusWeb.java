@@ -43,7 +43,7 @@ public class ConsultarStatusWeb extends HttpServlet {
     out.println("<h1>Status</h1>");
     out.println("<hr>");
 
-    out.println(cliente.consultarStatusCuenta (numeroCuenta));
+    out.println(cliente.consultarStatusCuenta (numeroCuenta,2));
 
     out.println("<hr><a href=\"Iniciar/consultas.html\">Volver</a>");
     out.println("</body></html>");

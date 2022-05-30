@@ -113,7 +113,7 @@ public class CambiarPin extends javax.swing.JFrame {
 
     private void btAbrirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAbrirActionPerformed
         ClienteCt cuenta = new ClienteCt();
-        JOptionPane.showMessageDialog(null,cuenta.cambiarPin(cbNumeroCuenta.getSelectedItem().toString(), txtActual.getText(), txtNuevo.getText()));
+        JOptionPane.showMessageDialog(null,cuenta.cambiarPin(cbNumeroCuenta.getSelectedItem().toString(), txtActual.getText(), txtNuevo.getText(), 1));
         PaginaPrincipal ventana = new PaginaPrincipal();
         ventana.setVisible(true);
         this.setVisible(false);

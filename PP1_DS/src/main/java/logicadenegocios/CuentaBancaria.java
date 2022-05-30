@@ -48,12 +48,12 @@ public class CuentaBancaria implements Comparable{
         notificarTodosObservadores();
     }
    
-    public void cambiarPin(String pPin){
+    public void cambiarPin(String pPin,int pVista){
         setPin(pPin);
-        CuentaBancaria.this.agregarOperacion("Cambio de pin",0,0);
+        CuentaBancaria.this.agregarOperacion("Cambio de pin",0,0,pVista);
     }
     
-    public String depositarColones(double pMontoDeposito){
+    public String depositarColones(double pMontoDeposito,int pVista){
         DecimalFormat df = new DecimalFormat("#.00");
         ValidacionCuenta aux = new ValidacionCuenta();
         double montoComision = 0;
@@ -62,11 +62,11 @@ public class CuentaBancaria implements Comparable{
         }
         setSaldo(getSaldo() + (pMontoDeposito - montoComision));
         setCantidadOperacionesRetirosDepositos(getCantidadOperacionesRetirosDepositos() + 1);
-        CuentaBancaria.this.agregarOperacion("Deposito",pMontoDeposito,montoComision);
+        CuentaBancaria.this.agregarOperacion("Deposito",pMontoDeposito,montoComision, pVista);
         return "Estimado usuario, se han depositado correctamente " + pMontoDeposito +" colones" + "\n[El monto real depositado a su cuenta " + getNumeroCuenta() + " es de " + pMontoDeposito + " colones]" + "\n[El monto cobrado por concepto de comisión fue de " + df.format(montoComision) + " colones, que  fueron rebajados automáticamente de su saldo actual]";
     }
     
-    public String depositarDolares(double pMontoDeposito){
+    public String depositarDolares(double pMontoDeposito,int pVista){
         DecimalFormat df = new DecimalFormat("#.00");
         double montoDepositoColones = calcularTipoCambioCompra(pMontoDeposito);
         ValidacionCuenta aux = new ValidacionCuenta();
@@ -76,11 +76,11 @@ public class CuentaBancaria implements Comparable{
         }
         setSaldo(getSaldo() + (montoDepositoColones - montoComision));
         setCantidadOperacionesRetirosDepositos(getCantidadOperacionesRetirosDepositos() + 1);
-        CuentaBancaria.this.agregarOperacion("Deposito",montoDepositoColones,montoComision);
+        CuentaBancaria.this.agregarOperacion("Deposito",montoDepositoColones,montoComision, pVista);
         return "Estimado usuario, se han recibido correctamente " + pMontoDeposito + " dolares" + "\n[Según el BCCR, el tipo de cambio de compra del dólar del " + obtenerFechaActual() + " es: " + calcularTipoCambioCompra(1) + "\n[El monto equivalente en colones es " + df.format(montoDepositoColones) + "]\n[El monto real depositado a su numero de cuenta " + getNumeroCuenta() + " es de " + pMontoDeposito + " dolares]" + "\n[El monto cobrado por concepto de comisión fue de " + df.format(montoComision) + " colones, que  fueron rebajados automáticamente de su saldo actual]";
     }
     
-    public String retirarColones(double pMontoRetiro){
+    public String retirarColones(double pMontoRetiro,int pVista){
         DecimalFormat df = new DecimalFormat("#.00");
         ValidacionCuenta aux = new ValidacionCuenta();
         double montoComision = 0;
@@ -89,11 +89,11 @@ public class CuentaBancaria implements Comparable{
         }
         setSaldo(getSaldo() - (pMontoRetiro + montoComision));
         setCantidadOperacionesRetirosDepositos(getCantidadOperacionesRetirosDepositos() + 1);
-        CuentaBancaria.this.agregarOperacion("Retiro",pMontoRetiro,montoComision);
+        CuentaBancaria.this.agregarOperacion("Retiro",pMontoRetiro,montoComision, pVista);
         return "Estimado usuario, el monto de este retiro es " + pMontoRetiro + " colones." + "\n[El monto cobrado por concepto de comisión fue de " + df.format(montoComision) + " colones, que  fueron rebajados automáticamente de su saldo actual]";
     }
     
-    public String retirarDolares(double pMontoRetiro){
+    public String retirarDolares(double pMontoRetiro,int pVista){
         DecimalFormat df = new DecimalFormat("#.00");
         
         double montoRetiroColones = calcularTipoCambioVenta(pMontoRetiro);
@@ -104,11 +104,11 @@ public class CuentaBancaria implements Comparable{
         }
         setSaldo(getSaldo() - (montoRetiroColones + montoComision));
         setCantidadOperacionesRetirosDepositos(getCantidadOperacionesRetirosDepositos() + 1);
-        CuentaBancaria.this.agregarOperacion("Retiro",montoRetiroColones,montoComision);
+        CuentaBancaria.this.agregarOperacion("Retiro",montoRetiroColones,montoComision, pVista);
         return "Estimado usuario, el monto de este retiro es " + pMontoRetiro + " dólares." + "\n[Según el BCCR, el tipo de cambio de venta del dólar de hoy es: " + calcularTipoCambioVenta(1) + "]\n[El monto equivalente de su retiro es " + df.format(montoRetiroColones) + " colones] \n[El monto cobrado por concepto de comisión fue de " + df.format(montoComision) + " colones, que fueron rebajados automáticamente de su saldo actual]";
     }
     
-    public String transferirMonto (double pMonto){
+    public String transferirMonto (double pMonto,int pVista){
         DecimalFormat df = new DecimalFormat("#.00");
         ValidacionCuenta aux = new ValidacionCuenta();
         double montoComision = 0;
@@ -116,36 +116,36 @@ public class CuentaBancaria implements Comparable{
             montoComision = calcularComision(pMonto);
         }
         setSaldo(getSaldo() - (pMonto + montoComision));
-        CuentaBancaria.this.agregarOperacion("Transferencia",pMonto,montoComision);
+        CuentaBancaria.this.agregarOperacion("Transferencia",pMonto,montoComision, pVista);
         return "Estimado usuario, la transferencia de fondos se ejecutó satisfactoriamente. El monto retirado de la cuenta origen y depositado en la cuenta destino es " + pMonto + "colones. \n" + "[El monto cobrado por concepto de comisión a la cuenta origen fue de " + df.format(montoComision) + " colones, que fueron rebajados automáticamente de su saldo actual]";
     }
     
-    public String consultarSaldoCuentaColones(){
+    public String consultarSaldoCuentaColones(int pVista){
         DecimalFormat df = new DecimalFormat("#.00");
-        CuentaBancaria.this.agregarOperacion("Consulta",0,0);
+        CuentaBancaria.this.agregarOperacion("Consulta",0,0,pVista);
         return "Estimado usuario el saldo actual de su cuenta es " + df.format(getSaldo()) + " colones. ";
     }
     
-    public String consultarSaldoCuentaDolares(){
+    public String consultarSaldoCuentaDolares(int pVista){
         DecimalFormat df = new DecimalFormat("#.00");
-        CuentaBancaria.this.agregarOperacion("Consulta",0,0);
+        CuentaBancaria.this.agregarOperacion("Consulta",0,0, pVista);
         return "Estimado usuario el saldo actual de su cuenta es " + df.format(getSaldo()/calcularTipoCambioCompra(1)) + " dólares.\nPara esta conversión se utilizó el tipo de cambio del dólar, precio de compra.\n[Según el BCCR, el tipo de cambio de compra del dólar de hoy es:" + calcularTipoCambioCompra(1) + "]"; 
     }
     
-    public String consultarEstadoCuentaColones (){
+    public String consultarEstadoCuentaColones (int pVista){
         DecimalFormat df = new DecimalFormat("#.00");
-        CuentaBancaria.this.agregarOperacion("Consulta",0,0);
+        CuentaBancaria.this.agregarOperacion("Consulta",0,0, pVista);
         return "Propietario: " + duenio.getNombre() + duenio.getPrimerApellido() + "\nFecha creacion: " + getFechaCreacion() + "\nNumero de Cuenta: " + getNumeroCuenta() + "\nSaldo en colones: " + df.format(getSaldo());
     }
     
-    public String consultarEstadoCuentaDolares(){
+    public String consultarEstadoCuentaDolares(int pVista){
         DecimalFormat df = new DecimalFormat("#.00");
-        CuentaBancaria.this.agregarOperacion("Consulta",0,0);
+        CuentaBancaria.this.agregarOperacion("Consulta",0,0,pVista);
         return "Duenio: " + duenio.getNombre() + duenio.getPrimerApellido() + "\nFecha creacion: " + getFechaCreacion() + "\nNumero de Cuenta: " + getNumeroCuenta() + "\nSaldo en dolares: " + df.format(getSaldo()/calcularTipoCambioVenta(1));
     }
     
-    public String consultarStatusCuenta(){
-        CuentaBancaria.this.agregarOperacion("Consulta",0,0);
+    public String consultarStatusCuenta(int pVista){
+        CuentaBancaria.this.agregarOperacion("Consulta",0,0,pVista);
         return "“La cuenta número " + getNumeroCuenta() + " se encuentra: " + isActiva();
     }
     
@@ -160,8 +160,8 @@ public class CuentaBancaria implements Comparable{
     }
     
     //Se debe acceder desde la clase cliente
-    public void agregarOperacion (String pTipoOperacion, double pMonto,double pMontoComision){
-        Operacion nuevaOperacion = new Operacion (pTipoOperacion, pMonto, pMontoComision);
+    public void agregarOperacion (String pTipoOperacion, double pMonto,double pMontoComision, int pVista){
+        Operacion nuevaOperacion = new Operacion (pTipoOperacion, pMonto, pMontoComision, pVista);
         operaciones.add(nuevaOperacion);
         setExchangeRate(nuevaOperacion);
        
@@ -169,7 +169,7 @@ public class CuentaBancaria implements Comparable{
     
     public void agregarOperacion(String pTipoOperacion, double pMonto, double pMontoComision, 
          LocalDate pFechaCreacion, boolean pIsComision) {
-         Operacion operacion = new Operacion (pTipoOperacion, pMonto, pMontoComision);
+         Operacion operacion = new Operacion (pTipoOperacion, pMonto, pMontoComision, 0);
          operacion.setComision(pIsComision);
          operacion.setFechaOperacion(pFechaCreacion);
          operaciones.add(operacion);

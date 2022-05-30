@@ -22,8 +22,7 @@ import static seguridad.ClienteSc.autenticarCliente;
 import static seguridad.CuentaBancariaSc.*;
 
 public class ClienteCt {
-    
-    private static int vista = 0; //0 cli - 1 Gui - 2 Web
+   
     static int numCliente = 0;
     static ArrayList<Cliente> clientes = new ArrayList<>();
     private static ClienteDAO clienteDAO = new ClienteDAO();
@@ -68,7 +67,7 @@ public class ClienteCt {
     }
     
     //Preguntar sobre si deben ser por separado
-    public String cambiarPin (String pNumCuenta, String pPinActual, String pPinNuevo){
+    public String cambiarPin (String pNumCuenta, String pPinActual, String pPinNuevo, int pVista){
         CuentaBancaria cuenta = new CuentaBancaria();
         if(isNumeric(pNumCuenta)==false){
             return "Se encuentran caracteres donde solamente se permiten números";
@@ -83,7 +82,7 @@ public class ClienteCt {
                     for (int j=0; j < clientes.get(i).getMisCuentas().size(); j++){
                         if (clientes.get(i).getMisCuentas().get(j).getNumeroCuenta() == Integer.parseInt(pNumCuenta)){
                             cuenta = clientes.get(i).getMisCuentas().get(j);
-                            clientes.get(i).ejecutarCambioPin(clientes.get(i).getMisCuentas().get(j), pPinNuevo);
+                            clientes.get(i).ejecutarCambioPin(clientes.get(i).getMisCuentas().get(j), pPinNuevo, pVista);
                             
                             
                         }
@@ -132,7 +131,7 @@ public class ClienteCt {
     }     
         
     
-    public String consultarSaldoCuentaColones (String pNumCuenta, String pPin){
+    public String consultarSaldoCuentaColones (String pNumCuenta, String pPin, int pVista){
         String msg = "";
         if(isNumeric(pNumCuenta)==false){
             return "Se encuentran caracteres donde solamente se permiten números";
@@ -146,7 +145,7 @@ public class ClienteCt {
                 for (int i = 0; i < clientes.size(); i++){
                     for (int j=0; j < clientes.get(i).getMisCuentas().size(); j++){
                         if (clientes.get(i).getMisCuentas().get(j).getNumeroCuenta() == Integer.parseInt(pNumCuenta)){
-                            msg = clientes.get(i).EjecutarConsultaSaldoCuentaColones(clientes.get(i).getMisCuentas().get(j));
+                            msg = clientes.get(i).EjecutarConsultaSaldoCuentaColones(clientes.get(i).getMisCuentas().get(j), pVista);
                         }
                     }
                 }
@@ -159,7 +158,7 @@ public class ClienteCt {
        return "Estimado usuario, su cuenta está inactiva";
     }
     
-    public String consultarSaldoCuentaDolares (String pNumCuenta, String pPin){
+    public String consultarSaldoCuentaDolares (String pNumCuenta, String pPin, int pVista){
         String msg = "";
         if(isNumeric(pNumCuenta)==false){
             return "Se encuentran caracteres donde solamente se permiten números";
@@ -173,7 +172,7 @@ public class ClienteCt {
                 for (int i = 0; i < clientes.size(); i++){
                     for (int j=0; j < clientes.get(i).getMisCuentas().size(); j++){
                         if (clientes.get(i).getMisCuentas().get(j).getNumeroCuenta() == Integer.parseInt(pNumCuenta)){
-                            msg = clientes.get(i).ejecutarConsultaSaldoCuentaDolares(clientes.get(i).getMisCuentas().get(j));
+                            msg = clientes.get(i).ejecutarConsultaSaldoCuentaDolares(clientes.get(i).getMisCuentas().get(j), pVista);
                         }
                     }
                 }
@@ -186,7 +185,7 @@ public class ClienteCt {
        return "Estimado usuario, su cuenta está inactiva";
     }
     
-    public String consultarEstadoCuentaColones (String pNumCuenta, String pPin){
+    public String consultarEstadoCuentaColones (String pNumCuenta, String pPin, int pVista){
         String msg = "";
         if(isNumeric(pNumCuenta)==false){
             return "Se encuentran caracteres donde solamente se permiten números";
@@ -200,7 +199,7 @@ public class ClienteCt {
                 for (int i = 0; i < clientes.size(); i++){
                     for (int j=0; j < clientes.get(i).getMisCuentas().size(); j++){
                         if (clientes.get(i).getMisCuentas().get(j).getNumeroCuenta() == Integer.parseInt(pNumCuenta)){
-                            msg = clientes.get(i).ejecutarConsultaEstadoCuentaColones(clientes.get(i).getMisCuentas().get(j));
+                            msg = clientes.get(i).ejecutarConsultaEstadoCuentaColones(clientes.get(i).getMisCuentas().get(j), pVista);
                         }
                     }
                 }
@@ -213,7 +212,7 @@ public class ClienteCt {
        return "Estimado usuario, su cuenta está inactiva";
     }
     
-    public String consultarEstadoCuentaDolares (String pNumCuenta, String pPin){
+    public String consultarEstadoCuentaDolares (String pNumCuenta, String pPin,int pVista){
         String msg = "";
         if(isNumeric(pNumCuenta)==false){
             return "Se encuentran caracteres donde solamente se permiten números";
@@ -227,7 +226,7 @@ public class ClienteCt {
                 for (int i = 0; i < clientes.size(); i++){
                     for (int j=0; j < clientes.get(i).getMisCuentas().size(); j++){
                         if (clientes.get(i).getMisCuentas().get(j).getNumeroCuenta() == Integer.parseInt(pNumCuenta)){
-                            msg = clientes.get(i).ejecutarConsultaEstadoCuentaDolares(clientes.get(i).getMisCuentas().get(j));
+                            msg = clientes.get(i).ejecutarConsultaEstadoCuentaDolares(clientes.get(i).getMisCuentas().get(j), pVista);
                         }
                     }
                 }
@@ -240,7 +239,7 @@ public class ClienteCt {
        return "Estimado usuario, su cuenta está inactiva";
     }
     
-    public String consultarStatusCuenta (String pNumCuenta){
+    public String consultarStatusCuenta (String pNumCuenta, int pVista){
         String msg="";
         if(isNumeric(pNumCuenta)==false){
             return "Se encuentran caracteres donde solamente se permiten números";
@@ -249,7 +248,7 @@ public class ClienteCt {
         for (int i = 0; i < clientes.size(); i++){
             for (int j=0; j < clientes.get(i).getMisCuentas().size(); j++){
                 if (clientes.get(i).getMisCuentas().get(j).getNumeroCuenta() == Integer.parseInt(pNumCuenta)){
-                    msg = clientes.get(i).ejecutarConsultaStatusCuenta(clientes.get(i).getMisCuentas().get(j));
+                    msg = clientes.get(i).ejecutarConsultaStatusCuenta(clientes.get(i).getMisCuentas().get(j),pVista);
                 }
             }
         }
@@ -257,7 +256,7 @@ public class ClienteCt {
     }
     
     
-    public String realizarDepositoColones (String pNumCuenta, String pMonto){
+    public String realizarDepositoColones (String pNumCuenta, String pMonto, int pVista){
         String msg ="";
         if(isNumeric(pNumCuenta)==false){
             return "Se encuentran caracteres donde solamente se permiten números";
@@ -269,7 +268,7 @@ public class ClienteCt {
             for (int j=0; j < clientes.get(i).getMisCuentas().size(); j++){
                 if (clientes.get(i).getMisCuentas().get(j).getNumeroCuenta() == Integer.parseInt(pNumCuenta)){
                     
-                    msg = clientes.get(i).ejecutarDepositoColones(clientes.get(i).getMisCuentas().get(j), Integer.parseInt(pMonto));
+                    msg = clientes.get(i).ejecutarDepositoColones(clientes.get(i).getMisCuentas().get(j), Integer.parseInt(pMonto), pVista);
                     cuentaDAO.actualizarSaldoCuentaDAO(Integer.parseInt(pNumCuenta),clientes.get(i).getMisCuentas().get(j).getSaldo(),clientes.get(i).getMisCuentas().get(j).getCantidadOperacionesRetirosDepositos());
                     
                     agregarOperacionADAO(clientes.get(i).getMisCuentas().get(j));
@@ -279,7 +278,7 @@ public class ClienteCt {
         return msg;
     }
     
-    public String realizarDepositoDolares(String pNumCuenta, String pMonto){
+    public String realizarDepositoDolares(String pNumCuenta, String pMonto, int pVista){
         String msg ="";
         if(isNumeric(pNumCuenta)==false){
             return "Se encuentran caracteres donde solamente se permiten números";
@@ -298,7 +297,7 @@ public class ClienteCt {
         for (int i = 0; i < clientes.size(); i++){
             for (int j=0; j < clientes.get(i).getMisCuentas().size(); j++){
                 if (clientes.get(i).getMisCuentas().get(j).getNumeroCuenta() == Integer.parseInt(pNumCuenta)){
-                    msg = clientes.get(i).ejecutarDepositoDolares(clientes.get(i).getMisCuentas().get(j), Integer.parseInt(pMonto));
+                    msg = clientes.get(i).ejecutarDepositoDolares(clientes.get(i).getMisCuentas().get(j), Integer.parseInt(pMonto), pVista);
                     cuentaDAO.actualizarSaldoCuentaDAO(Integer.parseInt(pNumCuenta),clientes.get(i).getMisCuentas().get(j).getSaldo(),clientes.get(i).getMisCuentas().get(j).getCantidadOperacionesRetirosDepositos());
                     
                     agregarOperacionADAO(clientes.get(i).getMisCuentas().get(j));
@@ -334,7 +333,7 @@ public class ClienteCt {
     }
         
     
-    public  String realizarRetiroColones (String pNumCuenta, String pMonto, String pPalabraIngresada, String pPalabra){
+    public  String realizarRetiroColones (String pNumCuenta, String pMonto, String pPalabraIngresada, String pPalabra, int pVista){
         int intentos =0;
         String msg ="";
         if (isNumeric(pMonto) == false){
@@ -348,7 +347,7 @@ public class ClienteCt {
                         if (validarSaldoCuenta(clientes.get(i).getMisCuentas().get(j),Integer.parseInt(pMonto),clientes.get(i).getMisCuentas().get(j).calcularComision(Integer.parseInt(pMonto))) == false){
                             return "Monto insuficiente, ingrese un monto menor e inténtelo de nuevo";
                         }
-                        msg = clientes.get(i).ejecutarRetiroColones(clientes.get(i).getMisCuentas().get(j),Integer.parseInt(pMonto));
+                        msg = clientes.get(i).ejecutarRetiroColones(clientes.get(i).getMisCuentas().get(j),Integer.parseInt(pMonto), pVista);
                         cuentaDAO.actualizarSaldoCuentaDAO(Integer.parseInt(pNumCuenta),clientes.get(i).getMisCuentas().get(j).getSaldo(),clientes.get(i).getMisCuentas().get(j).getCantidadOperacionesRetirosDepositos());
                         agregarOperacionADAO(clientes.get(i).getMisCuentas().get(j));
                         return msg; 
@@ -389,7 +388,7 @@ public class ClienteCt {
        return "Estimado usuario, su cuenta está inactiva";       
     }
     
-    public String realizarRetiroDolares (String pNumCuenta, String pMonto, String pPalabraIngresada, String pPalabra){
+    public String realizarRetiroDolares (String pNumCuenta, String pMonto, String pPalabraIngresada, String pPalabra, int pVista){
         int intentos =0;
         String msg ="";
         if (isNumeric(pMonto) == false){
@@ -404,7 +403,7 @@ public class ClienteCt {
                         if (validarSaldoCuenta(clientes.get(i).getMisCuentas().get(j),pMontoColones,clientes.get(i).getMisCuentas().get(j).calcularComision(pMontoColones)) == false){
                             return "Monto insuficiente, ingrese un monto menor e inténtelo de nuevo";
                         }
-                        msg = clientes.get(i).ejecutarRetiroDolares(clientes.get(i).getMisCuentas().get(j),Integer.parseInt(pMonto));
+                        msg = clientes.get(i).ejecutarRetiroDolares(clientes.get(i).getMisCuentas().get(j),Integer.parseInt(pMonto), pVista);
                         cuentaDAO.actualizarSaldoCuentaDAO(Integer.parseInt(pNumCuenta),clientes.get(i).getMisCuentas().get(j).getSaldo(),clientes.get(i).getMisCuentas().get(j).getCantidadOperacionesRetirosDepositos());
                         agregarOperacionADAO(clientes.get(i).getMisCuentas().get(j));
                         return msg; 
@@ -438,7 +437,7 @@ public class ClienteCt {
         return "Se le ha enviado un codigo a su celular, por favor ingrese los datos requeridos";
     }
     
-    public String realizarTransferencia (String pNumCuentaOrigen, String pNumCuenta, String pMonto, String pPin,String pPalabraIngresada){
+    public String realizarTransferencia (String pNumCuentaOrigen, String pNumCuenta, String pMonto, String pPin,String pPalabraIngresada, int pVista){
         String msg ="";
         int intentos =0;
         
@@ -461,7 +460,7 @@ public class ClienteCt {
                             for (int i1 = 0; i1 < clientes.size(); i1++){
                                 for (int j1=0; j1 < clientes.get(i1).getMisCuentas().size(); j1++){
                                     if (clientes.get(i1).getMisCuentas().get(j1).getNumeroCuenta() == Integer.parseInt(pNumCuenta)){
-                                       msg = clientes.get(i).ejecutarTransferenca(clientes.get(i).getMisCuentas().get(j),clientes.get(i1).getMisCuentas().get(j1), Double.parseDouble(pMonto));
+                                       msg = clientes.get(i).ejecutarTransferenca(clientes.get(i).getMisCuentas().get(j),clientes.get(i1).getMisCuentas().get(j1), Double.parseDouble(pMonto), pVista);
                                        
                                        cuentaDAO.actualizarSaldoCuentaDAO(Integer.parseInt(pNumCuentaOrigen),clientes.get(i).getMisCuentas().get(j).getSaldo(), clientes.get(i).getMisCuentas().get(j).getCantidadOperacionesRetirosDepositos());
                                        cuentaDAO.actualizarSaldoCuentaDAO(Integer.parseInt(pNumCuenta),clientes.get(i1).getMisCuentas().get(j1).getSaldo(),clientes.get(i1).getMisCuentas().get(j1).getCantidadOperacionesRetirosDepositos());
@@ -526,10 +525,5 @@ public class ClienteCt {
         clientes.add(clienteAux);   
     }
     
-    public static int getVista(){
-        return vista;
-    }
-    public void setVista(int pVista){
-        vista = pVista;
-    }
+    
 }

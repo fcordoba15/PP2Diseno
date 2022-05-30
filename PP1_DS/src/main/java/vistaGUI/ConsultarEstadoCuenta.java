@@ -116,10 +116,10 @@ public class ConsultarEstadoCuenta extends javax.swing.JFrame {
         String pin = txtPin.getText();
         ClienteCt cliente = new ClienteCt();
         if (tipoDivisa.equals("Colones")){
-            JOptionPane.showMessageDialog(null,cliente.consultarEstadoCuentaColones(numCuenta,pin));   
+            JOptionPane.showMessageDialog(null,cliente.consultarEstadoCuentaColones(numCuenta,pin,1));   
         }
         if (tipoDivisa.equals("Dolares")){
-            JOptionPane.showMessageDialog(null,cliente.consultarEstadoCuentaDolares(numCuenta,pin));
+            JOptionPane.showMessageDialog(null,cliente.consultarEstadoCuentaDolares(numCuenta,pin,1));
         }
     }//GEN-LAST:event_btConsultarActionPerformed
 

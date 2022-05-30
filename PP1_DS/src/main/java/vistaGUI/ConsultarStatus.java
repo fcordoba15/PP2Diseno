@@ -95,7 +95,7 @@ public class ConsultarStatus extends javax.swing.JFrame {
         ClienteCt clienteCuentas = new ClienteCt();
         String numCuenta = cbNumeroCuenta.getSelectedItem().toString();
         
-        JOptionPane.showMessageDialog(null,clienteCuentas.consultarStatusCuenta(numCuenta));
+        JOptionPane.showMessageDialog(null,clienteCuentas.consultarStatusCuenta(numCuenta,1));
         
     }//GEN-LAST:event_btConsultarActionPerformed
 

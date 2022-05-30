@@ -45,10 +45,10 @@ public class DepositarWeb extends HttpServlet {
     out.println("<hr>");
 
     if (Integer.parseInt(divisa) == 1){
-        out.println(cliente.realizarDepositoDolares (numeroCuenta, monto));
+        out.println(cliente.realizarDepositoDolares (numeroCuenta, monto,2));
     }
     else{
-        out.println(cliente.realizarDepositoColones (numeroCuenta, monto));
+        out.println(cliente.realizarDepositoColones (numeroCuenta, monto,2));
     }
         
     out.println("<hr><a href=\"Iniciar/operaciones.html\">Volver</a>");

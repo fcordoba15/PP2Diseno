@@ -154,7 +154,7 @@ public class Transferir extends javax.swing.JFrame {
         String monto = txtMonto.getText();
         String palabraClave = txtPalabraClave.getText();
          ClienteCt cliente = new ClienteCt();
-        JOptionPane.showMessageDialog(null,cliente.realizarTransferencia(numCuentaOrigen,numCuentaDestino,monto,pin,palabraClave));
+        JOptionPane.showMessageDialog(null,cliente.realizarTransferencia(numCuentaOrigen,numCuentaDestino,monto,pin,palabraClave,1));
     }//GEN-LAST:event_btTransferirActionPerformed
 
     private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed

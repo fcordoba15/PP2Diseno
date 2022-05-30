@@ -120,10 +120,10 @@ public class ConsultarSaldo extends javax.swing.JFrame {
         String pin = txtPin.getText();
         
         if (tipoDivisa.equals("Colones")){
-            JOptionPane.showMessageDialog(null,cliente.consultarSaldoCuentaColones(numCuenta,pin));   
+            JOptionPane.showMessageDialog(null,cliente.consultarSaldoCuentaColones(numCuenta,pin,1));   
         }
         if (tipoDivisa.equals("Dolares")){
-            JOptionPane.showMessageDialog(null,cliente.consultarSaldoCuentaDolares(numCuenta,pin));
+            JOptionPane.showMessageDialog(null,cliente.consultarSaldoCuentaDolares(numCuenta,pin,1));
         }
         
     }//GEN-LAST:event_btConsultarActionPerformed

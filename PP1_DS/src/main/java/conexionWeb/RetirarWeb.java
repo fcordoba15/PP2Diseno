@@ -48,13 +48,13 @@ public class RetirarWeb extends HttpServlet {
     ClienteCt cliente = new ClienteCt();
     if (Integer.parseInt(divisa) == 1){
         try {
-            out.println(cliente.realizarRetiroDolares(numeroCuenta, monto, palabra, PalabraEnviadaWeb.pPalabra));
+            out.println(cliente.realizarRetiroDolares(numeroCuenta, monto, palabra, PalabraEnviadaWeb.pPalabra,2));
         } catch (Exception ex) {
             Logger.getLogger(RetirarWeb.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     else{
-        out.println(cliente.realizarRetiroColones(numeroCuenta, monto, palabra, PalabraEnviadaWeb.pPalabra));
+        out.println(cliente.realizarRetiroColones(numeroCuenta, monto, palabra, PalabraEnviadaWeb.pPalabra,2));
     }
     
     out.println("<hr><a href=\"Iniciar/operaciones.html\">Volver</a>");

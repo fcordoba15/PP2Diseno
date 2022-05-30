@@ -99,11 +99,11 @@ public class Depositar extends javax.swing.JFrame {
     private void btDepositarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btDepositarActionPerformed
        ClienteCt cliente = new ClienteCt();
        if(cbDivisa.getSelectedItem().toString().equals("Colones")){
-           JOptionPane.showMessageDialog(null,cliente.realizarDepositoColones(cbNumeroCuenta.getSelectedItem().toString(),txtMonto.getText()));   
+           JOptionPane.showMessageDialog(null,cliente.realizarDepositoColones(cbNumeroCuenta.getSelectedItem().toString(),txtMonto.getText(),1));   
        }
        if(cbDivisa.getSelectedItem().toString().equals("Dolares")){
            //DEPOSITO DOLARES 
-           JOptionPane.showMessageDialog(null,cliente.realizarDepositoDolares(cbNumeroCuenta.getSelectedItem().toString(),txtMonto.getText())); 
+           JOptionPane.showMessageDialog(null,cliente.realizarDepositoDolares(cbNumeroCuenta.getSelectedItem().toString(),txtMonto.getText(),1)); 
        }
     }//GEN-LAST:event_btDepositarActionPerformed
 

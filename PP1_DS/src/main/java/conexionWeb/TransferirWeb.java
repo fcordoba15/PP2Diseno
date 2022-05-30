@@ -44,7 +44,7 @@ public class TransferirWeb extends HttpServlet {
     out.println("<body>");
     out.println("<h1>¡Transferencia Realizada!</h1>");
     out.println("<hr>");
-    out.println(cliente.realizarTransferencia(numeroCuenta, numeroCuentaDestino, monto, pin, palabra));
+    out.println(cliente.realizarTransferencia(numeroCuenta, numeroCuentaDestino, monto, pin, palabra,2));
     out.println("<hr><a href=\"Iniciar/operaciones.html\">Volver</a>");
     out.println("</body></html>");
   }

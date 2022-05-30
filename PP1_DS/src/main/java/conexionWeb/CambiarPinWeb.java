@@ -42,7 +42,7 @@ public class CambiarPinWeb extends HttpServlet {
     out.println("<body>");
     out.println("<h1>¡Pin Cambiado!</h1>");
     out.println("<hr>");
-    out.println(cliente.cambiarPin(numeroCuenta, pinActual, pinNuevo));
+    out.println(cliente.cambiarPin(numeroCuenta, pinActual, pinNuevo,2));
     out.println("<hr><a href=\"iniciar.html\">Volver</a>");
     out.println("</body></html>");
   }

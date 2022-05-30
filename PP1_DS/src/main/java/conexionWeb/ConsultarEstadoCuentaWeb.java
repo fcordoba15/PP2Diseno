@@ -44,10 +44,10 @@ public class ConsultarEstadoCuentaWeb extends HttpServlet {
     out.println("<hr>");
     ClienteCt cliente = new ClienteCt();
     if (Integer.parseInt(divisa) == 1){
-        out.println(cliente.consultarEstadoCuentaDolares (numeroCuenta, pin));
+        out.println(cliente.consultarEstadoCuentaDolares (numeroCuenta, pin,2));
     }
     else{
-        out.println(cliente.consultarEstadoCuentaColones (numeroCuenta, pin));
+        out.println(cliente.consultarEstadoCuentaColones (numeroCuenta, pin,2));
     }
         
     out.println("<hr><a href=\"Iniciar/consultas.html\">Volver</a>");

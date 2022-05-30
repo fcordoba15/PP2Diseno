@@ -36,58 +36,58 @@ public class Cliente implements Comparable{
         return (getPrimerApellido().compareTo(((Cliente)pOtroObjeto).getPrimerApellido())<0 ? true:false);
     }
 
-    public void ejecutarCambioPin(CuentaBancaria pCuentaBancaria, String pPin){
-        pCuentaBancaria.cambiarPin(pPin);
+    public void ejecutarCambioPin(CuentaBancaria pCuentaBancaria, String pPin,int pVista){
+        pCuentaBancaria.cambiarPin(pPin,pVista);
     }
     
-    public String ejecutarDepositoColones(CuentaBancaria pCuentaBancaria, double pMontoDeposito){
-        String msg = pCuentaBancaria.depositarColones(pMontoDeposito);
+    public String ejecutarDepositoColones(CuentaBancaria pCuentaBancaria, double pMontoDeposito,int pVista){
+        String msg = pCuentaBancaria.depositarColones(pMontoDeposito, pVista);
         return msg;
     }
     
-    public String ejecutarDepositoDolares(CuentaBancaria pCuentaBancaria, double pMontoDeposito){
-        String msg = pCuentaBancaria.depositarDolares(pMontoDeposito);
+    public String ejecutarDepositoDolares(CuentaBancaria pCuentaBancaria, double pMontoDeposito, int pVista){
+        String msg = pCuentaBancaria.depositarDolares(pMontoDeposito, pVista);
         return msg;
     }
     
-    public String ejecutarRetiroColones(CuentaBancaria pCuentaBancaria, double pMontoRetiro){
-        String msg = pCuentaBancaria.retirarColones(pMontoRetiro);
+    public String ejecutarRetiroColones(CuentaBancaria pCuentaBancaria, double pMontoRetiro, int pVista){
+        String msg = pCuentaBancaria.retirarColones(pMontoRetiro,pVista);
         return msg;
     }
     
-    public String ejecutarRetiroDolares(CuentaBancaria pCuentaBancaria, double pMontoRetiro){
-        String msg = pCuentaBancaria.retirarDolares(pMontoRetiro);
+    public String ejecutarRetiroDolares(CuentaBancaria pCuentaBancaria, double pMontoRetiro, int pVista){
+        String msg = pCuentaBancaria.retirarDolares(pMontoRetiro, pVista);
         return msg;
     }
     
-    public String ejecutarTransferenca(CuentaBancaria pCuentaBancariaOrigen, CuentaBancaria pCuentaBancaria, double pMonto){
-        String msg = pCuentaBancariaOrigen.transferirMonto(pMonto);
-        pCuentaBancaria.depositarColones(pMonto);
+    public String ejecutarTransferenca(CuentaBancaria pCuentaBancariaOrigen, CuentaBancaria pCuentaBancaria, double pMonto,int pVista){
+        String msg = pCuentaBancariaOrigen.transferirMonto(pMonto,pVista);
+        pCuentaBancaria.depositarColones(pMonto, pVista);
         return msg;
     }
     
-    public String EjecutarConsultaSaldoCuentaColones(CuentaBancaria pCuentaBancaria){
-        String msg = pCuentaBancaria.consultarSaldoCuentaColones();
+    public String EjecutarConsultaSaldoCuentaColones(CuentaBancaria pCuentaBancaria,int pVista){
+        String msg = pCuentaBancaria.consultarSaldoCuentaColones(pVista);
         return msg;
     }
     
-    public String ejecutarConsultaSaldoCuentaDolares(CuentaBancaria pCuentaBancaria){
-        String msg = pCuentaBancaria.consultarSaldoCuentaDolares();
+    public String ejecutarConsultaSaldoCuentaDolares(CuentaBancaria pCuentaBancaria, int pVista){
+        String msg = pCuentaBancaria.consultarSaldoCuentaDolares(pVista);
         return msg;
     }
     
-    public String ejecutarConsultaEstadoCuentaColones (CuentaBancaria pCuentaBancaria){
-        String msg = pCuentaBancaria.consultarEstadoCuentaColones();
+    public String ejecutarConsultaEstadoCuentaColones (CuentaBancaria pCuentaBancaria, int pVista){
+        String msg = pCuentaBancaria.consultarEstadoCuentaColones(pVista);
         return msg;
     }
     
-    public String ejecutarConsultaEstadoCuentaDolares(CuentaBancaria pCuentaBancaria){
-        String msg = pCuentaBancaria.consultarEstadoCuentaDolares();
+    public String ejecutarConsultaEstadoCuentaDolares(CuentaBancaria pCuentaBancaria, int pVista){
+        String msg = pCuentaBancaria.consultarEstadoCuentaDolares(pVista);
         return msg;
     }
 
-    public String ejecutarConsultaStatusCuenta(CuentaBancaria pCuentaBancaria){
-        String msg = pCuentaBancaria.consultarStatusCuenta();
+    public String ejecutarConsultaStatusCuenta(CuentaBancaria pCuentaBancaria, int pVista){
+        String msg = pCuentaBancaria.consultarStatusCuenta(pVista);
         return msg;
     }
         

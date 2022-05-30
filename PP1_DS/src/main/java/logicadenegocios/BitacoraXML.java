@@ -28,14 +28,14 @@ public class BitacoraXML extends BitacoraNotificationObserver{
     public void update() {
         try {
             Operacion operacion = subject.getExhangeRate();
-            añadirABitacoraXML (operacion);
+            añadirABitacoraXML (operacion, subject.numeroCuenta);
         } catch (Exception ex) {
             Logger.getLogger(BitacoraXML.class.getName()).log(Level.SEVERE, null, ex);
         }
                      
            }
     
-     private void añadirABitacoraXML (Operacion pCambio)throws Exception {
+     private void añadirABitacoraXML (Operacion pCambio, int numCuenta)throws Exception {
             String date = String.format("%1$tY-%1$tm-%1$td", pCambio.getFechaOperacion());
             DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
@@ -43,7 +43,7 @@ public class BitacoraXML extends BitacoraNotificationObserver{
             //Elemento raíz
             Document doc = docBuilder.parse(file);
             Node root = doc.getElementById("0");
-            NodeList vistas =  doc.getElementsByTagName(tipoVista());
+            NodeList vistas =  doc.getElementsByTagName(tipoVista(pCambio.getVista()));
             
             // Crear un nuevo nodo de cuentaOperacion
 		Element  operacion = doc.createElement("operacion");
@@ -58,7 +58,7 @@ public class BitacoraXML extends BitacoraNotificationObserver{
 		fechaOperacion.setTextContent(date);
 		monto.setTextContent (String.valueOf(pCambio.getMonto()));
                 montoComision.setTextContent (String.valueOf(pCambio.getMontoComision()));
-                numeroCuenta.setTextContent("798");
+                numeroCuenta.setTextContent(String.valueOf(numCuenta));
 		 
                 // Añadir nodo hijo a persona
                 operacion.appendChild(numeroCuenta);
@@ -87,8 +87,8 @@ public class BitacoraXML extends BitacoraNotificationObserver{
     
     
     
-    public String tipoVista(){
-         switch (ClienteCt.getVista()) {
+    public String tipoVista(int pVista){
+         switch (pVista) {
              case 0:
                  return "vistaCLI";
              case 1:

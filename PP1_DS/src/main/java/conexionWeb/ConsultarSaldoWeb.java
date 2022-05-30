@@ -44,10 +44,10 @@ public class ConsultarSaldoWeb extends HttpServlet {
     out.println("<hr>");
     ClienteCt cliente = new ClienteCt();
     if (Integer.parseInt(divisa) == 1){
-        out.println(cliente.consultarSaldoCuentaDolares (numeroCuenta, pin));
+        out.println(cliente.consultarSaldoCuentaDolares (numeroCuenta, pin,2));
     }
     else{
-        out.println(cliente.consultarSaldoCuentaColones (numeroCuenta, pin));
+        out.println(cliente.consultarSaldoCuentaColones (numeroCuenta, pin,2));
     }
     
     out.println("<hr><a href=\"Iniciar/consultas.html\">Volver</a>");

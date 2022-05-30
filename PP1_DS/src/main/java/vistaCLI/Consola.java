@@ -178,7 +178,7 @@ public class Consola {
         System.out.println("Ingrese el PIN nuevo de la cuenta: ");
         String pinNuevo = entrada.next();
 
-        System.out.println("\n" + cliente.cambiarPin(numeroCuenta, pinActual, pinNuevo));
+        System.out.println("\n" + cliente.cambiarPin(numeroCuenta, pinActual, pinNuevo,0));
     }          
 
     static void menuMovimientos() throws java.io.IOException{
@@ -234,10 +234,10 @@ public class Consola {
         String monto = entrada.next();
         int divisa = opcionDivisa();
         if (divisa == 1){
-            System.out.println("\n" + cliente.realizarDepositoDolares (numeroCuenta, monto));
+            System.out.println("\n" + cliente.realizarDepositoDolares (numeroCuenta, monto,0));
         }
         else if (divisa == 2){
-            System.out.println("\n" + cliente.realizarDepositoColones (numeroCuenta, monto));
+            System.out.println("\n" + cliente.realizarDepositoColones (numeroCuenta, monto,0));
         }
         else{
             System.out.println("ERROR: opcion no valida!!");
@@ -262,7 +262,7 @@ public class Consola {
             System.out.println("Ingrese la palabra que le fue enviada por mensaje: ");
             String palabraIngresadaDolares = entrada.next();  
             
-            System.out.println("\n" + cliente.realizarRetiroDolares(numeroCuenta, monto, palabraIngresadaDolares, palabraMensajeDolares));           
+            System.out.println("\n" + cliente.realizarRetiroDolares(numeroCuenta, monto, palabraIngresadaDolares, palabraMensajeDolares,0));           
         }
         else if (divisa == 2){
             String palabraMensajeColones = cliente.realizarRetiroColonesAux(numeroCuenta, pin);
@@ -270,7 +270,7 @@ public class Consola {
             System.out.println("Ingrese la palabra que le fue enviada por mensaje: ");
             String palabraIngresadaColones = entrada.next();  
             
-            System.out.println("\n" + cliente.realizarRetiroColones(numeroCuenta, monto, palabraIngresadaColones, palabraMensajeColones));           
+            System.out.println("\n" + cliente.realizarRetiroColones(numeroCuenta, monto, palabraIngresadaColones, palabraMensajeColones,0));           
         }
         else{
             System.out.println("\nERROR: opcion no valida!!");
@@ -295,7 +295,7 @@ public class Consola {
         System.out.println("Ingrese el numero de cuenta a depositar: ");
         String numeroCuentaDestino = entrada.next(); 
         
-        System.out.println("\n" + cliente.realizarTransferencia(numeroCuentaOrigen, numeroCuentaDestino, monto, pin, palabraIngresada));            
+        System.out.println("\n" + cliente.realizarTransferencia(numeroCuentaOrigen, numeroCuentaDestino, monto, pin, palabraIngresada,0));            
     }
 
 
@@ -394,10 +394,10 @@ public class Consola {
         String pin = entrada.next();
         int divisa = opcionDivisa();
         if (divisa == 1){
-            System.out.println("\n" + cliente.consultarSaldoCuentaDolares (numeroCuenta, pin));
+            System.out.println("\n" + cliente.consultarSaldoCuentaDolares (numeroCuenta, pin,0));
         }
         else if (divisa == 2){
-            System.out.println("\n" + cliente.consultarSaldoCuentaColones (numeroCuenta, pin));
+            System.out.println("\n" + cliente.consultarSaldoCuentaColones (numeroCuenta, pin,0));
         }
         else{
             System.out.println("ERROR: opcion no valida!!");
@@ -414,10 +414,10 @@ public class Consola {
         String pin = entrada.next();
         int divisa = opcionDivisa();
         if (divisa == 1){
-            System.out.println("\n" + cliente.consultarEstadoCuentaDolares (numeroCuenta, pin));
+            System.out.println("\n" + cliente.consultarEstadoCuentaDolares (numeroCuenta, pin,0));
         }
         else if (divisa == 2){
-            System.out.println("\n" + cliente.consultarEstadoCuentaColones (numeroCuenta, pin));
+            System.out.println("\n" + cliente.consultarEstadoCuentaColones (numeroCuenta, pin,0));
         }
         else{
             System.out.println("ERROR: opcion no valida!!");
@@ -430,7 +430,7 @@ public class Consola {
         System.out.println("\n---------------- CONSULTA DE STATUS DE CUENTA ----------------");
         System.out.println("Ingrese el numero de cuenta a consultar: ");
         String numeroCuenta = entrada.next();
-        System.out.println("\n" + cliente.consultarStatusCuenta (numeroCuenta));          
+        System.out.println("\n" + cliente.consultarStatusCuenta (numeroCuenta,0));          
     } 
     
      static void consultarGananciasTotales() throws IOException{
