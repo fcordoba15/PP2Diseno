@@ -25,17 +25,17 @@ public class BitacoraXML extends BitacoraNotificationObserver{
         subject= pSubject;
         subject.attach(this);
     }
+    
     public void update() {
         try {
             Operacion operacion = subject.getExhangeRate();
-            añadirABitacoraXML (operacion, subject.numeroCuenta);
+            anadirABitacoraXML (operacion, subject.numeroCuenta);
         } catch (Exception ex) {
             Logger.getLogger(BitacoraXML.class.getName()).log(Level.SEVERE, null, ex);
-        }
-                     
-           }
+        }                   
+    }
     
-     private void añadirABitacoraXML (Operacion pCambio, int numCuenta)throws Exception {
+     private void anadirABitacoraXML (Operacion pCambio, int numCuenta)throws Exception {
             String date = String.format("%1$tY-%1$tm-%1$td", pCambio.getFechaOperacion());
             DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
@@ -83,10 +83,6 @@ public class BitacoraXML extends BitacoraNotificationObserver{
        
   
     }
-    
-    
-    
-    
     
     public String tipoVista(int pVista){
          switch (pVista) {
