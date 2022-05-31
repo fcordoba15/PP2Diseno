@@ -41,7 +41,16 @@ public class RegistrosWebWeb extends HttpServlet {
     out.println("<h1>Registros web</h1>");
     out.println("<hr>");
     
-    ClienteCt cliente = new ClienteCt();
+    if (Integer.parseInt(tipo) == 1){
+        //out.println(funcion XML);
+    }
+    else if (Integer.parseInt(tipo) == 2){
+        //out.println(funcion CSV);
+    }
+    else{
+        //out.println(funcion TRAMA PLANA);
+    }
+    
     out.println("<hr><a href=\"Iniciar/Consultas/ConsultarBitacora.html\">Volver</a>");
     out.println("</body></html>");
   }
