@@ -45,7 +45,7 @@ public class BitacoraCSV extends BitacoraNotificationObserver{
         writer.close();
     }
     
-    public String consultarBitacorasPorTipoDeVista (String pVista) throws FileNotFoundException, IOException{
+    public String consultarBitacoraPorTipoDeVista (String pVista) throws FileNotFoundException, IOException{
         CSVReader reader = new CSVReader(new FileReader(csv));
         String[] fila = null;
         String msg ="";
@@ -63,7 +63,7 @@ public class BitacoraCSV extends BitacoraNotificationObserver{
         return msg;
     }
     
-    public String consultarBitacoras () throws FileNotFoundException, IOException{
+    public String consultarBitacora () throws FileNotFoundException, IOException{
         CSVReader reader = new CSVReader(new FileReader(csv));
         String[] fila = null;
         String msg ="";
