@@ -42,7 +42,8 @@ public class RegistrosGUIWeb extends HttpServlet {
     out.println("<hr>");
     
     if (Integer.parseInt(tipo) == 1){
-        //out.println(funcion XML);
+        ConsultaBitacoraCt consulta = new ConsultaBitacoraCt();
+        out.println(consulta.ConsultarPorVistaXML("vistaGUI"));
     }
     else if (Integer.parseInt(tipo) == 2){
         //out.println(funcion CSV);
