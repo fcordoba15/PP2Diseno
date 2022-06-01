@@ -14,7 +14,7 @@ public class ConsultaXML {
    public static ArrayList <String> consultaVista(String pVista){
        ArrayList <String> operacionesCuentas = new ArrayList(); 
         try {
-            File archivo = new File("C:\\Users\\fabih\\OneDrive\\Documentos\\GitHub\\PP2Diseno\\PP1_DS\\bitacoras");
+            File archivo = new File("C:\\Users\\Fiorella Mora\\Documents\\GitHub\\PP2Diseno\\PP1_DS\\bitacoras\\XML.xml");
             DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
             DocumentBuilder documentBuilder = dbf.newDocumentBuilder();
             Document document = documentBuilder.parse(archivo);

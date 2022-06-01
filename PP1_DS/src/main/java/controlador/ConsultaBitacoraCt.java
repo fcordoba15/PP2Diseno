@@ -6,14 +6,17 @@ import logicadenegocios.*;
 
 public class ConsultaBitacoraCt {
     
-    public void ConsultarPorVistaXML(String pTipoVista){
-        ConsultaXML.consultaVista(pTipoVista);
+    public ArrayList <String> ConsultarPorVistaXML(String pTipoVista){
+        ArrayList <String> operacionesCuentas = new ArrayList(); 
+         operacionesCuentas = ConsultaXML.consultaVista(pTipoVista);
+         return operacionesCuentas;
           
     }
-     public void ConsultarPorFechaXML(String pTipoVista){
-        ConsultaXML.consultaporFecha(pTipoVista);
-    
-    }
+     /*public ArrayList <String> ConsultarPorFechaXML(String pTipoVista){
+        ArrayList <String> operacionesCuentas = new ArrayList(); 
+        operacionesCuentas =  ConsultaXML.consultaporFecha(pTipoVista);
+        return operacionesCuentas;
+    }*/
     
     
 }

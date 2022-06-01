@@ -19,7 +19,7 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
 public class BitacoraXML extends BitacoraNotificationObserver{
-    static File file = new File("C:\\Users\\fabih\\OneDrive\\Documentos\\GitHub\\PP2Diseno\\PP1_DS\\bitacoras"); 
+    static File file = new File("C:\\Users\\Fiorella Mora\\Documents\\GitHub\\PP2Diseno\\PP1_DS\\bitacoras\\XML.xml"); 
 
      public BitacoraXML(CuentaBancaria pSubject) {
         subject= pSubject;
@@ -89,7 +89,6 @@ public class BitacoraXML extends BitacoraNotificationObserver{
              case 0:
                  return "vistaCLI";
              case 1:
-                 System.out.println("vistaGUI");
                  return "vistaGUI";
              default:
                  return "vistaWEB";
