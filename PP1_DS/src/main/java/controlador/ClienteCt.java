@@ -10,15 +10,17 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 import static util.PalabraAleatoria.generarPalabra;
-import static comunicacionExterna.MensajeSMS.enviarMensaje;
 import util.Ordenacion;
 import DAO.CuentaBancariaDAO;
 import DAO.OperacionDAO;
+import comunicacionExterna.CorreoElectronico;
+import comunicacionExterna.MensajeSMS;
 
 
 import static validaciones.ValidacionCuenta.validarSaldoCuenta;
 import logicadenegocios.CuentaBancaria;
 import static seguridad.ClienteSc.autenticarCliente;
+import seguridad.CuentaBancariaSc;
 import static seguridad.CuentaBancariaSc.*;
 
 public class ClienteCt {
@@ -28,6 +30,7 @@ public class ClienteCt {
     private static ClienteDAO clienteDAO = new ClienteDAO();
     private static CuentaBancariaDAO cuentaDAO = new CuentaBancariaDAO();
     private static OperacionDAO operacionDAO = new OperacionDAO();
+    CuentaBancariaSc cuentaSc = new CuentaBancariaSc();
     
     public String registrarCliente (String pPrimerApellido, String pSegundoApellido, String pNombre, String pIdentificacion, String pDia, String pMes, String pAnio, String pNumeroTelefonico, String pCorreoElectronico) throws ParseException {
         if(isNumeric(pIdentificacion)==false){
@@ -95,7 +98,7 @@ public class ClienteCt {
             }
         }
       
-       inactivarCuenta(Integer.parseInt(pNumCuenta),clientes);
+       cuentaSc.inactivarCuenta(Integer.parseInt(pNumCuenta),clientes);
        cuentaDAO.inactivarCuentaDAO(Integer.parseInt(pNumCuenta));
        return "Estimado usuario, su cuenta está inactiva";
     }
@@ -153,7 +156,7 @@ public class ClienteCt {
             }
         }
       
-       inactivarCuenta(Integer.parseInt(pNumCuenta),clientes);
+       cuentaSc.inactivarCuenta(Integer.parseInt(pNumCuenta),clientes);
        cuentaDAO.inactivarCuentaDAO(Integer.parseInt(pNumCuenta));
        return "Estimado usuario, su cuenta está inactiva";
     }
@@ -180,7 +183,7 @@ public class ClienteCt {
             }
         }
       
-       inactivarCuenta(Integer.parseInt(pNumCuenta),clientes);
+       cuentaSc.inactivarCuenta(Integer.parseInt(pNumCuenta),clientes);
        cuentaDAO.inactivarCuentaDAO(Integer.parseInt(pNumCuenta));
        return "Estimado usuario, su cuenta está inactiva";
     }
@@ -207,7 +210,7 @@ public class ClienteCt {
             }
         }
       
-       inactivarCuenta(Integer.parseInt(pNumCuenta),clientes);
+       cuentaSc.inactivarCuenta(Integer.parseInt(pNumCuenta),clientes);
        cuentaDAO.inactivarCuentaDAO(Integer.parseInt(pNumCuenta));
        return "Estimado usuario, su cuenta está inactiva";
     }
@@ -234,7 +237,7 @@ public class ClienteCt {
             }
         }
       
-       inactivarCuenta(Integer.parseInt(pNumCuenta),clientes);
+       cuentaSc.inactivarCuenta(Integer.parseInt(pNumCuenta),clientes);
        cuentaDAO.inactivarCuentaDAO(Integer.parseInt(pNumCuenta));
        return "Estimado usuario, su cuenta está inactiva";
     }
@@ -309,7 +312,8 @@ public class ClienteCt {
 
     static String pPalabra;
     
-    public String realizarRetiroColonesAux (String pNumCuenta, String pPin){       
+    public String realizarRetiroColonesAux (String pNumCuenta, String pPin){
+        MensajeSMS sms = new MensajeSMS();
         int intentos = 0;
         while (intentos < 2){
             if (autenticarCuenta(Integer.parseInt(pNumCuenta),pPin,clientes) == false){
@@ -320,14 +324,14 @@ public class ClienteCt {
                     for (int j=0; j < clientes.get(i).getMisCuentas().size(); j++){
                         if (clientes.get(i).getMisCuentas().get(j).getNumeroCuenta() == Integer.parseInt(pNumCuenta)){
                             pPalabra = generarPalabra();
-                            enviarMensaje(Integer.toString(clientes.get(i).getNumeroTelefonico()),pPalabra);
+                            sms.enviarNotificacion(Integer.toString(clientes.get(i).getNumeroTelefonico()),pPalabra);
                         }
                     }
                 }
                 return pPalabra;
             }
         }
-       inactivarCuenta(Integer.parseInt(pNumCuenta),clientes);
+       cuentaSc.inactivarCuenta(Integer.parseInt(pNumCuenta),clientes);
        cuentaDAO.inactivarCuentaDAO(Integer.parseInt(pNumCuenta));
        return "Estimado usuario, su cuenta está inactiva";       
     }
@@ -359,13 +363,14 @@ public class ClienteCt {
                intentos++; 
             }
         }
-        inactivarCuenta(Integer.parseInt(pNumCuenta),clientes);
+        cuentaSc.inactivarCuenta(Integer.parseInt(pNumCuenta),clientes);
         cuentaDAO.inactivarCuentaDAO(Integer.parseInt(pNumCuenta));
        return "Estimado usuario, su cuenta está inactiva";
     }
     
     
-    public String realizarRetiroDolaresAux (String pNumCuenta, String pPin){       
+    public String realizarRetiroDolaresAux (String pNumCuenta, String pPin){ 
+        MensajeSMS sms = new MensajeSMS();
         int intentos = 0;
         while (intentos < 2){
             if (autenticarCuenta(Integer.parseInt(pNumCuenta),pPin,clientes) == false){
@@ -376,14 +381,14 @@ public class ClienteCt {
                     for (int j=0; j < clientes.get(i).getMisCuentas().size(); j++){
                         if (clientes.get(i).getMisCuentas().get(j).getNumeroCuenta() == Integer.parseInt(pNumCuenta)){
                             pPalabra = generarPalabra();
-                            enviarMensaje(Integer.toString(clientes.get(i).getNumeroTelefonico()),pPalabra);
+                            sms.enviarNotificacion(Integer.toString(clientes.get(i).getNumeroTelefonico()),pPalabra);
                         }
                     }
                 }
                 return pPalabra;
             }
         }
-       inactivarCuenta(Integer.parseInt(pNumCuenta),clientes);
+       cuentaSc.inactivarCuenta(Integer.parseInt(pNumCuenta),clientes);
        cuentaDAO.inactivarCuentaDAO(Integer.parseInt(pNumCuenta));
        return "Estimado usuario, su cuenta está inactiva";       
     }
@@ -415,12 +420,13 @@ public class ClienteCt {
                intentos++; 
             }
         }
-        inactivarCuenta(Integer.parseInt(pNumCuenta),clientes);
+        cuentaSc.inactivarCuenta(Integer.parseInt(pNumCuenta),clientes);
         cuentaDAO.inactivarCuentaDAO(Integer.parseInt(pNumCuenta));
        return "Estimado usuario, su cuenta está inactiva";
     }
     
     public String realizarTransferenciaAux (String pNumCuentaOrigen, String pPin){
+        MensajeSMS sms = new MensajeSMS();
         if (autenticarCuenta(Integer.parseInt(pNumCuentaOrigen),pPin,clientes) != true){
             return "Cuenta invalida, inténtelo de nuevo";
         }
@@ -429,7 +435,7 @@ public class ClienteCt {
             for (int j=0; j < clientes.get(i).getMisCuentas().size(); j++){
                 if (clientes.get(i).getMisCuentas().get(j).getNumeroCuenta() == Integer.parseInt(pNumCuentaOrigen)){
                     pPalabra = generarPalabra();
-                    enviarMensaje(Integer.toString(clientes.get(i).getNumeroTelefonico()),pPalabra);
+                    sms.enviarNotificacion(Integer.toString(clientes.get(i).getNumeroTelefonico()),pPalabra);
                 }
             }
         }
@@ -477,7 +483,7 @@ public class ClienteCt {
                intentos++; 
             }
         }
-        inactivarCuenta(Integer.parseInt(pNumCuenta),clientes);
+        cuentaSc.inactivarCuenta(Integer.parseInt(pNumCuenta),clientes);
         return "Estimado usuario, su cuenta está inactiva";
     }  
     

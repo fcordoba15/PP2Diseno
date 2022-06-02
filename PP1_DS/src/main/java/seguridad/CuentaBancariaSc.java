@@ -21,14 +21,16 @@ public class CuentaBancariaSc {
     }
     
     //Método para inactivar una cuenta en caso de anomalías (pin y mensaje)
-    public static void inactivarCuenta(int pNumCuenta,ArrayList<Cliente>clientes){
+    public void inactivarCuenta(int pNumCuenta,ArrayList<Cliente>clientes){
+        MensajeSMS sms = new MensajeSMS();
+        CorreoElectronico mail = new  CorreoElectronico();
         for (int i = 0; i < clientes.size(); i++){
                 for (int j=0; j < clientes.get(i).getMisCuentas().size(); j++){
                     if (clientes.get(i).getMisCuentas().get(j).getNumeroCuenta() == pNumCuenta){
                         clientes.get(i).getMisCuentas().get(j).setActiva(false);
                         
-                        MensajeSMS.enviarMensaje(String.valueOf(clientes.get(i).getNumeroTelefonico()), "Estimado Usuario! \n Su cuenta Num:"+ pNumCuenta+ "se inactivo por cuestiones de seguridad.");
-                        CorreoElectronico.enviarCorreo(clientes.get(i).getCorreoElectronico(),"Inactivacion Cuenta Bancaria", "Estimado Usuario! \n Su cuenta Num:"+ pNumCuenta+ "se inactivo por cuestiones de seguridad.");
+                        sms.enviarNotificacion(String.valueOf(clientes.get(i).getNumeroTelefonico()), "Estimado Usuario! \n Su cuenta Num:"+ pNumCuenta+ "se inactivo por cuestiones de seguridad.");
+                        mail.enviarNotificacion(clientes.get(i).getCorreoElectronico(), "Estimado Usuario! \n Su cuenta Num:"+ pNumCuenta+ "se inactivo por cuestiones de seguridad.");
                     }
                 }
             }

@@ -5,9 +5,9 @@ import java.net.*;
 import java.util.Base64;
 import java.io.*;
 
-public class MensajeSMS {
+public class MensajeSMS implements NotificacionUsuario {
     
-    public static void enviarMensaje(String numMovil, String mensaje){
+    public void enviarNotificacion(String destinatario, String cuerpo){
         
         try{
              String myURI = "https://api.bulksms.com/v1/messages";
@@ -16,7 +16,7 @@ public class MensajeSMS {
             String myPassword = "Pdiseno2022";
             String codPais = "+506";
 
-            String myData = "{to: \""+codPais+""+numMovil+"\", encoding: \"UNICODE\", body: \""+mensaje+"\"}";
+            String myData = "{to: \""+codPais+""+destinatario+"\", encoding: \"UNICODE\", body: \""+cuerpo+"\"}";
 
             URL url = new URL(myURI);
             HttpURLConnection request = (HttpURLConnection) url.openConnection();
@@ -56,8 +56,10 @@ public class MensajeSMS {
             System.out.println(e);
         
          }
+        
     }   
-             
+
+       
 }
 
     

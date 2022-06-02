@@ -6,8 +6,9 @@ import javax.mail.*;
 import javax.mail.internet.*;
 import javax.activation.*;
 
-public class CorreoElectronico {
-    public static void enviarCorreo(String destinatario, String asunto, String cuerpo) {
+public class CorreoElectronico implements NotificacionUsuario{
+    public  void enviarNotificacion(String destinatario, String cuerpo) {
+        String asunto = "BancoInforma: Invactivacion Cuenta";
         Properties props = System.getProperties();
         props.put("mail.smtp.host", "smtp.gmail.com");  
         props.put("mail.smtp.user", "proyectobanco2022");
@@ -32,5 +33,10 @@ public class CorreoElectronico {
         catch (MessagingException me) {
             me.printStackTrace();  
         }
-    }   
+        
+    }
+    
+  
+        
+    
 }
