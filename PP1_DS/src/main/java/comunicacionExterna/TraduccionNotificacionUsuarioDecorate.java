@@ -11,19 +11,23 @@ public class TraduccionNotificacionUsuarioDecorate extends NotificacionUsuarioDe
     }
     
     public void enviarNotificacion( String detinatario, String cuerpo){
-        decorateNotificacionUsuario.enviarNotificacion(detinatario, cuerpo);
+        System.out.println(detinatario);
         decorateNotificacionUsuario.enviarNotificacion(detinatario,setIdiomaCuerpo(cuerpo));  
     }
     
     private String setIdiomaCuerpo(String cuerpo){
         String textoTraduccion = "";
+        String texto = "";
         try {
             Traduccion traduccion  = Traduccion.getInstance();
             textoTraduccion = traduccion.translateText(cuerpo,"auto","en");
+            texto = cuerpo + "\n" + textoTraduccion;
+            
         } catch (Exception ex) {
             Logger.getLogger(TraduccionNotificacionUsuarioDecorate.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return textoTraduccion;   
+        
+        return texto;   
     }
     
 }
