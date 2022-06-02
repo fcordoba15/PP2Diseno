@@ -6,6 +6,8 @@ import logicadenegocios.CuentaBancaria;
 import logicadenegocios.Cliente;
 import comunicacionExterna.CorreoElectronico;
 import comunicacionExterna.MensajeSMS;
+import comunicacionExterna.NotificacionUsuario;
+import comunicacionExterna.TraduccionNotificacionUsuarioDecorate;
 public class CuentaBancariaSc {
     
     //autenticación para iniciar operaciones en cuentas
@@ -22,12 +24,13 @@ public class CuentaBancariaSc {
     
     //Método para inactivar una cuenta en caso de anomalías (pin y mensaje)
     public void inactivarCuenta(int pNumCuenta,ArrayList<Cliente>clientes){
-        MensajeSMS sms = new MensajeSMS();
-        CorreoElectronico mail = new  CorreoElectronico();
         for (int i = 0; i < clientes.size(); i++){
                 for (int j=0; j < clientes.get(i).getMisCuentas().size(); j++){
                     if (clientes.get(i).getMisCuentas().get(j).getNumeroCuenta() == pNumCuenta){
                         clientes.get(i).getMisCuentas().get(j).setActiva(false);
+                        
+                        NotificacionUsuario sms = new TraduccionNotificacionUsuarioDecorate( new MensajeSMS());
+                        NotificacionUsuario mail = new TraduccionNotificacionUsuarioDecorate( new  CorreoElectronico());
                         
                         sms.enviarNotificacion(String.valueOf(clientes.get(i).getNumeroTelefonico()), "Estimado Usuario! \n Su cuenta Num:"+ pNumCuenta+ "se inactivo por cuestiones de seguridad.");
                         mail.enviarNotificacion(clientes.get(i).getCorreoElectronico(), "Estimado Usuario! \n Su cuenta Num:"+ pNumCuenta+ "se inactivo por cuestiones de seguridad.");

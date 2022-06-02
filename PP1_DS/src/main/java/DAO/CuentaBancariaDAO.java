@@ -99,6 +99,8 @@ public class CuentaBancariaDAO {
                 String pPin = result.getString("pin");
                 if (pIsActiva == 0){
                     isActiva = false;
+                }else{
+                    isActiva = true;
                 }
                 int pCantOperaciones = result.getInt("cantOperaciones");
                CuentaBancariaCt.cargarCuentasCt(pNumeroCuenta, pFechaCreacion, pSaldo, isActiva, pIdentificacion, pCantOperaciones, pPin);
