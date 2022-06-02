@@ -17,7 +17,7 @@ public class ConsultaBitacoraCt {
      public ArrayList <String> ConsultarPorFechaXML(){
        String pFecha = new SimpleDateFormat("yyyy-MM-dd").format(Calendar.getInstance().getTime());
        ArrayList <String> operacionesCuentas = new ArrayList(); 
-       operacionesCuentas =  ConsultaXML.consultaporFecha(pFecha);
+       operacionesCuentas =  ConsultaXML.consultaPorFecha(pFecha);
        return operacionesCuentas;
     }
      

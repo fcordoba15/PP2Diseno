@@ -80,8 +80,6 @@ public class BitacoraXML extends BitacoraNotificationObserver{
                 
                 Result result = new StreamResult(file);
                 transformer.transform(source, result);
-       
-  
     }
     
     public String tipoVista(int pVista){

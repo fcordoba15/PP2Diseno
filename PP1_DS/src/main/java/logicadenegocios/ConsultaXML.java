@@ -13,6 +13,7 @@ import org.w3c.dom.NodeList;
 public class ConsultaXML {
     
    static File archivo = new File("C:\\Users\\fabih\\OneDrive\\Documentos\\GitHub\\PP2Diseno\\PP1_DS\\bitacoras\\XML.xml");
+   
    public static ArrayList <String> consultaVista(String pVista){
        ArrayList <String> operacionesCuentas = new ArrayList(); 
         try {
@@ -35,7 +36,7 @@ public class ConsultaXML {
         return operacionesCuentas;
    }
         
-        public static ArrayList <String>  consultaporFecha(String pFecha){
+        public static ArrayList <String>  consultaPorFecha(String pFecha){
             ArrayList <String> operacionesCuentas = new ArrayList(); 
             try {
   
@@ -58,7 +59,7 @@ public class ConsultaXML {
             return operacionesCuentas;
     }
     
-        public static ArrayList <String>  consultaFechaAux(NodeList pLista, String pFecha){
+    public static ArrayList <String>  consultaFechaAux(NodeList pLista, String pFecha){
             ArrayList <String> operacionesCuentas = new ArrayList(); 
             for (int temp = 0; temp < pLista.getLength(); temp++) {
                 Node nodo = pLista.item(temp);

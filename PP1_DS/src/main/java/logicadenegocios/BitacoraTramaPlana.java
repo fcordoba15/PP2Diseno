@@ -36,56 +36,6 @@ public class BitacoraTramaPlana extends BitacoraNotificationObserver{
         aux.write(tipoVista(pCambio.getVista()) + String.valueOf(numCuenta) + pCambio.getTipoOperacion() + date + String.valueOf(pCambio.getMonto()) + String.valueOf(pCambio.getMontoComision()) + "\n");
         aux.close();
     }
-
-    public String consultarBitacoraPorTipoDeVista (String pVista) throws FileNotFoundException, IOException{
-        FileReader aux = new FileReader(file);
-        String msg;
-        String resultado ="";
-        char indice = ' ';
-        
-        msg = obtenerDatos(aux);
-        
-        while (msg != ""){
-            indice = ' ';
-            if (msg.substring(0,8).equals(pVista) == true){
-                resultado += obtenerLineaDatos(msg);
-            }
-            while (indice != '\n'){
-                msg = msg.substring(1);
-                indice = msg.charAt(0);
-            }
-            msg = msg.substring(1);
-        }
-        return resultado;
-    }
-    
-    public String obtenerLineaDatos (String msg){
-        String resultado ="";
-        char indice = ' ';
-        while (indice != '\n'){
-            resultado += msg.substring(0,1);
-            msg = msg.substring(1);
-            indice = msg.charAt(0);
-        }
-        return resultado;     
-    }
-    
-    public String consultarBitacora () throws FileNotFoundException, IOException{
-        FileReader aux = new FileReader(file);
-        String resultado;
-        resultado = obtenerDatos(aux);
-        return resultado;
-    }
-    
-    public String obtenerDatos (FileReader file) throws IOException{
-        String resultado = "";
-        int ch;
-        while ((ch = file.read()) != -1){
-           resultado += (char)ch;
-        }
-        file.close();
-        return resultado;
-    }
     
     public String tipoVista(int pVista){
          switch (pVista) {
