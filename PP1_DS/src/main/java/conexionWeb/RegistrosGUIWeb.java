@@ -40,10 +40,15 @@ public class RegistrosGUIWeb extends HttpServlet {
     out.println("<body>");
     out.println("<h1>Registros GUI</h1>");
     out.println("<hr>");
-    
+    ConsultaBitacoraCt consulta = new ConsultaBitacoraCt();
     if (Integer.parseInt(tipo) == 1){
-        ConsultaBitacoraCt consulta = new ConsultaBitacoraCt();
+        //out.println(consulta.ConsultarPorVistaXML("vistaGUI"));
         out.println(consulta.ConsultarPorVistaXML("vistaGUI"));
+        out.println("<hr>");
+        out.println("<form method=\"get\" action=\"prueba.xml\">\n" +
+"            \n" +
+"            <button>Abrir árbol XML</button>\n" +
+"        </form>");
     }
     else if (Integer.parseInt(tipo) == 2){
         //out.println(funcion CSV);

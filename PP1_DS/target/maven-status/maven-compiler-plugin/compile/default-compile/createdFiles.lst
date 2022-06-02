@@ -29,6 +29,7 @@ vistaGUI\ConsultarEstadoCuenta$4.class
 conexionWeb\RegistrosWebWeb.class
 vistaGUI\ConsultarTipoCambio$5.class
 vistaGUI\MenuOperaciones.class
+util\Traduccion.class
 vistaGUI\Transferir$1.class
 conexionWeb\ConsultarStatusWeb.class
 vistaGUI\PaginaPrincipal$4.class
@@ -61,6 +62,7 @@ DAO\OperacionDAO.class
 vistaGUI\ConsultarGananciasTotales$1.class
 vistaGUI\ListarCuentasOrdenadas$1.class
 logicadenegocios\BitacoraXML.class
+controlador\ConsultaBitacoraCt.class
 vistaGUI\RegistrarCliente$1.class
 vistaGUI\AbrirCuentaBancaria$2.class
 vistaGUI\ConsultarSaldo$3.class
@@ -84,6 +86,7 @@ vistaGUI\ConsultarTipoCambio.class
 vistaGUI\Retirar$2.class
 vistaGUI\AbrirCuentaBancaria$1.class
 vistaGUI\MenuConsultas.class
+logicadenegocios\ConsultaXML.class
 vistaGUI\ConsultarTipoCambio$3.class
 util\Ordenacion.class
 vistaGUI\RegistrarCliente$7.class
