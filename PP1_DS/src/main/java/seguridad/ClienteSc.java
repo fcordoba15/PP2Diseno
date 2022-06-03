@@ -17,12 +17,5 @@ public class ClienteSc {
       return false; 
     }
       
-    //método para notificar al usuario la inactivación de cuenta
-      public static void AlertarClienteAnomalia(Cliente cliente){
-          CorreoElectronico mail = new  CorreoElectronico();
-          mail.enviarNotificacion(cliente.getCorreoElectronico(), "Estimado cliente! \nSe le informa que por razones de seguridad su cuenta fue inactiva.");
-          MensajeSMS sms = new MensajeSMS();
-          sms.enviarNotificacion(String.valueOf(cliente.getNumeroTelefonico()),"Estimado cliente! \nSe le informa que por razones de seguridad su cuenta fue inactiva."); 
-      }
     
 }

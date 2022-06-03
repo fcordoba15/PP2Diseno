@@ -11,8 +11,8 @@ public class TraduccionNotificacionUsuarioDecorate extends NotificacionUsuarioDe
     }
     
     public void enviarNotificacion( String detinatario, String cuerpo){
-        System.out.println(detinatario);
-        decorateNotificacionUsuario.enviarNotificacion(detinatario,setIdiomaCuerpo(cuerpo));  
+        String texto = setIdiomaCuerpo(cuerpo);
+        decorateNotificacionUsuario.enviarNotificacion(detinatario,texto);  
     }
     
     private String setIdiomaCuerpo(String cuerpo){
