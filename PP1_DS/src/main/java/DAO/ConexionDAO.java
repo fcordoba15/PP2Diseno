@@ -8,23 +8,18 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
  
 public class ConexionDAO {
- //private String url;
- public  Connection connect;
-
+ private static  Connection connect;
+ private static String url;
  
- /*public ConexionDAO (String pUrl) {
+  public ConexionDAO () {
       //pUrl =  "jdbc:sqlserver://;databaseName=BDBanco;user=administrador;password=diseno2022!";
-      pUrl = "jdbc:sqlserver://serverbanking1.database.windows.net:1433;database=BDBanco;user=administrador@serverbanking1;password=diseno2022!;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;";
-      this.url = pUrl;
-   }*/
+      this.url = "jdbc:sqlserver://serverbanking2.database.windows.net:1433;database=BDBanco;user=administrador@serverbanking2;password=diseno2022!;encrypt=true;trustServerCertificate=true;hostNameInCertificate=*.database.windows.net;loginTimeout=30;";
+   }
   
-  /**
-   * Método para conectarse a la base de datos por medio del driver JDBC para realizar operaciones.
-   */
-  public void abrirConexioDAO() {
+ 
+  public static void abrirConexioDAO() {
       try {
       Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver"); 
-      String url =  "jdbc:sqlserver://serverbanking2.database.windows.net:1433;database=BDBanco;user=administrador@serverbanking2;password=diseno2022!;encrypt=true;trustServerCertificate=true;hostNameInCertificate=*.database.windows.net;loginTimeout=30;";
       connect = DriverManager.getConnection(url);
     } catch (SQLException ex) {
         System.out.println(ex);
@@ -34,13 +29,18 @@ public class ConexionDAO {
   }
   
   //** Metdo para cerrar la conexion sql server**//
-  public void cerrarConexionDAO() {
+  public static void cerrarConexionDAO() {
       try {
         connect.close();
       } catch (SQLException e) {
         e.printStackTrace();
       }
   }
+  
+  public Connection getConnect(){
+      return connect;
+  }
+  
 }
      
   

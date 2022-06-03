@@ -10,14 +10,12 @@ import java.time.ZoneId;
 import java.util.Date;
 
 public class CuentaBancariaDAO {
-    ConexionDAO conexionDAO = new ConexionDAO();
-    Connection c = null;
+    private static ConexionDAO instance = new ConexionDAO();
     
     public void registrarCuentaDAO(int pNumCuenta,LocalDate pFechaCreacion ,double pSaldo, boolean pActiva, String pPin, int pCedulaDuenio, int pCantOperaciones ){
-        conexionDAO.abrirConexioDAO();
-        c = conexionDAO.connect;
+        instance.abrirConexioDAO();
         try {
-        PreparedStatement st = c.prepareStatement("EXEC encriptarCuentaBancaria ?,?,?,?,?,?,?");
+        PreparedStatement st = instance.getConnect().prepareStatement("EXEC encriptarCuentaBancaria ?,?,?,?,?,?,?");
         st.setInt(1, pNumCuenta);
         st.setInt(2,pCedulaDuenio);
         st.setDate(3, java.sql.Date.valueOf(pFechaCreacion));
@@ -31,54 +29,54 @@ public class CuentaBancariaDAO {
         st.setInt(7,pCantOperaciones);
         st.executeUpdate(); 
    
-        conexionDAO.cerrarConexionDAO();
+        instance.cerrarConexionDAO();
         } catch (SQLException ex) {   
            System.out.println(ex);
-         conexionDAO.cerrarConexionDAO();
+         instance.cerrarConexionDAO();
         } 
     }
     
     public void cambiarPinDAO(int pNumCuenta,String pPin){
      try {
-        conexionDAO.abrirConexioDAO();
+        instance.abrirConexioDAO();
         
-        PreparedStatement st = conexionDAO.connect.prepareStatement("UPDATE CUENTABANCARIA SET pin = (ENCRYPTBYPASSPHRASE('encriptar','"+pPin+"')) WHERE numeroCuenta = ?");
+        PreparedStatement st = instance.getConnect().prepareStatement("UPDATE CUENTABANCARIA SET pin = (ENCRYPTBYPASSPHRASE('encriptar','"+pPin+"')) WHERE numeroCuenta = ?");
         st.setInt(1, pNumCuenta);
         st.executeUpdate(); 
-        conexionDAO.cerrarConexionDAO();
+        instance.cerrarConexionDAO();
         } catch (SQLException ex) {   
            System.out.println(ex);
-         conexionDAO.cerrarConexionDAO();
+         instance.cerrarConexionDAO();
         } 
     }
     
     public void inactivarCuentaDAO(int pNumCuenta){
      try {
-        conexionDAO.abrirConexioDAO();
+        instance.abrirConexioDAO();
         
-        PreparedStatement st = conexionDAO.connect.prepareStatement("UPDATE CUENTABANCARIA SET isActiva = '0' WHERE numeroCuenta = ?");
+        PreparedStatement st = instance.getConnect().prepareStatement("UPDATE CUENTABANCARIA SET isActiva = '0' WHERE numeroCuenta = ?");
         st.setInt(1, pNumCuenta);
         st.executeUpdate(); 
    
-        conexionDAO.cerrarConexionDAO();
+        instance.cerrarConexionDAO();
         } catch (SQLException ex) {   
            System.out.println(ex);
-         conexionDAO.cerrarConexionDAO();
+         instance.cerrarConexionDAO();
         } 
     }
     
     public void actualizarSaldoCuentaDAO(int pNumCuenta,double pSaldo, int cantOperacion){
      try {
-        conexionDAO.abrirConexioDAO();
+        instance.abrirConexioDAO();
         
-        PreparedStatement st = conexionDAO.connect.prepareStatement("UPDATE CUENTABANCARIA SET saldo = (ENCRYPTBYPASSPHRASE('encriptar','"+pSaldo+"')),cantOperaciones = '"+cantOperacion+"' WHERE numeroCuenta = ?");
+        PreparedStatement st = instance.getConnect().prepareStatement("UPDATE CUENTABANCARIA SET saldo = (ENCRYPTBYPASSPHRASE('encriptar','"+pSaldo+"')),cantOperaciones = '"+cantOperacion+"' WHERE numeroCuenta = ?");
         st.setInt(1,pNumCuenta);
         st.executeUpdate(); 
    
-        conexionDAO.cerrarConexionDAO();
+        instance.cerrarConexionDAO();
         } catch (SQLException ex) {   
            System.out.println(ex);
-         conexionDAO.cerrarConexionDAO();
+         instance.cerrarConexionDAO();
         } 
     }
     
@@ -86,8 +84,8 @@ public class CuentaBancariaDAO {
        boolean isActiva = true;
        ResultSet result = null;
    try {
-        conexionDAO.abrirConexioDAO();
-        PreparedStatement st = conexionDAO.connect.prepareStatement("desencriptar_cuentaBancaria");
+        instance.abrirConexioDAO();
+        PreparedStatement st = instance.getConnect().prepareStatement("desencriptar_cuentaBancaria");
         result = st.executeQuery();
         
             while (result.next()) { 
@@ -105,10 +103,10 @@ public class CuentaBancariaDAO {
                 int pCantOperaciones = result.getInt("cantOperaciones");
                CuentaBancariaCt.cargarCuentasCt(pNumeroCuenta, pFechaCreacion, pSaldo, isActiva, pIdentificacion, pCantOperaciones, pPin);
             }
-         conexionDAO.cerrarConexionDAO();
+         instance.cerrarConexionDAO();
         } 
         catch (SQLException ex) {
-          conexionDAO.cerrarConexionDAO();
+          instance.cerrarConexionDAO();
         }       
 }    
         

@@ -9,8 +9,7 @@ import controlador.ClienteCt;
 import java.sql.Connection;
 
 public class ClienteDAO {
-    ConexionDAO conexionDAO = new ConexionDAO();
-    Connection c = null;
+    private static ConexionDAO instance = new ConexionDAO();
     
     //METODO PRINCIPAL PARA REGISTRAR CLIENTE
     public void clienteDAO(String pPrimerApellido, String pSegundoApellido, String pNombre, int pIdentificacion, String pDia, String pMes, String pAnio, int pCodigoCliente, int pTelefono, String pCorreo){
@@ -20,10 +19,9 @@ public class ClienteDAO {
     
     
     private void registrarClienteDAO(String pPrimerApellido, String pSegundoApellido, String pNombre, int pIdentificacion, String pDia, String pMes, String pAnio, int pCodigoCliente){
-        conexionDAO.abrirConexioDAO();
-        c = conexionDAO.connect;
+        instance.abrirConexioDAO();
         try {
-        PreparedStatement st = c.prepareStatement("INSERT INTO CLIENTE(identificacion, primerApellido,segundoApellido,nombre,fechaNacimiento,codigoCliente)VALUES (?,?,?,?,?,?)");
+        PreparedStatement st = instance.getConnect().prepareStatement("INSERT INTO CLIENTE(identificacion, primerApellido,segundoApellido,nombre,fechaNacimiento,codigoCliente)VALUES (?,?,?,?,?,?)");
         st.setInt(1,pIdentificacion);
         st.setString(2, pPrimerApellido);
         st.setString(3, pSegundoApellido);
@@ -31,38 +29,38 @@ public class ClienteDAO {
         st.setString(5,pAnio+"/"+pMes+"/"+pDia);
         st.setInt(6,pCodigoCliente);
         st.executeUpdate(); 
-        conexionDAO.cerrarConexionDAO();
+        instance.cerrarConexionDAO();
         
         } 
         catch (SQLException ex) {
-         conexionDAO.cerrarConexionDAO();
+         instance.cerrarConexionDAO();
         } 
     }
     
     private void registrarContactoClienteDAO(int pIdentificacion,int pTelefono, String pCorreo){
      try {
-        conexionDAO.abrirConexioDAO();
-        c = conexionDAO.connect;
+        instance.abrirConexioDAO();
+     
         
-        PreparedStatement st = c.prepareStatement("INSERT INTO CLIENTECONTACTO(identificacion,numeroTelefonico,correoElectronico)VALUES (?,?,?)");
-        conexionDAO.abrirConexioDAO();
+        PreparedStatement st = instance.getConnect().prepareStatement("INSERT INTO CLIENTECONTACTO(identificacion,numeroTelefonico,correoElectronico)VALUES (?,?,?)");
+        instance.abrirConexioDAO();
         st.setInt(1,pIdentificacion);
         st.setInt(2,pTelefono);
         st.setString(3,pCorreo);
         st.executeUpdate();
-        conexionDAO.cerrarConexionDAO();
+        instance.cerrarConexionDAO();
         } 
         catch (SQLException ex) {
-          conexionDAO.cerrarConexionDAO();
+          instance.cerrarConexionDAO();
         } 
      }
     
    public void downloadClienteDAO(){
        ResultSet result = null;
    try {
-        conexionDAO.abrirConexioDAO();
+        instance.abrirConexioDAO();
         
-        PreparedStatement st = conexionDAO.connect.prepareStatement("SELECT CLIENTE.identificacion, CLIENTE.primerApellido, CLIENTE.segundoApellido, CLIENTE.nombre, CLIENTE.fechaNacimiento, CLIENTE.codigoCliente, CLIENTECONTACTO.numeroTelefonico, CLIENTECONTACTO.correoElectronico \n" +
+        PreparedStatement st = instance.getConnect().prepareStatement("SELECT CLIENTE.identificacion, CLIENTE.primerApellido, CLIENTE.segundoApellido, CLIENTE.nombre, CLIENTE.fechaNacimiento, CLIENTE.codigoCliente, CLIENTECONTACTO.numeroTelefonico, CLIENTECONTACTO.correoElectronico \n" +
         "FROM CLIENTE \n" +
         "INNER JOIN CLIENTECONTACTO ON  CLIENTECONTACTO.identificacion = CLIENTE.identificacion");
         result = st.executeQuery();
@@ -78,10 +76,10 @@ public class ClienteDAO {
                 String pCorreoElectronico = result.getString("correoElectronico");
                 ClienteCt.cargarClientesCt(pPrimerApellido, pSegundoApellido,pNombre, pIdentificacion, pFechaNacimiento,pNumeroTelefonico,pCorreoElectronico,pCodigo);
             }
-         conexionDAO.cerrarConexionDAO();
+         instance.cerrarConexionDAO();
         } 
         catch (SQLException ex) {
-          conexionDAO.cerrarConexionDAO();
+          instance.cerrarConexionDAO();
         }       
 }    
       

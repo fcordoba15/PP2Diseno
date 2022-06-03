@@ -11,16 +11,13 @@ import java.time.LocalDate;
 
 public class OperacionDAO {
     
-    ConexionDAO conexionDAO = new ConexionDAO();
-    Connection c = null;
-    
+    private static ConexionDAO instance = new ConexionDAO();
     public void registrarOperacionDAO(int pNumCuenta,String pTipoOperacion, LocalDate pFechaOperacion ,double pMonto, boolean pIsComision,double pMontoComision){
     
-        conexionDAO.abrirConexioDAO();
-        c = conexionDAO.connect;
+        instance.abrirConexioDAO();
         try {
         
-        PreparedStatement st = c.prepareStatement("INSERT INTO OPERACION(numeroCuenta,tipoOperacion, fechaOperacion,monto,isComision,montoComision)VALUES (?,?,?,?,?,?)");
+        PreparedStatement st = instance.getConnect().prepareStatement("INSERT INTO OPERACION(numeroCuenta,tipoOperacion, fechaOperacion,monto,isComision,montoComision)VALUES (?,?,?,?,?,?)");
         st.setInt(1, pNumCuenta);
         st.setString(2,pTipoOperacion);
         st.setDate(3, java.sql.Date.valueOf(pFechaOperacion));
@@ -33,10 +30,10 @@ public class OperacionDAO {
         st.setString(6,String.valueOf(pMontoComision));
         st.executeUpdate(); 
    
-        conexionDAO.cerrarConexionDAO();
+        instance.cerrarConexionDAO();
         } catch (SQLException ex) {   
         
-         conexionDAO.cerrarConexionDAO();
+         instance.cerrarConexionDAO();
         } 
     }
     
@@ -44,9 +41,9 @@ public class OperacionDAO {
     ResultSet result = null;
     boolean isComision = true;
      try {
-        conexionDAO.abrirConexioDAO();
+        instance.abrirConexioDAO();
     
-        PreparedStatement st = conexionDAO.connect.prepareStatement("SELECT * FROM OPERACION");
+        PreparedStatement st = instance.getConnect().prepareStatement("SELECT * FROM OPERACION");
         result = st.executeQuery();
             while (result.next()) { 
                 int pNumeroCuenta = result.getInt("numeroCuenta");
@@ -62,10 +59,10 @@ public class OperacionDAO {
               
              CuentaBancariaCt.cargarOperacionCuentaCt(pNumeroCuenta,pFechaOperacion,pTipoOperacion,pMonto, isComision, pMontoComision);  
             }
-         conexionDAO.cerrarConexionDAO();
+         instance.cerrarConexionDAO();
         } 
         catch (SQLException ex) {
-          conexionDAO.cerrarConexionDAO();
+          instance.cerrarConexionDAO();
         }  
     }    
         
