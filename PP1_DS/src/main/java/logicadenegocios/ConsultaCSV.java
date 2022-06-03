@@ -16,7 +16,7 @@ import java.io.IOException;
 public class ConsultaCSV {
     static String csv = "C:\\Users\\ranbe\\OneDrive\\Documentos\\GitHub\\PP2Diseno\\PP1_DS\\bitacoras\\CSV.csv";
     
-    public String consultaVista (String pVista) throws FileNotFoundException, IOException{
+    public static String consultaVista (String pVista) throws FileNotFoundException, IOException{
         CSVReader reader = new CSVReader(new FileReader(csv));
         String[] fila = null;
         String msg ="";
@@ -34,7 +34,7 @@ public class ConsultaCSV {
         return msg;
     }
     
-    public String consultaPorFecha (String pVista) throws FileNotFoundException, IOException{
+    public static String consultaPorFecha (String pVista) throws FileNotFoundException, IOException{
         CSVReader reader = new CSVReader(new FileReader(csv));
         String[] fila = null;
         String msg ="";
@@ -52,7 +52,7 @@ public class ConsultaCSV {
         return msg;
     }
     
-    public String consultaGeneral () throws FileNotFoundException, IOException{
+    public static String consultaGeneral () throws FileNotFoundException, IOException{
         CSVReader reader = new CSVReader(new FileReader(csv));
         String[] fila = null;
         String msg ="";

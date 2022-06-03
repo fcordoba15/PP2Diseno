@@ -43,7 +43,7 @@ public class RegistrosGUIWeb extends HttpServlet {
     ConsultaBitacoraCt consulta = new ConsultaBitacoraCt();
     if (Integer.parseInt(tipo) == 1){
         //out.println(consulta.ConsultarPorVistaXML("vistaGUI"));
-        out.println(consulta.ConsultarPorVistaXML("vistaGUI"));
+        out.println(consulta.consultarPorVistaXML("vistaGUI"));
         out.println("<hr>");
         out.println("<form method=\"get\" action=\"prueba.xml\">\n" +
 "            \n" +

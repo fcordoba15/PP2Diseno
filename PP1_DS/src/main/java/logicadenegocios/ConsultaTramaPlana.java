@@ -16,7 +16,7 @@ import java.io.IOException;
 public class ConsultaTramaPlana {
     static File file = new File("C:\\Users\\ranbe\\OneDrive\\Documentos\\GitHub\\PP2Diseno\\PP1_DS\\bitacoras\\tramaPlana.txt");
     
-    public String consultaPorVista (String pVista) throws FileNotFoundException, IOException{
+    public static String consultaVista (String pVista) throws FileNotFoundException, IOException{
         FileReader aux = new FileReader(file);
         String msg;
         String resultado ="";
@@ -32,7 +32,7 @@ public class ConsultaTramaPlana {
         return resultado;
     }
     
-    public String consultarPorFecha (String pFecha) throws FileNotFoundException, IOException{
+    public static String consultaPorFecha (String pFecha) throws FileNotFoundException, IOException{
         String sFichero = "C:\\Users\\ranbe\\OneDrive\\Documentos\\NetBeansProjects\\plana.txt";
         File fichero = new File(sFichero); 
         FileReader aux = new FileReader(fichero);
@@ -53,14 +53,14 @@ public class ConsultaTramaPlana {
         return resultado;
     }
     
-    public String consultaGeneral () throws FileNotFoundException, IOException{
+    public static String consultaGeneral () throws FileNotFoundException, IOException{
         FileReader aux = new FileReader(file);
         String resultado;
         resultado = obtenerDatos(aux);
         return resultado;
     }
     
-    public String obtenerFecha(String msg){
+    public static String obtenerFecha(String msg){
         String resultado ="";
         char indice = ' ';
         int contador = 0;
@@ -75,7 +75,7 @@ public class ConsultaTramaPlana {
         return "";
     }
     
-    public String obtenerLineaDatos(String msg){
+    public static String obtenerLineaDatos(String msg){
         String resultado ="";
         char indice = ' ';
         while (indice != '\n'){
@@ -86,7 +86,7 @@ public class ConsultaTramaPlana {
         return resultado;     
     }
     
-    public String eliminarLineaDatos(String msg){
+    public static String eliminarLineaDatos(String msg){
         char indice = ' ';
         while (indice != '\n'){
                 msg = msg.substring(1);
@@ -96,7 +96,7 @@ public class ConsultaTramaPlana {
         return msg;     
     }
     
-    public String obtenerDatos (FileReader file) throws IOException{
+    public static String obtenerDatos (FileReader file) throws IOException{
         String resultado = "";
         int ch;
         while ((ch = file.read()) != -1){
