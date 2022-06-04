@@ -20,9 +20,10 @@ public class ConsultaCSV {
     public static ArrayList <String> consultaVista (String pVista) throws FileNotFoundException, IOException{
         CSVReader reader = new CSVReader(new FileReader(csv));
         String[] fila = null;
-        String msg ="";
+        String msg;
         ArrayList <String> operacionesCuentas = new ArrayList();
         while((fila = reader.readNext()) != null) {
+            msg ="";
             if (pVista.equals(fila[0]) == true){
                 for (int i=0;i<5;i++){
                     msg += fila[i] + ",";
@@ -40,9 +41,10 @@ public class ConsultaCSV {
     public static ArrayList <String> consultaPorFecha (String pVista) throws FileNotFoundException, IOException{
         CSVReader reader = new CSVReader(new FileReader(csv));
         String[] fila = null;
-        String msg ="";
+        String msg;
         ArrayList <String> operacionesCuentas = new ArrayList();
         while((fila = reader.readNext()) != null) {
+            msg ="";
             if (pVista.equals(fila[3]) == true){
                 for (int i=0;i<5;i++){
                     msg += fila[i] + ",";
@@ -60,9 +62,10 @@ public class ConsultaCSV {
     public static ArrayList <String> consultaGeneral () throws FileNotFoundException, IOException{
         CSVReader reader = new CSVReader(new FileReader(csv));
         String[] fila = null;
-        String msg ="";
+        String msg;
         ArrayList <String> operacionesCuentas = new ArrayList();
         while((fila = reader.readNext()) != null) {
+            msg = "";
             for (int i=0;i<5;i++){
                 msg += fila[i] + ",";
             }

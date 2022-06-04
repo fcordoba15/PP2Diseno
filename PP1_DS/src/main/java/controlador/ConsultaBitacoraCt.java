@@ -45,6 +45,9 @@ public class ConsultaBitacoraCt {
     public ArrayList <String> consultarGeneralCSV () throws IOException{
         ArrayList <String> operacionesCuentas = new ArrayList();
         operacionesCuentas  = ConsultaCSV.consultaGeneral();
+        for (int i = 0; i < operacionesCuentas.size(); i++){
+            System.out.println(operacionesCuentas.get(i));
+        }
         return operacionesCuentas;
     }
     
