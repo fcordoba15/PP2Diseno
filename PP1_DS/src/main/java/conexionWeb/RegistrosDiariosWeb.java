@@ -17,6 +17,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import controlador.*;
+import java.util.ArrayList;
 
 
 @WebServlet(urlPatterns = {"/RegistrosDiariosWeb"})
@@ -42,14 +43,29 @@ public class RegistrosDiariosWeb extends HttpServlet {
     out.println("<hr>");
     
     if (Integer.parseInt(tipo) == 1){
-        //out.println(funcion XML);
+        ConsultaBitacoraCt consulta = new ConsultaBitacoraCt();
+        ArrayList<String> datosXML = consulta.consultarPorFechaXML(); 
+        for (int i = 0; i < datosXML.size(); i++){
+            out.println(" <details>\n" + "  <p>"+ datosXML.get(i) +"</p>\n" + "</details> ");
+        }   
+        out.println("<hr>");
+        out.println("<form method=\"get\" action=\"prueba.xml\">\n" +"            \n" +"            <button>Abrir árbol XML</button>\n" +"        </form>");    
     }
+    
     else if (Integer.parseInt(tipo) == 2){
-        //out.println(funcion CSV);
+        ConsultaBitacoraCt consultaCSV = new ConsultaBitacoraCt();
+        ArrayList<String> datosCSV = consultaCSV.consultarPorFechaCSV(); 
+        for (int i = 0; i < datosCSV.size(); i++){
+            out.println(" <details>\n" + "  <p>"+ datosCSV.get(i) +"</p>\n" + "</details> ");
+        }  
     }
     else{
-        //out.println(funcion TRAMA PLANA);
-    }    
+        ConsultaBitacoraCt consultaTRAMAPLANA = new ConsultaBitacoraCt();
+        ArrayList<String> datosTRAMAPLANA = consultaTRAMAPLANA.consultarPorFechaTramaPlana(); 
+        for (int i = 0; i < datosTRAMAPLANA.size(); i++){
+            out.println(" <details>\n" + "  <p>"+ datosTRAMAPLANA.get(i) +"</p>\n" + "</details> ");
+        }  
+    }   
 
     out.println("<hr><a href=\"Iniciar/Consultas/ConsultarBitacora.html\">Volver</a>");
     out.println("</body></html>");

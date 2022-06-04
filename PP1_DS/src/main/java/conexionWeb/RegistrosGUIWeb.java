@@ -41,17 +41,11 @@ public class RegistrosGUIWeb extends HttpServlet {
     out.println("<body>");
     out.println("<h1>Registros GUI</h1>");
     out.println("<hr>");
-    
-    ConsultaBitacoraCt consulta = new ConsultaBitacoraCt();
-    ArrayList<String> datosXML = consulta.consultarPorVistaXML("vistaGUI"); 
-    
-    ConsultaBitacoraCt consultaCSV = new ConsultaBitacoraCt();
-    ArrayList<String> datosCSV = consultaCSV.consultarPorVistaCSV("vistaGUI"); 
-    
-    ConsultaBitacoraCt consultaTRAMAPLANA = new ConsultaBitacoraCt();
-    ArrayList<String> datosTRAMAPLANA = consultaTRAMAPLANA.consultarPorVistaTramaPlana("vistaGUI"); 
+ 
     
     if (Integer.parseInt(tipo) == 1){
+        ConsultaBitacoraCt consulta = new ConsultaBitacoraCt();
+        ArrayList<String> datosXML = consulta.consultarPorVistaXML("vistaGUI"); 
         for (int i = 0; i < datosXML.size(); i++){
             out.println(" <details>\n" + "  <p>"+ datosXML.get(i) +"</p>\n" + "</details> ");
         }   
@@ -60,15 +54,20 @@ public class RegistrosGUIWeb extends HttpServlet {
     }
     
     else if (Integer.parseInt(tipo) == 2){
+        ConsultaBitacoraCt consultaCSV = new ConsultaBitacoraCt();
+        ArrayList<String> datosCSV = consultaCSV.consultarPorVistaCSV("vistaGUI"); 
         for (int i = 0; i < datosCSV.size(); i++){
             out.println(" <details>\n" + "  <p>"+ datosCSV.get(i) +"</p>\n" + "</details> ");
         }  
     }
     else{
+        ConsultaBitacoraCt consultaTRAMAPLANA = new ConsultaBitacoraCt();
+        ArrayList<String> datosTRAMAPLANA = consultaTRAMAPLANA.consultarPorVistaTramaPlana("vistaGUI"); 
         for (int i = 0; i < datosTRAMAPLANA.size(); i++){
             out.println(" <details>\n" + "  <p>"+ datosTRAMAPLANA.get(i) +"</p>\n" + "</details> ");
         }  
     }
+    
     
     out.println("<hr><a href=\"Iniciar/Consultas/ConsultarBitacora.html\">Volver</a>");
     out.println("</body></html>");
