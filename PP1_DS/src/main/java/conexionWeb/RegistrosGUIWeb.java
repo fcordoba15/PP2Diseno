@@ -17,6 +17,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import controlador.*;
+import java.util.ArrayList;
 
 
 @WebServlet(urlPatterns = {"/RegistrosGUIWeb"})
@@ -40,21 +41,33 @@ public class RegistrosGUIWeb extends HttpServlet {
     out.println("<body>");
     out.println("<h1>Registros GUI</h1>");
     out.println("<hr>");
+    
     ConsultaBitacoraCt consulta = new ConsultaBitacoraCt();
+    ArrayList<String> datosXML = consulta.consultarPorVistaXML("vistaGUI"); 
+    
+    ConsultaBitacoraCt consultaCSV = new ConsultaBitacoraCt();
+    ArrayList<String> datosCSV = consultaCSV.consultarPorVistaCSV("vistaGUI"); 
+    
+    ConsultaBitacoraCt consultaTRAMAPLANA = new ConsultaBitacoraCt();
+    ArrayList<String> datosTRAMAPLANA = consultaTRAMAPLANA.consultarPorVistaTramaPlana("vistaGUI"); 
+    
     if (Integer.parseInt(tipo) == 1){
-        //out.println(consulta.ConsultarPorVistaXML("vistaGUI"));
-        out.println(consulta.consultarPorVistaXML("vistaGUI"));
+        for (int i = 0; i < datosXML.size(); i++){
+            out.println(" <details>\n" + "  <p>"+ datosXML.get(i) +"</p>\n" + "</details> ");
+        }   
         out.println("<hr>");
-        out.println("<form method=\"get\" action=\"prueba.xml\">\n" +
-"            \n" +
-"            <button>Abrir árbol XML</button>\n" +
-"        </form>");
+        out.println("<form method=\"get\" action=\"prueba.xml\">\n" +"            \n" +"            <button>Abrir árbol XML</button>\n" +"        </form>");    
     }
+    
     else if (Integer.parseInt(tipo) == 2){
-        //out.println(funcion CSV);
+        for (int i = 0; i < datosCSV.size(); i++){
+            out.println(" <details>\n" + "  <p>"+ datosCSV.get(i) +"</p>\n" + "</details> ");
+        }  
     }
     else{
-        //out.println(funcion TRAMA PLANA);
+        for (int i = 0; i < datosTRAMAPLANA.size(); i++){
+            out.println(" <details>\n" + "  <p>"+ datosTRAMAPLANA.get(i) +"</p>\n" + "</details> ");
+        }  
     }
     
     out.println("<hr><a href=\"Iniciar/Consultas/ConsultarBitacora.html\">Volver</a>");

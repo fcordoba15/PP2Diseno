@@ -25,10 +25,12 @@ C:\Users\fabih\OneDrive\Documentos\GitHub\PP2Diseno\PP1_DS\src\main\java\conexio
 C:\Users\fabih\OneDrive\Documentos\GitHub\PP2Diseno\PP1_DS\src\main\java\vistaGUI\MenuPrincipal.java
 C:\Users\fabih\OneDrive\Documentos\GitHub\PP2Diseno\PP1_DS\src\main\java\conexionWeb\AbrirCuentaBancariaWeb.java
 C:\Users\fabih\OneDrive\Documentos\GitHub\PP2Diseno\PP1_DS\src\main\java\conexionWeb\CambiarPinWeb.java
+C:\Users\fabih\OneDrive\Documentos\GitHub\PP2Diseno\PP1_DS\src\main\java\comunicacionExterna\NotificacionUsuarioDecorator.java
 C:\Users\fabih\OneDrive\Documentos\GitHub\PP2Diseno\PP1_DS\src\main\java\conexionWeb\RetirarWeb.java
 C:\Users\fabih\OneDrive\Documentos\GitHub\PP2Diseno\PP1_DS\src\main\java\util\Traduccion.java
 C:\Users\fabih\OneDrive\Documentos\GitHub\PP2Diseno\PP1_DS\src\main\java\controlador\AdministradorCt.java
 C:\Users\fabih\OneDrive\Documentos\GitHub\PP2Diseno\PP1_DS\src\main\java\vistaGUI\ConsultarSaldo.java
+C:\Users\fabih\OneDrive\Documentos\GitHub\PP2Diseno\PP1_DS\src\main\java\comunicacionExterna\NotificacionUsuario.java
 C:\Users\fabih\OneDrive\Documentos\GitHub\PP2Diseno\PP1_DS\src\main\java\DAO\OperacionDAO.java
 C:\Users\fabih\OneDrive\Documentos\GitHub\PP2Diseno\PP1_DS\src\main\java\seguridad\ClienteSc.java
 C:\Users\fabih\OneDrive\Documentos\GitHub\PP2Diseno\PP1_DS\src\main\java\DAO\ConexionDAO.java
@@ -54,9 +56,12 @@ C:\Users\fabih\OneDrive\Documentos\GitHub\PP2Diseno\PP1_DS\src\main\java\validac
 C:\Users\fabih\OneDrive\Documentos\GitHub\PP2Diseno\PP1_DS\src\main\java\conexionWeb\RegistrosWebWeb.java
 C:\Users\fabih\OneDrive\Documentos\GitHub\PP2Diseno\PP1_DS\src\main\java\logicadenegocios\CuentaBancaria.java
 C:\Users\fabih\OneDrive\Documentos\GitHub\PP2Diseno\PP1_DS\src\main\java\conexionWeb\CuentaConsultadaWeb.java
+C:\Users\fabih\OneDrive\Documentos\GitHub\PP2Diseno\PP1_DS\src\main\java\logicadenegocios\ConsultaTramaPlana.java
+C:\Users\fabih\OneDrive\Documentos\GitHub\PP2Diseno\PP1_DS\src\main\java\comunicacionExterna\TraduccionNotificacionUsuarioDecorate.java
 C:\Users\fabih\OneDrive\Documentos\GitHub\PP2Diseno\PP1_DS\src\main\java\util\Ordenacion.java
 C:\Users\fabih\OneDrive\Documentos\GitHub\PP2Diseno\PP1_DS\src\main\java\comunicacionExterna\MensajeSMS.java
 C:\Users\fabih\OneDrive\Documentos\GitHub\PP2Diseno\PP1_DS\src\main\java\vistaGUI\MenuConsultas.java
+C:\Users\fabih\OneDrive\Documentos\GitHub\PP2Diseno\PP1_DS\src\main\java\logicadenegocios\ConsultaCSV.java
 C:\Users\fabih\OneDrive\Documentos\GitHub\PP2Diseno\PP1_DS\src\main\java\conexionWeb\RegistrosTotalesWeb.java
 C:\Users\fabih\OneDrive\Documentos\GitHub\PP2Diseno\PP1_DS\src\main\java\conexionWeb\RegistrosCLIWeb.java
 C:\Users\fabih\OneDrive\Documentos\GitHub\PP2Diseno\PP1_DS\src\main\java\conexionWeb\ConsultarTipoCambioWeb.java

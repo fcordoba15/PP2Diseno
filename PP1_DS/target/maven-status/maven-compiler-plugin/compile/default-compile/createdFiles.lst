@@ -10,6 +10,7 @@ vistaGUI\CambiarPin$4.class
 vistaGUI\ConsultarGananciasTotales$4.class
 vistaGUI\MenuConsultas$2.class
 vistaGUI\MenuPrincipal$5.class
+comunicacionExterna\NotificacionUsuarioDecorator.class
 vistaGUI\AbrirCuentaBancaria$5.class
 vistaGUI\ConsultarGananciasPorCuenta$5.class
 vistaGUI\ConsultarSaldo$2.class
@@ -56,9 +57,11 @@ vistaGUI\ConsultarGananciasTotales.class
 comunicacionExterna\ConexionWebService.class
 vistaGUI\Retirar.class
 vistaGUI\MenuPrincipal.class
+comunicacionExterna\NotificacionUsuario.class
 vistaGUI\MenuOperaciones$4.class
 vistaGUI\MenuConsultas$10.class
 DAO\OperacionDAO.class
+comunicacionExterna\TraduccionNotificacionUsuarioDecorate.class
 vistaGUI\ConsultarGananciasTotales$1.class
 vistaGUI\ListarCuentasOrdenadas$1.class
 logicadenegocios\BitacoraXML.class
@@ -69,6 +72,7 @@ vistaGUI\ConsultarSaldo$3.class
 vistaGUI\MenuConsultas$4.class
 vistaGUI\RegistrarCliente$8.class
 controlador\ClienteCt.class
+logicadenegocios\ConsultaTramaPlana.class
 comunicacionExterna\CambioMoneda.class
 controlador\AdministradorCt.class
 vistaGUI\ConsultarStatus$1.class
@@ -77,6 +81,7 @@ vistaGUI\CambiarPin$2.class
 vistaGUI\PaginaPrincipal$2.class
 conexionWeb\RetirarWeb.class
 vistaGUI\ListarCuentasOrdenadas$2.class
+logicadenegocios\ConsultaCSV.class
 vistaGUI\MenuPrincipal$4.class
 vistaGUI\Retirar$5.class
 validaciones\ValidacionCliente.class

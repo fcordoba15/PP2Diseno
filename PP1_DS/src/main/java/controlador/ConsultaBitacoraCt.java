@@ -23,7 +23,7 @@ public class ConsultaBitacoraCt {
        return operacionesCuentas;
     }
      
-    public ArrayList <String> consultarGeneralXML(){
+    public static ArrayList <String> consultarGeneralXML(){
        ArrayList <String> operacionesCuentas = new ArrayList(); 
        operacionesCuentas =  ConsultaXML.consultaGeneralXML();
        return operacionesCuentas;
