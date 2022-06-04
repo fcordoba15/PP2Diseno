@@ -15,7 +15,8 @@ public class ConsultaBitacoraCt {
         return operacionesCuentas;
           
     }
-     public ArrayList <String> consultarPorFechaXML(){
+    
+    public ArrayList <String> consultarPorFechaXML(){
        String pFecha = new SimpleDateFormat("yyyy-MM-dd").format(Calendar.getInstance().getTime());
        ArrayList <String> operacionesCuentas = new ArrayList(); 
        operacionesCuentas =  ConsultaXML.consultaPorFecha(pFecha);
@@ -28,41 +29,41 @@ public class ConsultaBitacoraCt {
        return operacionesCuentas;
     }
     
-    public String consultarPorVistaCSV (String pTipoVista) throws IOException{
-        String resultado;
-        resultado = ConsultaCSV.consultaVista(pTipoVista);
-        return resultado;
+    public ArrayList <String> consultarPorVistaCSV (String pTipoVista) throws IOException{
+        ArrayList <String> operacionesCuentas = new ArrayList();
+        operacionesCuentas  = ConsultaCSV.consultaVista(pTipoVista);
+        return operacionesCuentas;
     }
     
-    public String consultarPorFechaCSV () throws IOException{
+    public ArrayList <String> consultarPorFechaCSV () throws IOException{
         String pFecha = new SimpleDateFormat("dd-MM-yyyy").format(Calendar.getInstance().getTime());
-        String resultado;
-        resultado = ConsultaCSV.consultaPorFecha(pFecha);
-        return resultado;
+        ArrayList <String> operacionesCuentas = new ArrayList();;
+        operacionesCuentas  = ConsultaCSV.consultaPorFecha(pFecha);
+        return operacionesCuentas;
     }
     
-    public String consultarGeneralCSV () throws IOException{
-        String resultado;
-        resultado = ConsultaCSV.consultaGeneral();
-        return resultado;
+    public ArrayList <String> consultarGeneralCSV () throws IOException{
+        ArrayList <String> operacionesCuentas = new ArrayList();
+        operacionesCuentas  = ConsultaCSV.consultaGeneral();
+        return operacionesCuentas;
     }
     
-    public String consultarPorVistaTramaPlana (String pTipoVista) throws IOException{
-        String resultado;
-        resultado = ConsultaTramaPlana.consultaVista(pTipoVista);
-        return resultado;
+    public ArrayList <String> consultarPorVistaTramaPlana (String pTipoVista) throws IOException{
+        ArrayList <String> operacionesCuentas = new ArrayList();
+        operacionesCuentas  = ConsultaTramaPlana.consultaVista(pTipoVista);
+        return operacionesCuentas;
     }
     
-    public String consultarPorFechaTramaPlana () throws IOException{
+    public ArrayList <String> consultarPorFechaTramaPlana () throws IOException{
         String pFecha = new SimpleDateFormat("dd-MM-yyyy").format(Calendar.getInstance().getTime());
-        String resultado;
-        resultado = ConsultaTramaPlana.consultaPorFecha(pFecha);
-        return resultado;
+        ArrayList <String> operacionesCuentas = new ArrayList();
+        operacionesCuentas  = ConsultaTramaPlana.consultaPorFecha(pFecha);
+        return operacionesCuentas;
     }
     
-    public String consultarGeneralTramaPlana () throws IOException{
-        String resultado;
-        resultado = ConsultaTramaPlana.consultaGeneral();
-        return resultado;
+    public ArrayList <String> consultarGeneralTramaPlana () throws IOException{
+        ArrayList <String> operacionesCuentas = new ArrayList();
+        operacionesCuentas  = ConsultaTramaPlana.consultaGeneral();
+        return operacionesCuentas;
     }
 }

@@ -8,6 +8,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
 
 /**
  *
@@ -16,29 +17,29 @@ import java.io.IOException;
 public class ConsultaTramaPlana {
     static File file = new File("C:\\Users\\ranbe\\OneDrive\\Documentos\\GitHub\\PP2Diseno\\PP1_DS\\bitacoras\\tramaPlana.txt");
     
-    public static String consultaVista (String pVista) throws FileNotFoundException, IOException{
+    public static ArrayList<String> consultaVista (String pVista) throws FileNotFoundException, IOException{
         FileReader aux = new FileReader(file);
         String msg;
-        String resultado ="";
+        ArrayList <String> operacionesCuentas = new ArrayList();
         
         msg = obtenerDatos(aux);
         
         while (msg != ""){
             if (msg.substring(0,8).equals(pVista) == true){
-                resultado += obtenerLineaDatos(msg);
+                operacionesCuentas.add(obtenerLineaDatos(msg));
             }
             msg = eliminarLineaDatos(msg);
         }
-        return resultado;
+        return operacionesCuentas;
     }
     
-    public static String consultaPorFecha (String pFecha) throws FileNotFoundException, IOException{
+    public static ArrayList<String> consultaPorFecha (String pFecha) throws FileNotFoundException, IOException{
         String sFichero = "C:\\Users\\ranbe\\OneDrive\\Documentos\\NetBeansProjects\\plana.txt";
         File fichero = new File(sFichero); 
         FileReader aux = new FileReader(fichero);
         String fechaAux;
         String msg;
-        String resultado ="";
+        ArrayList <String> operacionesCuentas = new ArrayList();
         
         msg = obtenerDatos(aux);
         
@@ -46,18 +47,23 @@ public class ConsultaTramaPlana {
             
             fechaAux = obtenerFecha(msg);
             if (fechaAux.equals(pFecha) == true){
-                resultado += obtenerLineaDatos(msg);
+                operacionesCuentas.add(obtenerLineaDatos(msg));
             }
             msg = eliminarLineaDatos(msg);
         }
-        return resultado;
+        return operacionesCuentas;
     }
     
-    public static String consultaGeneral () throws FileNotFoundException, IOException{
+    public static ArrayList<String> consultaGeneral () throws FileNotFoundException, IOException{
         FileReader aux = new FileReader(file);
-        String resultado;
-        resultado = obtenerDatos(aux);
-        return resultado;
+        String msg;
+        ArrayList <String> operacionesCuentas = new ArrayList();
+        msg = obtenerDatos(aux);
+        while (msg != ""){
+            operacionesCuentas.add(obtenerLineaDatos(msg));
+            msg = eliminarLineaDatos(msg);
+        }
+        return operacionesCuentas;
     }
     
     public static String obtenerFecha(String msg){
