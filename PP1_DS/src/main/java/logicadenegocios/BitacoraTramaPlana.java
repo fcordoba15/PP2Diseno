@@ -37,7 +37,7 @@ public class BitacoraTramaPlana extends BitacoraNotificationObserver{
         aux.close();
     }
     
-    public String tipoVista(int pVista){
+    private String tipoVista(int pVista){
          switch (pVista) {
              case 0:
                  return "vistaCLI";

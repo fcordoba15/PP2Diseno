@@ -1,0 +1,6 @@
+projectKey=PP2_DS
+serverUrl=http://localhost:9000
+serverVersion=9.4.0.54424
+dashboardUrl=http://localhost:9000/dashboard?id=PP2_DS
+ceTaskId=AYE6gEvBVMCDoV9Ehp5X
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AYE6gEvBVMCDoV9Ehp5X

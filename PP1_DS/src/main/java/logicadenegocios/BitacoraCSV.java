@@ -45,7 +45,7 @@ public class BitacoraCSV extends BitacoraNotificationObserver{
         writer.close();
     }
     
-    public String tipoVista(int pVista){
+    private String tipoVista(int pVista){
          switch (pVista) {
              case 0:
                  return "vistaCLI";
