@@ -1,12 +1,7 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!--
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!--
 Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
 Click nbfs://nbhost/SystemFileSystem/Templates/XML/XMLDocument.xml to edit this template
--->
-
-
-
-<root>
+--><root>
     <bitacora>
 <vistaCLI>
 <operacion>
@@ -26,7 +21,6 @@ Click nbfs://nbhost/SystemFileSystem/Templates/XML/XMLDocument.xml to edit this 
 <montoComision>0.0</montoComision>
 </operacion>
 </vistaGUI>
-<vistaWEB> </vistaWEB>
+<vistaWEB> <operacion><numeroCuenta>14640</numeroCuenta><tipoOperacion>Deposito</tipoOperacion><fechaOperacion>2022-06-06</fechaOperacion><monto>34566.0</monto><montoComision>0.0</montoComision></operacion></vistaWEB>
 </bitacora>
 </root>
-

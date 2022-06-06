@@ -13,7 +13,8 @@ public class ConexionDAO {
  
   public ConexionDAO () {
       //pUrl =  "jdbc:sqlserver://;databaseName=BDBanco;user=administrador;password=diseno2022!";
-      this.url = "jdbc:sqlserver://serverbanking2.database.windows.net:1433;database=BDBanco;user=administrador@serverbanking2;password=diseno2022!;encrypt=true;trustServerCertificate=true;hostNameInCertificate=*.database.windows.net;loginTimeout=30;";
+      this.url = "jdbc:sqlserver://;databaseName=BDBanco;user=administrador;password=diseno2022!;encrypt=true;trustServerCertificate=true";
+              //"jdbc:sqlserver://serverbanking2.database.windows.net:1433;database=BDBanco;user=administrador@serverbanking2;password=diseno2022!;encrypt=true;trustServerCertificate=true;hostNameInCertificate=*.database.windows.net;loginTimeout=30;";
    }
   
  
