@@ -21,6 +21,6 @@ Click nbfs://nbhost/SystemFileSystem/Templates/XML/XMLDocument.xml to edit this 
 <montoComision>0.0</montoComision>
 </operacion>
 </vistaGUI>
-<vistaWEB> <operacion><numeroCuenta>14640</numeroCuenta><tipoOperacion>Deposito</tipoOperacion><fechaOperacion>2022-06-06</fechaOperacion><monto>34566.0</monto><montoComision>0.0</montoComision></operacion></vistaWEB>
+<vistaWEB> <operacion><numeroCuenta>14640</numeroCuenta><tipoOperacion>Deposito</tipoOperacion><fechaOperacion>2022-06-06</fechaOperacion><monto>34566.0</monto><montoComision>0.0</montoComision></operacion><operacion><numeroCuenta>14640</numeroCuenta><tipoOperacion>Deposito</tipoOperacion><fechaOperacion>2022-06-06</fechaOperacion><monto>68354.0</monto><montoComision>0.0</montoComision></operacion><operacion><numeroCuenta>14640</numeroCuenta><tipoOperacion>Deposito</tipoOperacion><fechaOperacion>2022-06-06</fechaOperacion><monto>12000.0</monto><montoComision>0.0</montoComision></operacion></vistaWEB>
 </bitacora>
 </root>

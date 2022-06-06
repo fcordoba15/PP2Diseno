@@ -46,6 +46,7 @@ public class RegistrosWebWeb extends HttpServlet {
         ConsultaBitacoraCt consulta = new ConsultaBitacoraCt();
         ArrayList<String> datosXML = consulta.consultarPorVistaXML("vistaWEB"); 
         for (int i = 0; i < datosXML.size(); i++){
+            
             out.println(" <details>\n" + "  <p>"+ datosXML.get(i) +"</p>\n" + "</details> ");
         }   
         out.println("<hr>");

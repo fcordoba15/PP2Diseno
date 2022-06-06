@@ -23,11 +23,14 @@ public class ConsultaXML {
             Document document = documentBuilder.parse(archivo);
             document.getDocumentElement().normalize();
             NodeList listaVista = document.getElementsByTagName(pVista);
+             System.out.println(listaVista.getLength());
             for (int temp = 0; temp < listaVista.getLength(); temp++) {
                 Node nodo = listaVista.item(temp);
                 if (nodo.getNodeType() == Node.ELEMENT_NODE) {
                     Element element = (Element) nodo;
-                    operacionesCuentas.add("\nNumero Cuenta: " + element.getElementsByTagName("numeroCuenta").item(0).getTextContent()+ "\nTipo Operación: " + element.getElementsByTagName("tipoOperacion").item(0).getTextContent() + "\nFecha Operación: " + element.getElementsByTagName("fechaOperacion").item(0).getTextContent() + "Monto: " + element.getElementsByTagName("monto").item(0).getTextContent() + "Monto Comision: " + element.getElementsByTagName("montoComision").item(0).getTextContent());  
+                     for (int j  = 0; j < element.getElementsByTagName("numeroCuenta").getLength(); j++){
+                        operacionesCuentas.add("\nNumero Cuenta: " + element.getElementsByTagName("numeroCuenta").item(j).getTextContent()+ "\nTipo Operación: " + element.getElementsByTagName("tipoOperacion").item(j).getTextContent() + "\nFecha Operación: " + element.getElementsByTagName("fechaOperacion").item(j).getTextContent() + "Monto: " + element.getElementsByTagName("monto").item(j).getTextContent() + "Monto Comision: " + element.getElementsByTagName("montoComision").item(j).getTextContent());  
+                    }
                 }
             }
             return operacionesCuentas;
@@ -68,7 +71,9 @@ public class ConsultaXML {
                 if (nodo.getNodeType() == Node.ELEMENT_NODE) {
                     Element element = (Element) nodo;
                     if(pFecha.equals(element.getElementsByTagName("fechaOperacion").item(0).getTextContent() )){
-                      operacionesCuentas.add("\nNumero Cuenta: " + element.getElementsByTagName("numeroCuenta").item(0).getTextContent()+ "\nTipo Operación: " + element.getElementsByTagName("tipoOperacion").item(0).getTextContent() + "\nFecha Operación: " + element.getElementsByTagName("fechaOperacion").item(0).getTextContent() + "Monto: " + element.getElementsByTagName("monto").item(0).getTextContent() + "Monto Comision: " + element.getElementsByTagName("montoComision").item(0).getTextContent());
+                       for (int j  = 0; j < element.getElementsByTagName("numeroCuenta").getLength(); j++){
+                        operacionesCuentas.add("\nNumero Cuenta: " + element.getElementsByTagName("numeroCuenta").item(j).getTextContent() + "Tipo Operación:" + element.getElementsByTagName("tipoOperacion").item(j).getTextContent() + "\nFecha Operación: " + element.getElementsByTagName("fechaOperacion").item(j).getTextContent() + "Monto: " + element.getElementsByTagName("monto").item(j).getTextContent() + "Monto Comision: " + element.getElementsByTagName("montoComision").item(j).getTextContent());
+                       }
                     }
                 }   
             }
@@ -106,8 +111,10 @@ public class ConsultaXML {
 
                 if (nodo.getNodeType() == Node.ELEMENT_NODE) {
                     Element element = (Element) nodo;
-                    operacionesCuentas.add("\nNumero Cuenta: " + element.getElementsByTagName("numeroCuenta").item(0).getTextContent()+ "\nTipo Operación: " + element.getElementsByTagName("tipoOperacion").item(0).getTextContent() + "\nFecha Operación: " + element.getElementsByTagName("fechaOperacion").item(0).getTextContent() + "Monto: " + element.getElementsByTagName("monto").item(0).getTextContent() + "Monto Comision: " + element.getElementsByTagName("montoComision").item(0).getTextContent());  
-                }   
+                     for (int j  = 0; j < element.getElementsByTagName("numeroCuenta").getLength(); j++){
+                    operacionesCuentas.add("\nNumero Cuenta: " + element.getElementsByTagName("numeroCuenta").item(j).getTextContent()+ "\nTipo Operación: " + element.getElementsByTagName("tipoOperacion").item(j).getTextContent() + "\nFecha Operación: " + element.getElementsByTagName("fechaOperacion").item(j).getTextContent() + "Monto: " + element.getElementsByTagName("monto").item(j).getTextContent() + "Monto Comision: " + element.getElementsByTagName("montoComision").item(j).getTextContent());  
+                   }
+                }
             }
             return operacionesCuentas;
         }
