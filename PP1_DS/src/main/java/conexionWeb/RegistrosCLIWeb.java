@@ -49,7 +49,7 @@ public class RegistrosCLIWeb extends HttpServlet {
             out.println(" <details>\n" + "  <p>"+ datosXML.get(i) +"</p>\n" + "</details> ");
         }   
         out.println("<hr>");
-        out.println("<form method=\"get\" action=\"prueba.xml\">\n" +"            \n" +"            <button>Abrir árbol XML</button>\n" +"        </form>");    
+        out.println("<form method=\"get\" action=\"vistaCLI.xml\">\n" +"            \n" +"            <button>Abrir árbol XML</button>\n" +"        </form>");    
     }
     
     else if (Integer.parseInt(tipo) == 2){
