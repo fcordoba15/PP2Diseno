@@ -11,7 +11,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/XML/XMLDocument.xml to edit this 
 <monto>45777.0</monto>
 <montoComision>0.0</montoComision>
 </operacion>
-</vistaCLI>
+<operacion><numeroCuenta>14640</numeroCuenta><tipoOperacion>Deposito</tipoOperacion><fechaOperacion>2022-06-07</fechaOperacion><monto>4500.0</monto><montoComision>90.0</montoComision></operacion></vistaCLI>
 <vistaGUI>
 <operacion>
 <numeroCuenta>23620</numeroCuenta>
@@ -20,7 +20,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/XML/XMLDocument.xml to edit this 
 <monto>55999.0</monto>
 <montoComision>0.0</montoComision>
 </operacion>
-</vistaGUI>
-<vistaWEB> <operacion><numeroCuenta>14640</numeroCuenta><tipoOperacion>Deposito</tipoOperacion><fechaOperacion>2022-06-06</fechaOperacion><monto>34566.0</monto><montoComision>0.0</montoComision></operacion><operacion><numeroCuenta>14640</numeroCuenta><tipoOperacion>Deposito</tipoOperacion><fechaOperacion>2022-06-06</fechaOperacion><monto>68354.0</monto><montoComision>0.0</montoComision></operacion><operacion><numeroCuenta>14640</numeroCuenta><tipoOperacion>Deposito</tipoOperacion><fechaOperacion>2022-06-06</fechaOperacion><monto>12000.0</monto><montoComision>0.0</montoComision></operacion></vistaWEB>
+<operacion><numeroCuenta>14640</numeroCuenta><tipoOperacion>Deposito</tipoOperacion><fechaOperacion>2022-06-07</fechaOperacion><monto>123000.0</monto><montoComision>2460.0</montoComision></operacion><operacion><numeroCuenta>14640</numeroCuenta><tipoOperacion>Deposito</tipoOperacion><fechaOperacion>2022-06-07</fechaOperacion><monto>12.0</monto><montoComision>0.24</montoComision></operacion></vistaGUI>
+<vistaWEB> <operacion><numeroCuenta>14640</numeroCuenta><tipoOperacion>Deposito</tipoOperacion><fechaOperacion>2022-06-06</fechaOperacion><monto>34566.0</monto><montoComision>0.0</montoComision></operacion><operacion><numeroCuenta>14640</numeroCuenta><tipoOperacion>Deposito</tipoOperacion><fechaOperacion>2022-06-06</fechaOperacion><monto>68354.0</monto><montoComision>0.0</montoComision></operacion><operacion><numeroCuenta>14640</numeroCuenta><tipoOperacion>Deposito</tipoOperacion><fechaOperacion>2022-06-06</fechaOperacion><monto>12000.0</monto><montoComision>0.0</montoComision></operacion><operacion><numeroCuenta>14640</numeroCuenta><tipoOperacion>Deposito</tipoOperacion><fechaOperacion>2022-06-07</fechaOperacion><monto>51225.75</monto><montoComision>1024.515</montoComision></operacion><operacion><numeroCuenta>14640</numeroCuenta><tipoOperacion>Deposito</tipoOperacion><fechaOperacion>2022-06-07</fechaOperacion><monto>78.0</monto><montoComision>1.56</montoComision></operacion></vistaWEB>
 </bitacora>
 </root>

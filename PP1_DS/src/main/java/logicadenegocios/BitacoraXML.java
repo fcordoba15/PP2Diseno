@@ -19,7 +19,8 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
 public class BitacoraXML extends BitacoraNotificationObserver{
-    static File file = new File ("C:\\Users\\Fiorella Mora\\Documents\\GitHub\\PP2Diseno\\PP1_DS\\src\\main\\webapp\\prueba.xml"); 
+    static String url = "C:\\Users\\Fiorella Mora\\Documents\\GitHub\\PP2Diseno\\PP1_DS\\src\\main\\webapp";
+  
 
      public BitacoraXML(CuentaBancaria pSubject) {
         subject= pSubject;
@@ -29,13 +30,25 @@ public class BitacoraXML extends BitacoraNotificationObserver{
     public void update() {
         try {
             Operacion operacion = subject.getExhangeRate();
-            anadirABitacoraXML (operacion, subject.numeroCuenta);
+            
+            anadirABitacoraXML (operacion, subject.numeroCuenta,"\\prueba.xml");
+            anadirABitacoraXML (operacion, subject.numeroCuenta,"\\fecha.xml");
+            
+            if(operacion.getVista() ==0){
+                anadirABitacoraXML (operacion, subject.numeroCuenta,"\\vistaCLI.xml");
+            }else if (operacion.getVista() == 1){
+                anadirABitacoraXML (operacion, subject.numeroCuenta,"\\vistaGUI.xml");
+            }else{
+                anadirABitacoraXML (operacion, subject.numeroCuenta,"\\vistaWEB.xml");
+            }   
+            
         } catch (Exception ex) {
             Logger.getLogger(BitacoraXML.class.getName()).log(Level.SEVERE, null, ex);
         }                   
     }
     
-     private void anadirABitacoraXML (Operacion pCambio, int numCuenta)throws Exception {
+     private void anadirABitacoraXML (Operacion pCambio, int numCuenta, String pfile)throws Exception {
+            File file = new File(url+pfile);
             String date = String.format("%1$tY-%1$tm-%1$td", pCambio.getFechaOperacion());
             DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
