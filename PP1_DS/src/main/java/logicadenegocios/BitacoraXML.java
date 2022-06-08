@@ -20,7 +20,8 @@ import org.w3c.dom.NodeList;
 
 public class BitacoraXML extends BitacoraNotificationObserver{
     static String url = "C:\\Users\\Fiorella Mora\\Documents\\GitHub\\PP2Diseno\\PP1_DS\\src\\main\\webapp";
-  
+    //static String url = "C:\\Users\\ranbe\\OneDrive\\Documentos\\GitHub\\PP2Diseno\\PP1_DS\\src\\main\\webapp";
+    //static String url = "C:\\Users\\fabih\\OneDrive\\Documentos\\GitHub\\PP2Diseno\\PP1_DS\\src\\main\\webapp";
 
      public BitacoraXML(CuentaBancaria pSubject) {
         subject= pSubject;

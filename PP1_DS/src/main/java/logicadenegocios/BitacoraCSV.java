@@ -13,7 +13,9 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class BitacoraCSV extends BitacoraNotificationObserver{
-    static String csv = "C:\\Users\\ranbe\\OneDrive\\Documentos\\GitHub\\PP2Diseno\\PP1_DS\\bitacoras\\CSV.csv";
+    //static String csv = "C:\\Users\\ranbe\\OneDrive\\Documentos\\GitHub\\PP2Diseno\\PP1_DS\\bitacoras\\CSV.csv";
+    //static String csv = "C:\\Users\\fabih\\OneDrive\\Documentos\\GitHub\\PP2Diseno\\PP1_DS\\bitacoras\\CSV.csv"
+    static String csv = "C:\\Users\\Fiorella Mora\\Documents\\GitHub\\PP2Diseno\\PP1_DS\\bitacoras\\CSV.csv";
     public BitacoraCSV(CuentaBancaria pSubject) {
         subject= pSubject;
         subject.attach(this);

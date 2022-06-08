@@ -4,6 +4,6 @@ Click nbfs://nbhost/SystemFileSystem/Templates/XML/XMLDocument.xml to edit this 
 --><root>
     <bitacora>
 <vistaCLI>
-<operacion><numeroCuenta>14640</numeroCuenta><tipoOperacion>Deposito</tipoOperacion><fechaOperacion>2022-06-07</fechaOperacion><monto>4500.0</monto><montoComision>90.0</montoComision></operacion></vistaCLI>
+</vistaCLI>
 </bitacora>
 </root>

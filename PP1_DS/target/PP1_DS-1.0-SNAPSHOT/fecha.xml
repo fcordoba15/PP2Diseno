@@ -4,10 +4,10 @@ Click nbfs://nbhost/SystemFileSystem/Templates/XML/XMLDocument.xml to edit this 
 --><root>
     <bitacora>
 <vistaCLI>
-<operacion><numeroCuenta>14640</numeroCuenta><tipoOperacion>Deposito</tipoOperacion><fechaOperacion>2022-06-07</fechaOperacion><monto>4500.0</monto><montoComision>90.0</montoComision></operacion></vistaCLI>
+</vistaCLI>
 <vistaGUI>
-<operacion><numeroCuenta>14640</numeroCuenta><tipoOperacion>Deposito</tipoOperacion><fechaOperacion>2022-06-07</fechaOperacion><monto>12.0</monto><montoComision>0.24</montoComision></operacion></vistaGUI>
+<operacion><numeroCuenta>30187</numeroCuenta><tipoOperacion>Consulta</tipoOperacion><fechaOperacion>2022-06-07</fechaOperacion><monto>0.0</monto><montoComision>0.0</montoComision></operacion><operacion><numeroCuenta>30187</numeroCuenta><tipoOperacion>Consulta</tipoOperacion><fechaOperacion>2022-06-07</fechaOperacion><monto>0.0</monto><montoComision>0.0</montoComision></operacion></vistaGUI>
 <vistaWEB>
-</vistaWEB>
+<operacion><numeroCuenta>30187</numeroCuenta><tipoOperacion>Cambio de pin</tipoOperacion><fechaOperacion>2022-06-07</fechaOperacion><monto>0.0</monto><montoComision>0.0</montoComision></operacion><operacion><numeroCuenta>30187</numeroCuenta><tipoOperacion>Consulta</tipoOperacion><fechaOperacion>2022-06-07</fechaOperacion><monto>0.0</monto><montoComision>0.0</montoComision></operacion><operacion><numeroCuenta>30187</numeroCuenta><tipoOperacion>Consulta</tipoOperacion><fechaOperacion>2022-06-07</fechaOperacion><monto>0.0</monto><montoComision>0.0</montoComision></operacion><operacion><numeroCuenta>30187</numeroCuenta><tipoOperacion>Deposito</tipoOperacion><fechaOperacion>2022-06-07</fechaOperacion><monto>1200.0</monto><montoComision>0.0</montoComision></operacion><operacion><numeroCuenta>30187</numeroCuenta><tipoOperacion>Retiro</tipoOperacion><fechaOperacion>2022-06-07</fechaOperacion><monto>400.0</monto><montoComision>0.0</montoComision></operacion><operacion><numeroCuenta>30187</numeroCuenta><tipoOperacion>Transferencia</tipoOperacion><fechaOperacion>2022-06-07</fechaOperacion><monto>1000.0</monto><montoComision>0.0</montoComision></operacion><operacion><numeroCuenta>76425</numeroCuenta><tipoOperacion>Deposito</tipoOperacion><fechaOperacion>2022-06-07</fechaOperacion><monto>1000.0</monto><montoComision>0.0</montoComision></operacion></vistaWEB>
 </bitacora>
 </root>

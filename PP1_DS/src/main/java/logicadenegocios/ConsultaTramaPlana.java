@@ -15,8 +15,9 @@ import java.util.ArrayList;
  * @author ranbe
  */
 public class ConsultaTramaPlana {
-    static File file = new File("C:\\Users\\ranbe\\OneDrive\\Documentos\\GitHub\\PP2Diseno\\PP1_DS\\bitacoras\\tramaPlana.txt");
-    
+    // static File file = new File("C:\\Users\\ranbe\\OneDrive\\Documentos\\GitHub\\PP2Diseno\\PP1_DS\\bitacoras\\tramaPlana.txt");
+    //static File file = new File("C:\\Users\\fabih\\OneDrive\\Documentos\\GitHub\\PP2Diseno\\PP1_DS\\bitacoras\\tramaPlana.txt");
+    static File file = new File("C:\\Users\\Fiorella Mora\\Documents\\GitHub\\PP2Diseno\\PP1_DS\\bitacoras\\tramaPlana.txt");
     public static ArrayList<String> consultaVista (String pVista) throws FileNotFoundException, IOException{
         FileReader aux = new FileReader(file);
         String msg;

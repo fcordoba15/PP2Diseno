@@ -13,7 +13,8 @@ import org.w3c.dom.NodeList;
 public class ConsultaXML {
     
    static File archivo =  new File ("C:\\Users\\Fiorella Mora\\Documents\\GitHub\\PP2Diseno\\PP1_DS\\src\\main\\webapp\\prueba.xml");
-  
+    //static File archivo = new File ("C:\\Users\\ranbe\\OneDrive\\Documentos\\GitHub\\PP2Diseno\\PP1_DS\\src\\main\\webapp\\prueba.xml");
+    //static File archivo = new File ("C:\\Users\\fabih\\OneDrive\\Documentos\\GitHub\\PP2Diseno\\PP1_DS\\src\\main\\webapp\\prueba.xml");
    public static ArrayList <String> consultaVista(String pVista){
        
        ArrayList <String> operacionesCuentas = new ArrayList(); 

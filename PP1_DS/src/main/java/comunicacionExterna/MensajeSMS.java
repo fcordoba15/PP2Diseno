@@ -12,8 +12,8 @@ public class MensajeSMS implements NotificacionUsuario {
         try{
              String myURI = "https://api.bulksms.com/v1/messages";
 
-            String myUsername = "diseno2022";
-            String myPassword = "Pdiseno2022";
+            String myUsername = "vjiucl";
+            String myPassword = "PC-@KEiF-#t8LxH";
             String codPais = "+506";
 
             String myData = "{to: \""+codPais+""+destinatario+"\", encoding: \"UNICODE\", body: \""+cuerpo+"\"}";

@@ -1,5 +1,8 @@
-vistaGUI22442Deposito06-24-200250050.00
-vistaCLIasdjfklaslkf1324asdfasf
-vitaGUIaksldfasklñdjffskaljfklñasfklñsafjklñ
-vistaGUI221242Deposito06-24-200270055.00
-vistaCLIsakjflslakñfklñaskslñfj
+
+vistaGUI30187Consulta2022-06-070.00.0
+vistaWEB30187Consulta2022-06-070.00.0
+vistaWEB30187Consulta2022-06-070.00.0
+vistaWEB30187Deposito2022-06-071200.00.0
+vistaWEB30187Retiro2022-06-07400.00.0
+vistaWEB30187Transferencia2022-06-071000.00.0
+vistaWEB76425Deposito2022-06-071000.00.0

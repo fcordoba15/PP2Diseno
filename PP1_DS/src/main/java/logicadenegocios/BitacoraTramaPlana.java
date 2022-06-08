@@ -10,8 +10,9 @@ import java.util.logging.Logger;
 
 public class BitacoraTramaPlana extends BitacoraNotificationObserver{
    
-    static File file = new File("C:\\Users\\ranbe\\OneDrive\\Documentos\\GitHub\\PP2Diseno\\PP1_DS\\bitacoras\\tramaPlana.txt");
-    
+   // static File file = new File("C:\\Users\\ranbe\\OneDrive\\Documentos\\GitHub\\PP2Diseno\\PP1_DS\\bitacoras\\tramaPlana.txt");
+    //static File file = new File("C:\\Users\\fabih\\OneDrive\\Documentos\\GitHub\\PP2Diseno\\PP1_DS\\bitacoras\\tramaPlana.txt");
+    static File file = new File("C:\\Users\\Fiorella Mora\\Documents\\GitHub\\PP2Diseno\\PP1_DS\\bitacoras\\tramaPlana.txt");
     public BitacoraTramaPlana(CuentaBancaria pSubject) {
         subject= pSubject;
         subject.attach(this);
