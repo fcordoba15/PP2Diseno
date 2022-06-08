@@ -36,7 +36,7 @@ public class ConsultaBitacoraCt {
     }
     
     public ArrayList <String> consultarPorFechaCSV () throws IOException{
-        String pFecha = new SimpleDateFormat("dd-MM-yyyy").format(Calendar.getInstance().getTime());
+        String pFecha = new SimpleDateFormat("yyyy-MM-dd").format(Calendar.getInstance().getTime());
         ArrayList <String> operacionesCuentas = new ArrayList();;
         operacionesCuentas  = ConsultaCSV.consultaPorFecha(pFecha);
         return operacionesCuentas;
@@ -58,7 +58,7 @@ public class ConsultaBitacoraCt {
     }
     
     public ArrayList <String> consultarPorFechaTramaPlana () throws IOException{
-        String pFecha = new SimpleDateFormat("dd-MM-yyyy").format(Calendar.getInstance().getTime());
+        String pFecha = new SimpleDateFormat("yyyy-MM-dd").format(Calendar.getInstance().getTime());
         ArrayList <String> operacionesCuentas = new ArrayList();
         operacionesCuentas  = ConsultaTramaPlana.consultaPorFecha(pFecha);
         return operacionesCuentas;

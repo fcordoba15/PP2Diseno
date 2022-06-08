@@ -29,6 +29,7 @@ public class ConsultarSaldoWeb extends HttpServlet {
     String numeroCuenta = request.getParameter("NUMEROCUENTA");
     String pin = request.getParameter("PIN");
     String divisa = request.getParameter("DIVISAS");
+    System.out.println(divisa);
     ActualizacionDatos.refrescarPrograma();
     
     out.println("<!DOCTYPE html>");

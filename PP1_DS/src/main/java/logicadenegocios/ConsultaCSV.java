@@ -15,9 +15,9 @@ import java.util.ArrayList;
  * @author ranbe
  */
 public class ConsultaCSV {
-  //static String csv = "C:\\Users\\ranbe\\OneDrive\\Documentos\\GitHub\\PP2Diseno\\PP1_DS\\bitacoras\\CSV.csv";
+    static String csv = "C:\\Users\\ranbe\\OneDrive\\Documentos\\GitHub\\PP2Diseno\\PP1_DS\\bitacoras\\CSV.csv";
     //static String csv = "C:\\Users\\fabih\\OneDrive\\Documentos\\GitHub\\PP2Diseno\\PP1_DS\\bitacoras\\CSV.csv"
-    static String csv = "C:\\Users\\Fiorella Mora\\Documents\\GitHub\\PP2Diseno\\PP1_DS\\bitacoras\\CSV.csv";
+    //static String csv = "C:\\Users\\Fiorella Mora\\Documents\\GitHub\\PP2Diseno\\PP1_DS\\bitacoras\\CSV.csv";
     
     public static ArrayList <String> consultaVista (String pVista) throws FileNotFoundException, IOException{
         CSVReader reader = new CSVReader(new FileReader(csv));
@@ -40,14 +40,14 @@ public class ConsultaCSV {
         return operacionesCuentas;
     }
     
-    public static ArrayList <String> consultaPorFecha (String pVista) throws FileNotFoundException, IOException{
+    public static ArrayList <String> consultaPorFecha (String pFecha) throws FileNotFoundException, IOException{
         CSVReader reader = new CSVReader(new FileReader(csv));
         String[] fila = null;
         String msg;
         ArrayList <String> operacionesCuentas = new ArrayList();
         while((fila = reader.readNext()) != null) {
             msg ="";
-            if (pVista.equals(fila[3]) == true){
+            if (pFecha.equals(fila[3]) == true){
                 for (int i=0;i<5;i++){
                     msg += fila[i] + ",";
                 }

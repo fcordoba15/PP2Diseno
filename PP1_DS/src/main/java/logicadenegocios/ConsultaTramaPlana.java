@@ -15,9 +15,9 @@ import java.util.ArrayList;
  * @author ranbe
  */
 public class ConsultaTramaPlana {
-    // static File file = new File("C:\\Users\\ranbe\\OneDrive\\Documentos\\GitHub\\PP2Diseno\\PP1_DS\\bitacoras\\tramaPlana.txt");
+     static File file = new File("C:\\Users\\ranbe\\OneDrive\\Documentos\\GitHub\\PP2Diseno\\PP1_DS\\bitacoras\\tramaPlana.txt");
     //static File file = new File("C:\\Users\\fabih\\OneDrive\\Documentos\\GitHub\\PP2Diseno\\PP1_DS\\bitacoras\\tramaPlana.txt");
-    static File file = new File("C:\\Users\\Fiorella Mora\\Documents\\GitHub\\PP2Diseno\\PP1_DS\\bitacoras\\tramaPlana.txt");
+    //static File file = new File("C:\\Users\\Fiorella Mora\\Documents\\GitHub\\PP2Diseno\\PP1_DS\\bitacoras\\tramaPlana.txt");
     public static ArrayList<String> consultaVista (String pVista) throws FileNotFoundException, IOException{
         FileReader aux = new FileReader(file);
         String msg;
@@ -35,9 +35,7 @@ public class ConsultaTramaPlana {
     }
     
     public static ArrayList<String> consultaPorFecha (String pFecha) throws FileNotFoundException, IOException{
-        String sFichero = "C:\\Users\\ranbe\\OneDrive\\Documentos\\NetBeansProjects\\plana.txt";
-        File fichero = new File(sFichero); 
-        FileReader aux = new FileReader(fichero);
+        FileReader aux = new FileReader(file);
         String fechaAux;
         String msg;
         ArrayList <String> operacionesCuentas = new ArrayList();
@@ -47,6 +45,7 @@ public class ConsultaTramaPlana {
         while (msg != ""){
             
             fechaAux = obtenerFecha(msg);
+            System.out.println(fechaAux);
             if (fechaAux.equals(pFecha) == true){
                 operacionesCuentas.add(obtenerLineaDatos(msg));
             }
