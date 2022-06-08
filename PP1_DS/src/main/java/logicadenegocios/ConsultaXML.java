@@ -12,8 +12,8 @@ import org.w3c.dom.NodeList;
 
 public class ConsultaXML {
     
-    //static File archivo =  new File ("C:\\Users\\Fiorella Mora\\Documents\\GitHub\\PP2Diseno\\PP1_DS\\src\\main\\webapp\\prueba.xml");
-    static File archivo = new File ("C:\\Users\\ranbe\\OneDrive\\Documentos\\GitHub\\PP2Diseno\\PP1_DS\\src\\main\\webapp\\prueba.xml");
+    static File archivo =  new File ("C:\\Users\\Fiorella Mora\\Documents\\GitHub\\PP2Diseno\\PP1_DS\\src\\main\\webapp\\prueba.xml");
+    //static File archivo = new File ("C:\\Users\\ranbe\\OneDrive\\Documentos\\GitHub\\PP2Diseno\\PP1_DS\\src\\main\\webapp\\prueba.xml");
     //static File archivo = new File ("C:\\Users\\fabih\\OneDrive\\Documentos\\GitHub\\PP2Diseno\\PP1_DS\\src\\main\\webapp\\prueba.xml");
    public static ArrayList <String> consultaVista(String pVista){
        
@@ -71,8 +71,9 @@ public class ConsultaXML {
 
                 if (nodo.getNodeType() == Node.ELEMENT_NODE) {
                     Element element = (Element) nodo;
-                    if(pFecha.equals(element.getElementsByTagName("fechaOperacion").item(0).getTextContent() )){
+                   
                        for (int j  = 0; j < element.getElementsByTagName("numeroCuenta").getLength(); j++){
+                            if(pFecha.equals(element.getElementsByTagName("fechaOperacion").item(0).getTextContent() )){
                         operacionesCuentas.add("\nNumero Cuenta: " + element.getElementsByTagName("numeroCuenta").item(j).getTextContent() + "Tipo Operación:" + element.getElementsByTagName("tipoOperacion").item(j).getTextContent() + "\nFecha Operación: " + element.getElementsByTagName("fechaOperacion").item(j).getTextContent() + "Monto: " + element.getElementsByTagName("monto").item(j).getTextContent() + "Monto Comision: " + element.getElementsByTagName("montoComision").item(j).getTextContent());
                        }
                     }
